@@ -12,6 +12,7 @@ import { COLORS } from '../../constants/colors';
 import { ENHANCED_MISSIONS } from '../../data/campaignMissions';
 import { CHARACTERS } from '../../data/characters';
 import CharacterDialogue from '../../components/CharacterDialogue';
+import ObjectiveInteraction from '../../components/ObjectiveInteraction';
 
 export default function CampaignMissionScreen({ route, navigation }) {
   const { missionId } = route.params;
@@ -21,6 +22,8 @@ export default function CampaignMissionScreen({ route, navigation }) {
   const [cutsceneIndex, setCutsceneIndex] = useState(0);
   const [objectives, setObjectives] = useState(mission?.objectives || []);
   const [showMissionComplete, setShowMissionComplete] = useState(false);
+  const [showObjectiveInteraction, setShowObjectiveInteraction] = useState(false);
+  const [activeObjective, setActiveObjective] = useState(null);
 
   useEffect(() => {
     // Show intro cutscene on mount
@@ -46,11 +49,24 @@ export default function CampaignMissionScreen({ route, navigation }) {
     setCurrentCutscene(null);
   };
 
-  const handleObjectiveComplete = (objectiveId) => {
+  const handleObjectiveClick = (objective) => {
+    if (objective.completed) return;
+    
+    // Open interactive interface for this objective
+    setActiveObjective(objective);
+    setShowObjectiveInteraction(true);
+  };
+
+  const handleObjectiveComplete = () => {
+    if (!activeObjective) return;
+
+    const objectiveId = activeObjective.id;
     const updatedObjectives = objectives.map((obj) =>
       obj.id === objectiveId ? { ...obj, completed: true } : obj
     );
     setObjectives(updatedObjectives);
+    setShowObjectiveInteraction(false);
+    setActiveObjective(null);
 
     // Check for cutscene trigger
     const completedObj = mission.objectives.find((o) => o.id === objectiveId);
@@ -125,7 +141,7 @@ export default function CampaignMissionScreen({ route, navigation }) {
           styles.objectiveCard,
           objective.completed && styles.objectiveCompleted,
         ]}
-        onPress={() => !objective.completed && handleObjectiveComplete(objective.id)}
+        onPress={() => handleObjectiveClick(objective)}
         disabled={objective.completed}
       >
         <View style={styles.objectiveHeader}>
@@ -251,6 +267,17 @@ export default function CampaignMissionScreen({ route, navigation }) {
             />
           </View>
         </Modal>
+      )}
+
+      {/* Objective Interaction */}
+      {activeObjective && (
+        <ObjectiveInteraction
+          visible={showObjectiveInteraction}
+          onClose={() => setShowObjectiveInteraction(false)}
+          objective={activeObjective}
+          onComplete={handleObjectiveComplete}
+          character={mission.story.mainCharacter}
+        />
       )}
 
       {/* Mission Complete Modal */}

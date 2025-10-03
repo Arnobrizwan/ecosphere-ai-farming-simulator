@@ -15,6 +15,7 @@ import { db } from '../../services/firebase.config';
 import { useGameState } from '../../game2d/GameStateContext';
 import { ENHANCED_MISSIONS, CAMPAIGN_STORY, MISSION_CATEGORIES } from '../../data/campaignMissions';
 import { CHARACTERS } from '../../data/characters';
+import StoryNarrative from '../../components/StoryNarrative';
 
 const { width } = Dimensions.get('window');
 
@@ -296,6 +297,9 @@ const DIFFICULTY_CONFIG = {
 
 export default function CampaignModeScreen({ navigation }) {
   const [userId, setUserId] = useState('');
+  const [showStoryNarrative, setShowStoryNarrative] = useState(false);
+  const [storySegments, setStorySegments] = useState([]);
+  const [selectedMission, setSelectedMission] = useState(null);
   const [userProgress, setUserProgress] = useState({
     completedMissions: [],
     currentXP: 0,
@@ -413,9 +417,68 @@ export default function CampaignModeScreen({ navigation }) {
       return;
     }
 
-    // Navigate to the new CampaignMission screen with character dialogues
+    // Store selected mission
+    setSelectedMission(mission);
+
+    // Parse story into segments
+    const segments = parseMissionStoryIntoSegments(mission);
+    
+    if (segments.length > 0) {
+      // Show story narrative before starting mission
+      setStorySegments(segments);
+      setShowStoryNarrative(true);
+    } else {
+      // No story, go directly to mission
+      startMissionDirectly(mission);
+    }
+  };
+
+  const parseMissionStoryIntoSegments = (mission) => {
+    const segments = [];
+
+    // Add story intro if available
+    if (mission.story && mission.story.intro) {
+      const sentences = mission.story.intro.match(/[^.!?]+[.!?]+/g) || [mission.story.intro];
+      for (let i = 0; i < sentences.length; i += 2) {
+        const segment = sentences.slice(i, i + 2).join(' ').trim();
+        if (segment) segments.push(segment);
+      }
+    } else if (mission.description) {
+      // Fallback to description
+      segments.push(mission.description);
+    }
+
+    // Add objectives as a segment
+    if (mission.objectives && mission.objectives.length > 0) {
+      const objectiveText = "Your objectives:\n" + 
+        mission.objectives.map((obj, idx) => `${idx + 1}. ${obj.text}`).join('\n');
+      segments.push(objectiveText);
+    }
+
+    // Add rewards info
+    if (mission.rewards) {
+      let rewardText = "Rewards:\n";
+      if (mission.rewards.xp) rewardText += `⭐ ${mission.rewards.xp} XP\n`;
+      if (mission.rewards.coins) rewardText += `🪙 ${mission.rewards.coins} Coins\n`;
+      if (mission.rewards.badges && mission.rewards.badges.length > 0) {
+        rewardText += `🏆 ${mission.rewards.badges.join(', ')}`;
+      }
+      segments.push(rewardText);
+    }
+
+    return segments;
+  };
+
+  const startMissionDirectly = (mission) => {
     startCampaignMission(mission.id);
     navigation.navigate('CampaignMission', { missionId: mission.id });
+  };
+
+  const handleStoryComplete = () => {
+    setShowStoryNarrative(false);
+    if (selectedMission) {
+      startMissionDirectly(selectedMission);
+    }
   };
 
   const completeMission = async (mission) => {
@@ -636,6 +699,25 @@ export default function CampaignModeScreen({ navigation }) {
         {CHAPTERS.map(renderChapterCard)}
         <View style={{ height: 50 }} />
       </ScrollView>
+
+      {/* Story Narrative */}
+      {selectedMission && (
+        <StoryNarrative
+          visible={showStoryNarrative}
+          onClose={handleStoryComplete}
+          storySegments={storySegments}
+          characterName={
+            selectedMission.story?.mainCharacter 
+              ? CHARACTERS[selectedMission.story.mainCharacter]?.name 
+              : 'Mission Briefing'
+          }
+          characterAvatar={
+            selectedMission.story?.mainCharacter 
+              ? CHARACTERS[selectedMission.story.mainCharacter]?.avatar 
+              : '📋'
+          }
+        />
+      )}
     </View>
   );
 }

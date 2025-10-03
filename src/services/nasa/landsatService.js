@@ -165,3 +165,93 @@ async function readGeoTiffBand(buffer) {
 
   return band;
 }
+
+/**
+ * Calculate NDWI (Normalized Difference Water Index)
+ * NDWI = (Green - NIR) / (Green + NIR)
+ * Higher values indicate water presence
+ */
+export const calculateNDWI = (green, nir) => {
+  if (green + nir === 0) return 0;
+  return (green - nir) / (green + nir);
+};
+
+/**
+ * Calculate SAVI (Soil-Adjusted Vegetation Index)
+ * SAVI = ((NIR - Red) / (NIR + Red + L)) × (1 + L)
+ * L = 0.5 (soil brightness correction)
+ */
+export const calculateSAVI = (nir, red, L = 0.5) => {
+  if (nir + red + L === 0) return 0;
+  return ((nir - red) / (nir + red + L)) * (1 + L);
+};
+
+/**
+ * Calculate EVI (Enhanced Vegetation Index)
+ * EVI = 2.5 × ((NIR - Red) / (NIR + 6×Red - 7.5×Blue + 1))
+ */
+export const calculateEVI = (nir, red, blue) => {
+  const denominator = nir + 6 * red - 7.5 * blue + 1;
+  if (denominator === 0) return 0;
+  return 2.5 * ((nir - red) / denominator);
+};
+
+/**
+ * Classify land cover based on NDVI values
+ */
+export const classifyLandCover = (ndvi) => {
+  if (ndvi > 0.6) return { type: 'Dense Vegetation', confidence: 90 };
+  if (ndvi > 0.3) return { type: 'Moderate Vegetation', confidence: 85 };
+  if (ndvi > 0.1) return { type: 'Sparse Vegetation', confidence: 75 };
+  if (ndvi < -0.1) return { type: 'Water/Urban', confidence: 70 };
+  return { type: 'Bare Soil', confidence: 70 };
+};
+
+/**
+ * Get vegetation health trend over time
+ */
+export const getVegetationTrend = async (latitude, longitude, startDate, endDate, options = {}) => {
+  try {
+    const scenes = await searchLandsatScenes(latitude, longitude, startDate, endDate, options);
+
+    const trend = [];
+    for (const scene of scenes.slice(0, 5)) { // Limit to 5 scenes for performance
+      try {
+        const ndvi = await calculateLandsatNDVI(scene);
+        const landCover = classifyLandCover(ndvi.mean);
+
+        trend.push({
+          date: scene.date,
+          ndvi: parseFloat(ndvi.mean.toFixed(4)),
+          cloudCover: scene.cloudCover,
+          landCover: landCover.type,
+          confidence: landCover.confidence,
+        });
+      } catch (error) {
+        console.warn(`[Landsat] Skipping scene ${scene.id}: ${error.message}`);
+      }
+    }
+
+    return {
+      latitude,
+      longitude,
+      period: { start: startDate, end: endDate },
+      observations: trend.length,
+      trend,
+      source: 'Landsat 8/9 OLI Time Series',
+      analyzedAt: new Date().toISOString(),
+    };
+  } catch (error) {
+    throw new Error(`Vegetation trend analysis failed: ${error.message}`);
+  }
+};
+
+export default {
+  searchLandsatScenes,
+  calculateLandsatNDVI,
+  calculateNDWI,
+  calculateSAVI,
+  calculateEVI,
+  classifyLandCover,
+  getVegetationTrend,
+};

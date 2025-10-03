@@ -14,6 +14,12 @@ import { authService } from '../../services/auth.service';
 import { STORY_SCENARIOS } from '../../data/storyScenarios';
 import { CHARACTERS } from '../../data/characters';
 import CharacterDialogue from '../../components/CharacterDialogue';
+import StoryNarrative from '../../components/StoryNarrative';
+
+// NASA Data Services
+import { fetchSMAPSoilMoisture } from '../../services/nasa/smapService';
+import { fetchIMERGPrecipitation } from '../../services/nasa/imergService';
+import { getDailyPoint } from '../../services/power.service';
 
 const { width } = Dimensions.get('window');
 
@@ -27,6 +33,11 @@ export default function SandboxModeScreen({ navigation }) {
   const [showScenarioModal, setShowScenarioModal] = useState(false);
   const [filter, setFilter] = useState('all');
   const [completedScenarios, setCompletedScenarios] = useState([]);
+  const [showStoryNarrative, setShowStoryNarrative] = useState(false);
+  const [storySegments, setStorySegments] = useState([]);
+  const [nasaData, setNasaData] = useState(null);
+  const [loadingNasaData, setLoadingNasaData] = useState(false);
+  const [gameplayActive, setGameplayActive] = useState(false);
 
   useEffect(() => {
     const user = authService.getCurrentUser();
@@ -50,21 +61,140 @@ export default function SandboxModeScreen({ navigation }) {
   };
 
   const handleStartScenario = () => {
-    Alert.alert(
-      '🚀 Starting Scenario',
-      `${selectedScenario.title}\n\nThis will launch the scenario with real NASA satellite data integration.`,
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Start',
-          onPress: () => {
-            setShowScenarioModal(false);
-            // Would navigate to actual gameplay
-            Alert.alert('Coming Soon', 'Full NASA data integration in development!');
-          }
+    if (!selectedScenario) return;
+
+    // Parse story into segments
+    const segments = parseStoryIntoSegments(selectedScenario.story);
+    
+    // Add objectives as additional story segments
+    const objectiveText = "Your objectives:\n" + 
+      selectedScenario.objectives.map((obj, idx) => `${idx + 1}. ${obj.text}`).join('\n');
+    segments.push(objectiveText);
+
+    // Add NASA data info
+    if (selectedScenario.nasaData) {
+      segments.push(
+        "NASA Satellite Data Available:\n" +
+        (selectedScenario.nasaData.smap ? "🛰️ SMAP - Soil Moisture\n" : "") +
+        (selectedScenario.nasaData.rainfall ? "🌧️ IMERG - Rainfall\n" : "") +
+        (selectedScenario.nasaData.ndvi ? "🌿 NDVI - Vegetation Health\n" : "") +
+        (selectedScenario.nasaData.temperature ? "🌡️ LST - Land Surface Temperature" : "")
+      );
+    }
+
+    // Close modal and show narrative
+    setShowScenarioModal(false);
+    setStorySegments(segments);
+    setShowStoryNarrative(true);
+  };
+
+  const parseStoryIntoSegments = (story) => {
+    // Split by sentences, keeping punctuation
+    const sentences = story.match(/[^.!?]+[.!?]+/g) || [story];
+    
+    // Group every 2-3 sentences into a segment
+    const segments = [];
+    for (let i = 0; i < sentences.length; i += 2) {
+      const segment = sentences.slice(i, i + 2).join(' ').trim();
+      if (segment) segments.push(segment);
+    }
+    
+    return segments.length > 0 ? segments : [story];
+  };
+
+  const handleStoryComplete = async () => {
+    setShowStoryNarrative(false);
+    setLoadingNasaData(true);
+
+    try {
+      // Fetch real NASA data for the scenario
+      const location = selectedScenario.location || { lat: 23.81, lon: 90.41 };
+      const today = new Date().toISOString().split('T')[0];
+
+      const nasaDataPromises = [];
+
+      // Fetch SMAP soil moisture if needed
+      if (selectedScenario.nasaData?.smap) {
+        nasaDataPromises.push(
+          fetchSMAPSoilMoisture(location.lat, location.lon, today).catch((err) => ({
+            type: 'smap',
+            error: err.message,
+          }))
+        );
+      }
+
+      // Fetch IMERG precipitation if needed
+      if (selectedScenario.nasaData?.rainfall) {
+        nasaDataPromises.push(
+          fetchIMERGPrecipitation(location.lat, location.lon, today).catch((err) => ({
+            type: 'imerg',
+            error: err.message,
+          }))
+        );
+      }
+
+      // Fetch POWER climate data if needed
+      if (selectedScenario.nasaData?.temperature) {
+        const startDate = today.replace(/-/g, '');
+        const endDate = startDate;
+        nasaDataPromises.push(
+          getDailyPoint(location.lat, location.lon, startDate, endDate, [
+            'T2M',
+            'T2M_MAX',
+            'T2M_MIN',
+            'PRECTOTCORR',
+            'RH2M',
+          ]).catch((err) => ({
+            type: 'power',
+            error: err.message,
+          }))
+        );
+      }
+
+      // Fetch all NASA data
+      const results = await Promise.all(nasaDataPromises);
+
+      // Process results
+      const processedData = {};
+      results.forEach((result) => {
+        if (result.soilMoisture !== undefined) {
+          processedData.smap = result;
+        } else if (result.precipitationRate !== undefined) {
+          processedData.imerg = result;
+        } else if (result.parameters) {
+          processedData.power = result;
         }
-      ]
-    );
+      });
+
+      setNasaData(processedData);
+      setLoadingNasaData(false);
+      setGameplayActive(true);
+
+      // Show mission started with real data
+      Alert.alert(
+        '🚀 Mission Started',
+        `${selectedScenario.title}\n\n✅ NASA Data Loaded:\n${
+          processedData.smap ? `🛰️ Soil Moisture: ${(processedData.smap.soilMoisture * 100).toFixed(1)}%\n` : ''
+        }${
+          processedData.imerg
+            ? `🌧️ Precipitation: ${processedData.imerg.dailyAccumulation.toFixed(1)} mm/day\n`
+            : ''
+        }${
+          processedData.power?.parameters?.T2M
+            ? `🌡️ Temperature: ${Object.values(processedData.power.parameters.T2M)[0].toFixed(1)}°C\n`
+            : ''
+        }\nUse the data to complete your objectives!`,
+        [{ text: 'Start Mission', onPress: () => console.log('Mission gameplay active') }]
+      );
+    } catch (error) {
+      setLoadingNasaData(false);
+      console.error('[Sandbox] NASA data fetch error:', error);
+      Alert.alert(
+        '⚠️ Data Loading Failed',
+        `Could not load all NASA data: ${error.message}\n\nContinuing with scenario objectives...`,
+        [{ text: 'Continue', onPress: () => setGameplayActive(true) }]
+      );
+    }
   };
 
   const getDifficultyColor = (difficulty) => {
@@ -349,6 +479,17 @@ export default function SandboxModeScreen({ navigation }) {
 
       {/* Scenario Detail Modal */}
       {renderScenarioModal()}
+
+      {/* Story Narrative */}
+      {selectedScenario && (
+        <StoryNarrative
+          visible={showStoryNarrative}
+          onClose={handleStoryComplete}
+          storySegments={storySegments}
+          characterName={CHARACTERS[selectedScenario.character]?.name || 'Narrator'}
+          characterAvatar={CHARACTERS[selectedScenario.character]?.avatar || '👤'}
+        />
+      )}
     </View>
   );
 }
