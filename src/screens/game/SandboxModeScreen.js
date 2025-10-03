@@ -65,26 +65,33 @@ export default function SandboxModeScreen({ navigation }) {
     // Parse story into segments
     const segments = parseStoryIntoSegments(selectedScenario.story);
     
-    // Add objectives as additional story segments
-    const objectiveText = "Your objectives:\n" + 
-      selectedScenario.objectives.map((obj, idx) => `${idx + 1}. ${obj.text}`).join('\n');
-    segments.push(objectiveText);
-
-    // Add NASA data info
+    // Show NASA data info alert
     if (selectedScenario.nasaData) {
-      segments.push(
-        "NASA Satellite Data Available:\n" +
-        (selectedScenario.nasaData.smap ? "🛰️ SMAP - Soil Moisture\n" : "") +
+      Alert.alert(
+        '🛰️ NASA Data Integration',
+        'This scenario uses real satellite data:\n\n' +
+        (selectedScenario.nasaData.smap ? "💧 SMAP - Soil Moisture\n" : "") +
         (selectedScenario.nasaData.rainfall ? "🌧️ IMERG - Rainfall\n" : "") +
         (selectedScenario.nasaData.ndvi ? "🌿 NDVI - Vegetation Health\n" : "") +
-        (selectedScenario.nasaData.temperature ? "🌡️ LST - Land Surface Temperature" : "")
+        (selectedScenario.nasaData.temperature ? "🌡️ LST - Land Surface Temperature" : ""),
+        [
+          { text: 'Skip Story', onPress: () => {
+            setShowScenarioModal(false);
+            handleStoryComplete();
+          }},
+          { text: 'Watch Story', onPress: () => {
+            setShowScenarioModal(false);
+            setStorySegments(segments);
+            setShowStoryNarrative(true);
+          }}
+        ]
       );
+    } else {
+      // Close modal and show narrative
+      setShowScenarioModal(false);
+      setStorySegments(segments);
+      setShowStoryNarrative(true);
     }
-
-    // Close modal and show narrative
-    setShowScenarioModal(false);
-    setStorySegments(segments);
-    setShowStoryNarrative(true);
   };
 
   const parseStoryIntoSegments = (story) => {
