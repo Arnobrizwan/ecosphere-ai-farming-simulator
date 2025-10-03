@@ -239,39 +239,37 @@
 ## 🚀 Quick Start
 
 ### Prerequisites
-
-```bash
-# Required
-node >= 16.0.0
-npm >= 8.0.0
-expo-cli
-
-# Optional
-Android Studio (for Android)
-Xcode (for iOS - macOS only)
-```
+- Node.js 18+ and npm
+- Expo CLI: `npm install -g @expo/cli`
+- Android Studio (for Android) or Xcode (for iOS)
+- NASA Earthdata account (free): https://urs.earthdata.nasa.gov/
+- Python 3.8+ (for NASA data processing)
 
 ### Installation
 
 ```bash
-# 1. Clone repository
+# Clone the repository
 git clone https://github.com/yourusername/ecosphere-ai-farming-simulator.git
-cd ecosphere-ai-farming-simulator-3
+cd ecosphere-ai-farming-simulator
 
-# 2. Install dependencies
+# Install dependencies
 npm install
 
-# 3. Configure environment
+# Set up environment variables
 cp .env.template .env
-# Edit .env with your API keys (see Configuration section)
+# Edit .env with your API keys (Firebase, NASA, Gemini, etc.)
 
-# 4. Start development server
+# Set up NASA data pipeline (optional)
+npm run nasa:setup      # Install Python dependencies
+npm run nasa:download   # Download satellite data
+npm run nasa:preprocess # Process and merge datasets
+npm run nasa:train      # Train ML models
+
+# Start the development server
 npm start
 
-# 5. Run on device/emulator
-npm run android  # Android
-npm run ios      # iOS (macOS only)
-npm run web      # Web browser
+# Run on device/emulator
+npm run android  # or npm run ios
 ```
 
 ### Configuration
@@ -292,15 +290,13 @@ EXPO_PUBLIC_FIREBASE_DATABASE_URL=https://your_project.firebaseio.com
 EXPO_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
 EXPO_PUBLIC_GEMINI_MODEL=gemini-2.5-flash
 
-# NASA Earthdata (from NASA Earthdata)
-NASA_EARTHDATA_TOKEN=your_nasa_token
-NASA_EARTHDATA_USERNAME=your_nasa_username
-EXPO_PUBLIC_NASA_EARTHDATA_TOKEN=${NASA_EARTHDATA_TOKEN}
-EXPO_PUBLIC_NASA_EARTHDATA_USERNAME=${NASA_EARTHDATA_USERNAME}
-```
+# NASA Earthdata (from https://urs.earthdata.nasa.gov/)
+NASA_EARTHDATA_USERNAME=your_earthdata_username
+NASA_EARTHDATA_TOKEN=your_earthdata_token
+NASA_EARTHDATA_API_KEY=your_earthdata_api_key
 
-**Get API Keys:**
-- **Firebase**: https://console.firebase.google.com (create project → web app)
+# Google AI (from Google AI Studio)
+EXPO_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
 - **Gemini AI**: https://makersuite.google.com/app/apikey
 - **NASA Earthdata**: https://urs.earthdata.nasa.gov (register → generate token)
 
