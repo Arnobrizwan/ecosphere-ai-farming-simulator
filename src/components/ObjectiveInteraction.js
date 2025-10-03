@@ -9,6 +9,11 @@ import {
   Alert,
   Dimensions,
   ActivityIndicator,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from 'react-native';
 import { COLORS } from '../constants/colors';
 import { CHARACTERS } from '../data/characters';
@@ -214,6 +219,8 @@ export default function ObjectiveInteraction({ visible, onClose, objective, onCo
           onChangeText={setAnswer}
           multiline
           maxLength={200}
+          returnKeyType="done"
+          blurOnSubmit={true}
         />
 
         <View style={styles.buttonRow}>
@@ -362,15 +369,27 @@ export default function ObjectiveInteraction({ visible, onClose, objective, onCo
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-      <View style={styles.modalOverlay}>
-        <View style={styles.modalContent}>
-          <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-            <Text style={styles.closeButtonText}>✕</Text>
-          </TouchableOpacity>
+      <KeyboardAvoidingView 
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
+        style={styles.modalOverlay}
+      >
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.modalOverlay}>
+            <ScrollView
+              contentContainerStyle={styles.scrollContent}
+              keyboardShouldPersistTaps="handled"
+            >
+              <View style={styles.modalContent}>
+                <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+                  <Text style={styles.closeButtonText}>✕</Text>
+                </TouchableOpacity>
 
-          {renderInterface()}
-        </View>
-      </View>
+                {renderInterface()}
+              </View>
+            </ScrollView>
+          </View>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     </Modal>
   );
 }
@@ -382,13 +401,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  scrollContent: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 20,
+  },
   modalContent: {
     width: width * 0.9,
     maxWidth: 500,
     backgroundColor: COLORS.pureWhite,
     borderRadius: 20,
     padding: 20,
-    maxHeight: '80%',
   },
   closeButton: {
     position: 'absolute',
