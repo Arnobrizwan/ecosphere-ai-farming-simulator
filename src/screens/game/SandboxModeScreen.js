@@ -282,7 +282,17 @@ export default function SandboxModeScreen({ navigation }) {
       Alert.alert(
         '🚀 Mission Started',
         `${selectedScenario.title}\n\n✅ Data Loaded:\n${soilMoisture}${precipitation}${temperature}${ndvi}${landsatSummary}${mlPrediction}${trend}\nUse the data to complete your objectives!`,
-        [{ text: 'Start Mission', onPress: () => console.log('Mission gameplay active') }]
+        [{ 
+          text: 'Start Mission', 
+          onPress: () => {
+            console.log('Mission gameplay active');
+            // Navigate to a dedicated mission screen instead of overlay
+            navigation.navigate('MissionDashboard', {
+              scenario: selectedScenario,
+              nasaData: processedData
+            });
+          }
+        }]
       );
     } catch (error) {
       setLoadingNasaData(false);
