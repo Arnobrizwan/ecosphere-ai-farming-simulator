@@ -138,13 +138,13 @@ export default function SandboxModeScreen({ navigation }) {
         const startDate = today.replace(/-/g, '');
         const endDate = startDate;
         nasaDataPromises.push(
-          getDailyPoint(location.lat, location.lon, startDate, endDate, [
-            'T2M',
-            'T2M_MAX',
-            'T2M_MIN',
-            'PRECTOTCORR',
-            'RH2M',
-          ]).catch((err) => ({
+          getDailyPoint({
+            latitude: location.lat,
+            longitude: location.lon,
+            start: startDate,
+            end: endDate,
+            parameters: ['T2M', 'T2M_MAX', 'T2M_MIN', 'PRECTOTCORR', 'RH2M', 'ALLSKY_SFC_SW_DWN'],
+          }).catch((err) => ({
             type: 'power',
             error: err.message,
           }))
@@ -157,12 +157,17 @@ export default function SandboxModeScreen({ navigation }) {
       // Process results
       const processedData = {};
       results.forEach((result) => {
-        if (result.soilMoisture !== undefined) {
-          processedData.smap = result;
+        if (result.error) {
+          console.warn(`[Sandbox] ${result.type} error:`, result.error);
+        } else if (result.soilMoisture !== undefined) {
+          // SMAP soil moisture
+          processedData.soilMoisture = result;
         } else if (result.precipitationRate !== undefined) {
-          processedData.imerg = result;
+          // IMERG precipitation
+          processedData.precipitation = result;
         } else if (result.parameters) {
-          processedData.power = result;
+          // POWER climate data
+          processedData.climate = result;
         }
       });
 
@@ -171,19 +176,20 @@ export default function SandboxModeScreen({ navigation }) {
       setGameplayActive(true);
 
       // Show mission started with real data
+      const soilMoisture = processedData.soilMoisture?.soilMoisture
+        ? `🛰️ Soil Moisture: ${(processedData.soilMoisture.soilMoisture * 100).toFixed(1)}%\n`
+        : '';
+      const precipitation = processedData.precipitation?.precipitationRate
+        ? `🌧️ Precipitation: ${processedData.precipitation.precipitationRate.toFixed(1)} mm/day\n`
+        : '';
+
+      // Extract temperature from POWER parameters array
+      const temp = processedData.climate?.parameters?.T2M?.[0]?.value;
+      const temperature = temp ? `🌡️ Temperature: ${temp.toFixed(1)}°C\n` : '';
+
       Alert.alert(
         '🚀 Mission Started',
-        `${selectedScenario.title}\n\n✅ NASA Data Loaded:\n${
-          processedData.smap ? `🛰️ Soil Moisture: ${(processedData.smap.soilMoisture * 100).toFixed(1)}%\n` : ''
-        }${
-          processedData.imerg
-            ? `🌧️ Precipitation: ${processedData.imerg.dailyAccumulation.toFixed(1)} mm/day\n`
-            : ''
-        }${
-          processedData.power?.parameters?.T2M
-            ? `🌡️ Temperature: ${Object.values(processedData.power.parameters.T2M)[0].toFixed(1)}°C\n`
-            : ''
-        }\nUse the data to complete your objectives!`,
+        `${selectedScenario.title}\n\n✅ NASA Data Loaded:\n${soilMoisture}${precipitation}${temperature}\nUse the data to complete your objectives!`,
         [{ text: 'Start Mission', onPress: () => console.log('Mission gameplay active') }]
       );
     } catch (error) {
@@ -526,9 +532,9 @@ export default function SandboxModeScreen({ navigation }) {
                 <View style={styles.nasaDataItem}>
                   <Text style={styles.nasaDataLabel}>💧 Soil Moisture</Text>
                   <Text style={styles.nasaDataValue}>
-                    {nasaData.soilMoisture.mean.toFixed(2)}%
+                    {(nasaData.soilMoisture.soilMoisture * 100).toFixed(1)}%
                   </Text>
-                  <Text style={styles.nasaDataSource}>SMAP (36km resolution)</Text>
+                  <Text style={styles.nasaDataSource}>SMAP SPL3SMP_E</Text>
                 </View>
               )}
 
@@ -538,27 +544,31 @@ export default function SandboxModeScreen({ navigation }) {
                   <Text style={styles.nasaDataValue}>
                     {nasaData.precipitation.precipitationRate.toFixed(2)} mm/day
                   </Text>
-                  <Text style={styles.nasaDataSource}>IMERG (0.1° resolution)</Text>
+                  <Text style={styles.nasaDataSource}>IMERG GPM_3IMERGDF</Text>
                 </View>
               )}
 
-              {nasaData.climate && (
+              {nasaData.climate?.parameters && (
                 <>
-                  <View style={styles.nasaDataItem}>
-                    <Text style={styles.nasaDataLabel}>🌡️ Temperature</Text>
-                    <Text style={styles.nasaDataValue}>
-                      {nasaData.climate.T2M?.toFixed(1) || 'N/A'}°C
-                    </Text>
-                    <Text style={styles.nasaDataSource}>NASA POWER</Text>
-                  </View>
+                  {nasaData.climate.parameters.T2M?.[0] && (
+                    <View style={styles.nasaDataItem}>
+                      <Text style={styles.nasaDataLabel}>🌡️ Temperature</Text>
+                      <Text style={styles.nasaDataValue}>
+                        {nasaData.climate.parameters.T2M[0].value.toFixed(1)}°C
+                      </Text>
+                      <Text style={styles.nasaDataSource}>NASA POWER</Text>
+                    </View>
+                  )}
 
-                  <View style={styles.nasaDataItem}>
-                    <Text style={styles.nasaDataLabel}>☀️ Solar Radiation</Text>
-                    <Text style={styles.nasaDataValue}>
-                      {nasaData.climate.ALLSKY_SFC_SW_DWN?.toFixed(1) || 'N/A'} kWh/m²
-                    </Text>
-                    <Text style={styles.nasaDataSource}>NASA POWER</Text>
-                  </View>
+                  {nasaData.climate.parameters.ALLSKY_SFC_SW_DWN?.[0] && (
+                    <View style={styles.nasaDataItem}>
+                      <Text style={styles.nasaDataLabel}>☀️ Solar Radiation</Text>
+                      <Text style={styles.nasaDataValue}>
+                        {nasaData.climate.parameters.ALLSKY_SFC_SW_DWN[0].value.toFixed(1)} MJ/m²
+                      </Text>
+                      <Text style={styles.nasaDataSource}>NASA POWER</Text>
+                    </View>
+                  )}
                 </>
               )}
 

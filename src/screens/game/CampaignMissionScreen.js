@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
   Alert,
   Modal,
+  Animated,
+  Easing,
 } from 'react-native';
 import { COLORS } from '../../constants/colors';
 import { ENHANCED_MISSIONS } from '../../data/campaignMissions';
@@ -27,8 +29,62 @@ export default function CampaignMissionScreen({ route, navigation }) {
   const [dialogueQueue, setDialogueQueue] = useState([]);
   const [currentDialogueIndex, setCurrentDialogueIndex] = useState(0);
   const [shownDialogues, setShownDialogues] = useState([]);
+  
+  // Animation values
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const slideAnim = useRef(new Animated.Value(50)).current;
+  const floatAnim1 = useRef(new Animated.Value(0)).current;
+  const floatAnim2 = useRef(new Animated.Value(0)).current;
+  const floatAnim3 = useRef(new Animated.Value(0)).current;
+  const scaleAnim = useRef(new Animated.Value(0.9)).current;
 
   useEffect(() => {
+    // Entrance animations
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 800,
+        useNativeDriver: true,
+      }),
+      Animated.spring(slideAnim, {
+        toValue: 0,
+        tension: 50,
+        friction: 8,
+        useNativeDriver: true,
+      }),
+      Animated.spring(scaleAnim, {
+        toValue: 1,
+        tension: 50,
+        friction: 8,
+        useNativeDriver: true,
+      }),
+    ]).start();
+
+    // Floating animations for farm elements
+    const createFloatingAnimation = (animValue, duration, delay) => {
+      Animated.loop(
+        Animated.sequence([
+          Animated.delay(delay),
+          Animated.timing(animValue, {
+            toValue: -20,
+            duration: duration,
+            easing: Easing.inOut(Easing.sin),
+            useNativeDriver: true,
+          }),
+          Animated.timing(animValue, {
+            toValue: 0,
+            duration: duration,
+            easing: Easing.inOut(Easing.sin),
+            useNativeDriver: true,
+          }),
+        ])
+      ).start();
+    };
+
+    createFloatingAnimation(floatAnim1, 3000, 0);
+    createFloatingAnimation(floatAnim2, 4000, 500);
+    createFloatingAnimation(floatAnim3, 3500, 1000);
+
     // Show intro dialogues on mount
     if (mission?.story?.dialogues) {
       const introDialogues = mission.story.dialogues.filter(
@@ -240,24 +296,40 @@ export default function CampaignMissionScreen({ route, navigation }) {
 
   return (
     <View style={styles.container}>
+      {/* Floating Farm Elements Background */}
+      <Animated.View style={[styles.floatingElement, { transform: [{ translateY: floatAnim1 }], top: 100, right: 30 }]}>
+        <Text style={styles.floatingEmoji}>🌾</Text>
+      </Animated.View>
+      <Animated.View style={[styles.floatingElement, { transform: [{ translateY: floatAnim2 }], top: 200, left: 20 }]}>
+        <Text style={styles.floatingEmoji}>🌱</Text>
+      </Animated.View>
+      <Animated.View style={[styles.floatingElement, { transform: [{ translateY: floatAnim3 }], top: 400, right: 50 }]}>
+        <Text style={styles.floatingEmoji}>🍃</Text>
+      </Animated.View>
+      <Animated.View style={[styles.floatingElement, { transform: [{ translateY: floatAnim1 }], top: 500, left: 40 }]}>
+        <Text style={styles.floatingEmoji}>🌻</Text>
+      </Animated.View>
+
       {/* Header */}
-      <View style={styles.header}>
+      <Animated.View style={[styles.header, { opacity: fadeAnim }]}>
         <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}
         >
           <Text style={styles.backButtonText}>← Back</Text>
         </TouchableOpacity>
-        <View style={styles.titleContainer}>
+        <Animated.View style={[styles.titleContainer, { transform: [{ scale: scaleAnim }] }]}>
           <Text style={styles.chapterText}>
             Chapter {mission.chapterNumber} - Mission {mission.missionNumber}
           </Text>
           <Text style={styles.title}>{mission.title}</Text>
           <Text style={styles.subtitle}>{mission.subtitle}</Text>
-        </View>
-      </View>
+        </Animated.View>
+      </Animated.View>
 
-      <ScrollView style={styles.content}>
+      <Animated.ScrollView 
+        style={[styles.content, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}
+      >
         {/* Story Section */}
         <View style={styles.storySection}>
           <Text style={styles.sectionTitle}>📖 Story</Text>
@@ -320,7 +392,7 @@ export default function CampaignMissionScreen({ route, navigation }) {
             </View>
           </View>
         </View>
-      </ScrollView>
+      </Animated.ScrollView>
 
       {/* Cutscene Modal */}
       {currentCutscene && (
@@ -648,6 +720,14 @@ const styles = StyleSheet.create({
     color: '#6B7280',
     fontWeight: '600',
     textAlign: 'center',
+  },
+  floatingElement: {
+    position: 'absolute',
+    zIndex: 0,
+    opacity: 0.3,
+  },
+  floatingEmoji: {
+    fontSize: 40,
   },
 });
 
