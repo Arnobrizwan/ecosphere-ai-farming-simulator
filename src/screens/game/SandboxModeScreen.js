@@ -113,23 +113,36 @@ export default function SandboxModeScreen({ navigation }) {
 
       const nasaDataPromises = [];
 
-      // Fetch SMAP soil moisture if needed
+      // Fetch SMAP soil moisture if needed (with fallback)
       if (selectedScenario.nasaData?.smap) {
         nasaDataPromises.push(
-          fetchSMAPSoilMoisture(location.lat, location.lon, today).catch((err) => ({
-            type: 'smap',
-            error: err.message,
-          }))
+          fetchSMAPSoilMoisture(location.lat, location.lon, today).catch((err) => {
+            console.warn('[Sandbox] SMAP unavailable, using fallback data:', err.message);
+            return {
+              soilMoisture: 0.25 + Math.random() * 0.15, // 25-40% (realistic range)
+              date: today,
+              location: { latitude: location.lat, longitude: location.lon },
+              unit: 'cm³/cm³',
+              source: 'Simulated SMAP Data',
+            };
+          })
         );
       }
 
-      // Fetch IMERG precipitation if needed
+      // Fetch IMERG precipitation if needed (with fallback)
       if (selectedScenario.nasaData?.rainfall) {
         nasaDataPromises.push(
-          fetchIMERGPrecipitation(location.lat, location.lon, today).catch((err) => ({
-            type: 'imerg',
-            error: err.message,
-          }))
+          fetchIMERGPrecipitation(location.lat, location.lon, today).catch((err) => {
+            console.warn('[Sandbox] IMERG unavailable, using fallback data:', err.message);
+            return {
+              precipitationRate: Math.random() * 15, // 0-15 mm/day
+              dailyAccumulation: Math.random() * 15,
+              probability: Math.random() * 100,
+              precipitationType: 'rain',
+              date: today,
+              source: 'Simulated IMERG Data',
+            };
+          })
         );
       }
 
@@ -183,9 +196,9 @@ export default function SandboxModeScreen({ navigation }) {
         ? `🌧️ Precipitation: ${processedData.precipitation.precipitationRate.toFixed(1)} mm/day\n`
         : '';
 
-      // Extract temperature from POWER parameters array
+      // Extract temperature from POWER parameters array (with null check)
       const temp = processedData.climate?.parameters?.T2M?.[0]?.value;
-      const temperature = temp ? `🌡️ Temperature: ${temp.toFixed(1)}°C\n` : '';
+      const temperature = temp !== null && temp !== undefined ? `🌡️ Temperature: ${temp.toFixed(1)}°C\n` : '';
 
       Alert.alert(
         '🚀 Mission Started',
@@ -534,7 +547,9 @@ export default function SandboxModeScreen({ navigation }) {
                   <Text style={styles.nasaDataValue}>
                     {(nasaData.soilMoisture.soilMoisture * 100).toFixed(1)}%
                   </Text>
-                  <Text style={styles.nasaDataSource}>SMAP SPL3SMP_E</Text>
+                  <Text style={styles.nasaDataSource}>
+                    {nasaData.soilMoisture.source || 'SMAP SPL3SMP_E'}
+                  </Text>
                 </View>
               )}
 
@@ -544,31 +559,35 @@ export default function SandboxModeScreen({ navigation }) {
                   <Text style={styles.nasaDataValue}>
                     {nasaData.precipitation.precipitationRate.toFixed(2)} mm/day
                   </Text>
-                  <Text style={styles.nasaDataSource}>IMERG GPM_3IMERGDF</Text>
+                  <Text style={styles.nasaDataSource}>
+                    {nasaData.precipitation.source || 'IMERG GPM_3IMERGDF'}
+                  </Text>
                 </View>
               )}
 
               {nasaData.climate?.parameters && (
                 <>
-                  {nasaData.climate.parameters.T2M?.[0] && (
-                    <View style={styles.nasaDataItem}>
-                      <Text style={styles.nasaDataLabel}>🌡️ Temperature</Text>
-                      <Text style={styles.nasaDataValue}>
-                        {nasaData.climate.parameters.T2M[0].value.toFixed(1)}°C
-                      </Text>
-                      <Text style={styles.nasaDataSource}>NASA POWER</Text>
-                    </View>
-                  )}
+                  {nasaData.climate.parameters.T2M?.[0]?.value !== null &&
+                    nasaData.climate.parameters.T2M?.[0]?.value !== undefined && (
+                      <View style={styles.nasaDataItem}>
+                        <Text style={styles.nasaDataLabel}>🌡️ Temperature</Text>
+                        <Text style={styles.nasaDataValue}>
+                          {nasaData.climate.parameters.T2M[0].value.toFixed(1)}°C
+                        </Text>
+                        <Text style={styles.nasaDataSource}>NASA POWER</Text>
+                      </View>
+                    )}
 
-                  {nasaData.climate.parameters.ALLSKY_SFC_SW_DWN?.[0] && (
-                    <View style={styles.nasaDataItem}>
-                      <Text style={styles.nasaDataLabel}>☀️ Solar Radiation</Text>
-                      <Text style={styles.nasaDataValue}>
-                        {nasaData.climate.parameters.ALLSKY_SFC_SW_DWN[0].value.toFixed(1)} MJ/m²
-                      </Text>
-                      <Text style={styles.nasaDataSource}>NASA POWER</Text>
-                    </View>
-                  )}
+                  {nasaData.climate.parameters.ALLSKY_SFC_SW_DWN?.[0]?.value !== null &&
+                    nasaData.climate.parameters.ALLSKY_SFC_SW_DWN?.[0]?.value !== undefined && (
+                      <View style={styles.nasaDataItem}>
+                        <Text style={styles.nasaDataLabel}>☀️ Solar Radiation</Text>
+                        <Text style={styles.nasaDataValue}>
+                          {nasaData.climate.parameters.ALLSKY_SFC_SW_DWN[0].value.toFixed(1)} MJ/m²
+                        </Text>
+                        <Text style={styles.nasaDataSource}>NASA POWER</Text>
+                      </View>
+                    )}
                 </>
               )}
 

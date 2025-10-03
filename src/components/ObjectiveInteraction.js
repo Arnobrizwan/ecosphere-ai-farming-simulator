@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -8,9 +8,11 @@ import {
   TextInput,
   Alert,
   Dimensions,
+  ActivityIndicator,
 } from 'react-native';
 import { COLORS } from '../constants/colors';
 import { CHARACTERS } from '../data/characters';
+import geminiService from '../services/ai/gemini.service';
 
 const { width } = Dimensions.get('window');
 
@@ -22,13 +24,90 @@ export default function ObjectiveInteraction({ visible, onClose, objective, onCo
   const [answer, setAnswer] = useState('');
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [fieldSelected, setFieldSelected] = useState(false);
+  const [aiQuestion, setAiQuestion] = useState(null);
+  const [loadingQuestion, setLoadingQuestion] = useState(false);
+  const [validatingAnswer, setValidatingAnswer] = useState(false);
+  const [showHint, setShowHint] = useState(false);
 
-  const handleDialogue = () => {
-    // Simple dialogue interaction - just click through
-    Alert.alert(
-      `💬 ${CHARACTERS[character]?.name || 'Character'}`,
-      `"${objective.hint || 'Let me tell you about this...'}"`,
-      [
+  // Load AI question when dialogue objective opens
+  useEffect(() => {
+    if (objective.type === 'dialogue' && visible && !aiQuestion) {
+      loadAIQuestion();
+    }
+  }, [visible, objective.type]);
+
+  const loadAIQuestion = async () => {
+    setLoadingQuestion(true);
+    try {
+      const question = await geminiService.generateFarmingQuestion({
+        topic: objective.text,
+        difficulty: 'beginner',
+        character: CHARACTERS[character]?.name || 'Grandpa Jack',
+      });
+      setAiQuestion(question);
+    } catch (error) {
+      console.error('Error loading AI question:', error);
+      setAiQuestion({
+        question: objective.text || 'Tell me what you know about farming!',
+        expectedAnswer: 'Any thoughtful answer about farming',
+        hints: ['Think about your experience', 'Share what you\'ve learned'],
+      });
+    } finally {
+      setLoadingQuestion(false);
+    }
+  };
+
+  const handleDialogueSubmit = async () => {
+    if (!answer.trim()) {
+      Alert.alert('💬 Grandpa Jack', 'Please share your thoughts first!');
+      return;
+    }
+
+    setValidatingAnswer(true);
+    try {
+      const validation = await geminiService.validateAnswer(
+        aiQuestion.question,
+        answer,
+        aiQuestion.expectedAnswer
+      );
+
+      const followUp = await geminiService.generateFollowUp(
+        aiQuestion.question,
+        answer,
+        validation.isCorrect,
+        CHARACTERS[character]?.name
+      );
+
+      if (validation.isCorrect) {
+        Alert.alert(
+          '✅ Well Done!',
+          `${followUp}\n\nYou earned ${validation.score} points!`,
+          [
+            {
+              text: 'Continue',
+              onPress: () => {
+                onComplete();
+                onClose();
+              },
+            },
+          ]
+        );
+      } else {
+        Alert.alert('💡 Keep Learning', `${followUp}\n\nTry again or continue?`, [
+          { text: 'Try Again', style: 'cancel', onPress: () => setAnswer('') },
+          {
+            text: 'Continue Anyway',
+            onPress: () => {
+              onComplete();
+              onClose();
+            },
+          },
+        ]);
+      }
+    } catch (error) {
+      console.error('Error validating answer:', error);
+      // Fallback: accept any answer
+      Alert.alert('✅ Great!', 'Good answer! Let\'s continue.', [
         {
           text: 'Continue',
           onPress: () => {
@@ -36,8 +115,10 @@ export default function ObjectiveInteraction({ visible, onClose, objective, onCo
             onClose();
           },
         },
-      ]
-    );
+      ]);
+    } finally {
+      setValidatingAnswer(false);
+    }
   };
 
   const handleAction = () => {
@@ -92,27 +173,74 @@ export default function ObjectiveInteraction({ visible, onClose, objective, onCo
     }
   };
 
-  const renderDialogueInterface = () => (
-    <View style={styles.interactionContainer}>
-      <Text style={styles.characterAvatar}>{CHARACTERS[character]?.avatar || '👤'}</Text>
-      <Text style={styles.characterName}>{CHARACTERS[character]?.name || 'Character'}</Text>
-      
-      <View style={styles.dialogueBox}>
-        <Text style={styles.dialogueText}>
-          "{objective.text}"
-        </Text>
-        {objective.hint && (
-          <Text style={[styles.dialogueText, { fontStyle: 'italic', marginTop: 10, fontSize: 14 }]}>
-            💡 {objective.hint}
-          </Text>
-        )}
-      </View>
+  const renderDialogueInterface = () => {
+    if (loadingQuestion) {
+      return (
+        <View style={styles.interactionContainer}>
+          <Text style={styles.characterAvatar}>{CHARACTERS[character]?.avatar || '👤'}</Text>
+          <Text style={styles.characterName}>{CHARACTERS[character]?.name || 'Character'}</Text>
+          <ActivityIndicator size="large" color={COLORS.primaryGreen} style={{ marginVertical: 30 }} />
+          <Text style={styles.instructions}>Grandpa is thinking of a question...</Text>
+        </View>
+      );
+    }
 
-      <TouchableOpacity style={styles.actionButton} onPress={handleDialogue}>
-        <Text style={styles.actionButtonText}>Continue Conversation →</Text>
-      </TouchableOpacity>
-    </View>
-  );
+    return (
+      <View style={styles.interactionContainer}>
+        <Text style={styles.characterAvatar}>{CHARACTERS[character]?.avatar || '👤'}</Text>
+        <Text style={styles.characterName}>{CHARACTERS[character]?.name || 'Character'}</Text>
+        
+        <View style={styles.dialogueBox}>
+          <Text style={styles.dialogueText}>
+            "{aiQuestion?.question || objective.text}"
+          </Text>
+        </View>
+
+        {showHint && aiQuestion?.hints && aiQuestion.hints.length > 0 && (
+          <View style={styles.hintBox}>
+            <Text style={styles.hintTitle}>💡 Hints:</Text>
+            {aiQuestion.hints.map((hint, idx) => (
+              <Text key={idx} style={styles.hintText}>
+                • {hint}
+              </Text>
+            ))}
+          </View>
+        )}
+
+        <TextInput
+          style={styles.quizInput}
+          placeholder="Type your answer here..."
+          value={answer}
+          onChangeText={setAnswer}
+          multiline
+          maxLength={200}
+        />
+
+        <View style={styles.buttonRow}>
+          {!showHint && aiQuestion?.hints && (
+            <TouchableOpacity
+              style={styles.hintButton}
+              onPress={() => setShowHint(true)}
+            >
+              <Text style={styles.hintButtonText}>💡 Need a Hint?</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+
+        <TouchableOpacity
+          style={[styles.actionButton, validatingAnswer && styles.actionButtonDisabled]}
+          onPress={handleDialogueSubmit}
+          disabled={validatingAnswer}
+        >
+          {validatingAnswer ? (
+            <ActivityIndicator color={COLORS.pureWhite} />
+          ) : (
+            <Text style={styles.actionButtonText}>Submit Answer</Text>
+          )}
+        </TouchableOpacity>
+      </View>
+    );
+  };
 
   const renderActionInterface = () => (
     <View style={styles.interactionContainer}>
@@ -401,5 +529,43 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
     color: COLORS.pureWhite,
+  },
+  actionButtonDisabled: {
+    opacity: 0.6,
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 15,
+  },
+  hintButton: {
+    backgroundColor: '#F59E0B',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+  },
+  hintButtonText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: COLORS.pureWhite,
+  },
+  hintBox: {
+    backgroundColor: '#FEF3C7',
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 15,
+    borderLeftWidth: 4,
+    borderLeftColor: '#F59E0B',
+  },
+  hintTitle: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#92400E',
+    marginBottom: 6,
+  },
+  hintText: {
+    fontSize: 13,
+    color: '#78350F',
+    marginBottom: 3,
   },
 });
