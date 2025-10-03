@@ -1,0 +1,40 @@
+{
+  "dataset": "MOD13Q1.061",
+  "layers": [
+    "NDVI",
+    "EVI"
+  ],
+  "region": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          90.3,
+          23.7
+        ],
+        [
+          90.5,
+          23.7
+        ],
+        [
+          90.5,
+          23.9
+        ],
+        [
+          90.3,
+          23.9
+        ],
+        [
+          90.3,
+          23.7
+        ]
+      ]
+    ]
+  },
+  "date_range": {
+    "start": "2025-04-06T15:09:22.245891",
+    "end": "2025-10-03T15:09:22.245891"
+  },
+  "status": "failed",
+  "note": "AppEEARS request failed - using simulated NDVI in app"
+}

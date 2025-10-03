@@ -552,13 +552,30 @@ const soilMoisture = await getSMAPData({
 
 **Specifications**:
 - 30m spatial resolution
-- 16-day revisit time
-- True color and infrared bands
+- 16-day revisit → request several weeks back in time to guarantee coverage
+
+#### 🚀 End-to-End NASA + Landsat Pipeline
+
+- **`npm run nasa:download`** – Orchestrates SMAP, MODIS, IMERG, Landsat, and POWER pulls (`scripts/nasa/download_data.sh`).
+  - Landsat download lives in `scripts/nasa/download_landsat.py`. Adjust `start_date` / `end_date` to historic ranges (e.g., 2024) because CMR rarely has future scenes.
+- **`npm run nasa:preprocess`** – Merges `data/smap/`, `data/modis/`, `data/imerg/`, `data/landsat/` into `data/processed/merged_features.csv` (`scripts/nasa/preprocess_data.py`).
+- **`npm run nasa:train`** – Trains the RandomForest (`scripts/nasa/train_model.py`) using combined NDVI + Landsat NDVI + precipitation features and writes `models/rf_soil_moisture.pkl`.
+- **Run order**: download → preprocess → train → restart Expo to pick up the fresh assets.
+
+#### 🕒 Scheduling Landsat Downloads
+
+- Landsat has a **16-day revisit** (8 days with Landsat 8 + 9). Automate historical pulls via cron:
+  ```bash
+  0 3 * * 0 cd /path/to/project && source .venv/bin/activate && npm run nasa:download >> logs/nasa-download.log 2>&1
+  ```
+- Rotate date windows in `scripts/nasa/download_landsat.py` (e.g., subtract 30–60 days) before each run to guarantee valid granules.
+- Use `npm run nasa:check` to confirm fresh files in `data/landsat/raw/` and rerun preprocess/train afterwards.
 
 **Use Cases**:
 - Land classification
 - Change detection
 - Crop mapping
+{{ ... }}
 
 **Implementation**: Integrated in satellite services
 

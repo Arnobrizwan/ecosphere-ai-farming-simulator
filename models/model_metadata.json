@@ -1,0 +1,43 @@
+{
+  "model_type": "RandomForestRegressor",
+  "n_estimators": 100,
+  "features": [
+    "precipitation",
+    "day_of_year",
+    "month",
+    "precip_7d_sum",
+    "ndvi"
+  ],
+  "target": "soil_moisture (next day)",
+  "metrics": {
+    "train_mse": 0.0006435858647995284,
+    "test_mse": 0.0019508130149685462,
+    "train_r2": 0.6662430068031531,
+    "test_r2": -0.22151351586635193,
+    "test_mae": 0.03453331995115296,
+    "feature_importance": [
+      {
+        "feature": "day_of_year",
+        "importance": 0.39181852037385817
+      },
+      {
+        "feature": "precipitation",
+        "importance": 0.2906963116340052
+      },
+      {
+        "feature": "precip_7d_sum",
+        "importance": 0.24651911409961458
+      },
+      {
+        "feature": "ndvi",
+        "importance": 0.06428849843131934
+      },
+      {
+        "feature": "month",
+        "importance": 0.006677555461202675
+      }
+    ]
+  },
+  "trained_date": "2025-10-03T15:15:55.572324",
+  "training_samples": 35
+}

@@ -7,7 +7,13 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "seed:admin": "node scripts/seed-admin.js"
+    "seed:admin": "node scripts/seed-admin.js",
+    "nasa:setup": "bash scripts/nasa/setup_environment.sh",
+    "nasa:download": "bash scripts/nasa/download_data.sh",
+    "nasa:download:modis": "source .env && source .venv/bin/activate && python3 scripts/nasa/download_appeears_result.py",
+    "nasa:preprocess": "bash scripts/nasa/preprocess.sh",
+    "nasa:train": "bash scripts/nasa/train_model.sh",
+    "nasa:check": "bash scripts/nasa/check_datasets.sh"
   },
   "dependencies": {
     "@azesmway/react-native-unity": "^1.0.11",

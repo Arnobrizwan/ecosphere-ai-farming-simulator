@@ -15,17 +15,16 @@ import { STORY_SCENARIOS } from '../../data/storyScenarios';
 import { CHARACTERS } from '../../data/characters';
 import CharacterDialogue from '../../components/CharacterDialogue';
 import StoryNarrative from '../../components/StoryNarrative';
-
 // NASA Data Services
 import { fetchSMAPSoilMoisture } from '../../services/nasa/smapService';
 import { fetchIMERGPrecipitation } from '../../services/nasa/imergService';
 import { getDailyPoint } from '../../services/power.service';
-
-const { width } = Dimensions.get('window');
+import { getLatestNDVI, predictSoilMoisture, analyzeSoilMoistureTrend } from '../../services/ml/soilMoisturePredictor';
+import { getVegetationTrend } from '../../services/nasa/landsatService';
 
 /**
  * Story-Driven Sandbox Mode with NASA Data
- * 12 real-world farming scenarios using satellite data
+ * 12 real-world farmer scenarios using satellite data
  */
 export default function SandboxModeScreen({ navigation }) {
   const [userId, setUserId] = useState('');
@@ -184,25 +183,95 @@ export default function SandboxModeScreen({ navigation }) {
         }
       });
 
+      // Fetch ML predictions and NDVI
+      try {
+        console.log('[Sandbox] Fetching ML predictions...');
+        
+        // Get latest NDVI from processed data
+        const ndviData = await getLatestNDVI();
+        processedData.ndvi = ndviData;
+        
+        // Get soil moisture trend analysis
+        const trendAnalysis = await analyzeSoilMoistureTrend();
+        processedData.trend = trendAnalysis;
+
+        // Landsat vegetation trend (last 60 days)
+        const landsatEnd = new Date();
+        const landsatStart = new Date();
+        landsatStart.setDate(landsatEnd.getDate() - 60);
+
+        const landsatTrend = await getVegetationTrend(
+          location.lat,
+          location.lon,
+          landsatStart.toISOString().split('T')[0],
+          landsatEnd.toISOString().split('T')[0]
+        ).catch((err) => {
+          console.warn('[Sandbox] Landsat trend unavailable, using fallback:', err.message);
+          return {
+            observations: 0,
+            trend: [],
+            source: 'Simulated Landsat Data'
+          };
+        });
+        processedData.landsat = landsatTrend;
+        
+        // Predict soil moisture using ML model
+        const currentPrecip = processedData.precipitation?.dailyAccumulation || 10;
+        const prediction = await predictSoilMoisture({
+          precipitation: currentPrecip,
+          dayOfYear: new Date().getDate(),
+          month: new Date().getMonth() + 1,
+          precip7dSum: currentPrecip * 7, // Approximate
+          ndvi: ndviData.ndvi,
+        });
+        processedData.mlPrediction = prediction;
+        
+        console.log('[Sandbox] ML data loaded:', {
+          ndvi: ndviData.ndvi,
+          trend: trendAnalysis.trend,
+          prediction: prediction.soilMoisture,
+          landsatObservations: landsatTrend?.observations || 0,
+        });
+        
+      } catch (mlError) {
+        console.warn('[Sandbox] ML prediction failed:', mlError);
+      }
+
       setNasaData(processedData);
       setLoadingNasaData(false);
       setGameplayActive(true);
 
       // Show mission started with real data
       const soilMoisture = processedData.soilMoisture?.soilMoisture
-        ? `🛰️ Soil Moisture: ${(processedData.soilMoisture.soilMoisture * 100).toFixed(1)}%\n`
+        ? `🛰️ Soil Moisture: ${(processedData.soilMoisture.soilMoisture * 100).toFixed(1)}% (${processedData.soilMoisture.source})\n`
         : '';
       const precipitation = processedData.precipitation?.precipitationRate
-        ? `🌧️ Precipitation: ${processedData.precipitation.precipitationRate.toFixed(1)} mm/day\n`
+        ? `🌧️ Precipitation: ${processedData.precipitation.precipitationRate.toFixed(1)} mm/day (${processedData.precipitation.source})\n`
         : '';
 
       // Extract temperature from POWER parameters array (with null check)
       const temp = processedData.climate?.parameters?.T2M?.[0]?.value;
       const temperature = temp !== null && temp !== undefined ? `🌡️ Temperature: ${temp.toFixed(1)}°C\n` : '';
 
+      // Add ML predictions
+      const ndvi = processedData.ndvi?.ndvi
+        ? `🌿 NDVI: ${processedData.ndvi.ndvi.toFixed(2)} (${processedData.ndvi.source})\n`
+        : '';
+      const mlPrediction = processedData.mlPrediction?.soilMoisture
+        ? `🤖 ML Prediction: ${(processedData.mlPrediction.soilMoisture * 100).toFixed(1)}% soil moisture\n`
+        : '';
+      const trend = processedData.trend?.trend
+        ? `📈 Trend: ${processedData.trend.trend} (${processedData.trend.recommendation})\n`
+        : '';
+      const landsatSummary = processedData.landsat?.observations
+        ? `🛰️ Landsat NDVI: ${processedData.landsat.trend[0]?.ndvi?.toFixed?.(2) || processedData.ndvi?.ndvi?.toFixed?.(2) || '—'} (${processedData.landsat.source})\n`
+        : processedData.landsat?.source
+          ? `🛰️ Landsat: ${processedData.landsat.source}\n`
+          : '';
+
       Alert.alert(
         '🚀 Mission Started',
-        `${selectedScenario.title}\n\n✅ NASA Data Loaded:\n${soilMoisture}${precipitation}${temperature}\nUse the data to complete your objectives!`,
+        `${selectedScenario.title}\n\n✅ Data Loaded:\n${soilMoisture}${precipitation}${temperature}${ndvi}${landsatSummary}${mlPrediction}${trend}\nUse the data to complete your objectives!`,
         [{ text: 'Start Mission', onPress: () => console.log('Mission gameplay active') }]
       );
     } catch (error) {
@@ -515,9 +584,9 @@ export default function SandboxModeScreen({ navigation }) {
         <View style={styles.loadingOverlay}>
           <View style={styles.loadingCard}>
             <Text style={styles.loadingIcon}>🛰️</Text>
-            <Text style={styles.loadingTitle}>Loading NASA Data...</Text>
-            <Text style={styles.loadingText}>
-              Fetching real-time satellite data{'\n'}SMAP • IMERG • POWER
+            <Text style={styles.loadingTitle}>Fetching NASA Satellites...</Text>
+            <Text style={styles.loadingSubtitle}>
+              Contacting SMAP, Landsat, MODIS, and IMERG services for real-time farm data.
             </Text>
           </View>
         </View>
@@ -589,6 +658,41 @@ export default function SandboxModeScreen({ navigation }) {
                       </View>
                     )}
                 </>
+              )}
+
+              {nasaData.ndvi && (
+                <View style={styles.nasaDataItem}>
+                  <Text style={styles.nasaDataLabel}>🌿 MODIS NDVI (Processed)</Text>
+                  <Text style={styles.nasaDataValue}>{nasaData.ndvi.ndvi?.toFixed?.(3) || '—'}</Text>
+                  <Text style={styles.nasaDataSource}>{nasaData.ndvi.source || 'MOD13Q1'}</Text>
+                </View>
+              )}
+
+              {nasaData.landsat && (
+                <View style={styles.nasaDataItem}>
+                  <Text style={styles.nasaDataLabel}>🛰️ Landsat Vegetation Health</Text>
+                  <Text style={styles.nasaDataSource}>{nasaData.landsat.source}</Text>
+                  {nasaData.landsat.observations > 0 ? (
+                    <View style={styles.landsatTrendContainer}>
+                      {nasaData.landsat.trend.slice(0, 3).map((obs, index) => (
+                        <View key={obs.date || index} style={styles.landsatTrendRow}>
+                          <Text style={styles.landsatTrendDate}>{obs.date?.slice(0, 10) || '—'}</Text>
+                          <Text style={styles.landsatTrendValue}>
+                            NDVI {obs.ndvi?.toFixed?.(3) ?? '—'}
+                          </Text>
+                          <Text style={styles.landsatTrendTag}>{obs.landCover || 'N/A'}</Text>
+                        </View>
+                      ))}
+                      <Text style={styles.landsatTrendFootnote}>
+                        Cloud cover: {nasaData.landsat.trend[0]?.cloudCover?.toFixed?.(1) ?? '—'}%
+                      </Text>
+                    </View>
+                  ) : (
+                    <Text style={styles.landsatTrendFootnote}>
+                      No recent Landsat passes. Showing simulated values until satellite coverage resumes.
+                    </Text>
+                  )}
+                </View>
               )}
 
               {selectedScenario && selectedScenario.objectives && (
@@ -740,313 +844,49 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: COLORS.pureWhite,
   },
-  crisisTag: {
-    backgroundColor: '#FEE2E2',
+  npkPredictionCard: {
+    backgroundColor: '#DBEAFE',
     borderRadius: 20,
     width: 32,
     height: 32,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  crisisText: {
-    fontSize: 18,
+  landsatTrendContainer: {
+    marginTop: 12,
+    backgroundColor: '#EEF2FF',
+    borderRadius: 12,
+    paddingVertical: 10,
+    paddingHorizontal: 14,
   },
-  scenarioTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: COLORS.deepBlack,
-    marginBottom: 8,
-  },
-  scenarioStory: {
-    fontSize: 14,
-    color: COLORS.earthBrown,
-    lineHeight: 20,
-    marginBottom: 12,
-    fontStyle: 'italic',
-  },
-  nasaIndicators: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
-    marginBottom: 12,
-  },
-  nasaTag: {
-    backgroundColor: COLORS.skyBlue,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderRadius: 10,
-  },
-  nasaTagText: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    color: COLORS.deepBlack,
-  },
-  cardFooter: {
+  landsatTrendRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: 12,
-    borderTopWidth: 1,
-    borderTopColor: '#E5E7EB',
+    marginBottom: 6,
   },
-  duration: {
+  landsatTrendDate: {
     fontSize: 12,
-    color: COLORS.earthBrown,
+    fontWeight: '600',
+    color: '#1E40AF',
+  },
+  landsatTrendValue: {
+    fontSize: 12,
+    color: '#0F172A',
     fontWeight: '600',
   },
-  rewards: {
-    fontSize: 12,
-    color: COLORS.primaryGreen,
-    fontWeight: 'bold',
-  },
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    justifyContent: 'center',
-    padding: 15,
-  },
-  modalContent: {
-    backgroundColor: COLORS.pureWhite,
-    borderRadius: 20,
-    padding: 20,
-    maxHeight: '90%',
-  },
-  modalTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: COLORS.deepBlack,
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-  section: {
-    marginTop: 20,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: COLORS.deepBlack,
-    marginBottom: 12,
-  },
-  dataGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 10,
-  },
-  dataCard: {
-    flex: 1,
-    minWidth: '45%',
-    backgroundColor: COLORS.accentYellow,
-    borderRadius: 12,
-    padding: 12,
-    alignItems: 'center',
-  },
-  dataIcon: {
-    fontSize: 28,
-    marginBottom: 6,
-  },
-  dataLabel: {
+  landsatTrendTag: {
     fontSize: 11,
-    color: COLORS.earthBrown,
-    marginBottom: 4,
-    textAlign: 'center',
+    color: '#2563EB',
+    backgroundColor: '#DBEAFE',
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 8,
   },
-  dataValue: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: COLORS.deepBlack,
-  },
-  objectiveRow: {
-    flexDirection: 'row',
-    marginBottom: 10,
-  },
-  objectiveNumber: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: COLORS.primaryGreen,
-    marginRight: 10,
-  },
-  objectiveText: {
-    flex: 1,
-    fontSize: 14,
-    color: COLORS.deepBlack,
-    lineHeight: 20,
-  },
-  tipText: {
-    fontSize: 13,
-    color: COLORS.earthBrown,
-    marginBottom: 8,
-    lineHeight: 20,
-  },
-  rewardsSection: {
-    marginTop: 20,
-  },
-  rewardsGrid: {
-    flexDirection: 'row',
-    gap: 10,
-  },
-  rewardCard: {
-    flex: 1,
-    backgroundColor: COLORS.primaryGreen,
-    borderRadius: 12,
-    padding: 12,
-    alignItems: 'center',
-  },
-  rewardIcon: {
-    fontSize: 28,
-    marginBottom: 6,
-  },
-  rewardAmount: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: COLORS.pureWhite,
-    textAlign: 'center',
-  },
-  rewardAmountBadge: {
+  landsatTrendFootnote: {
     fontSize: 11,
-    fontWeight: 'bold',
-    color: COLORS.pureWhite,
-    textAlign: 'center',
-  },
-  buttonRow: {
-    flexDirection: 'row',
-    gap: 10,
-    marginTop: 25,
-  },
-  cancelButton: {
-    flex: 1,
-    backgroundColor: '#E5E7EB',
-    paddingVertical: 14,
-    borderRadius: 12,
-    alignItems: 'center',
-  },
-  cancelButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: COLORS.deepBlack,
-  },
-  startButton: {
-    flex: 2,
-    backgroundColor: COLORS.primaryGreen,
-    paddingVertical: 14,
-    borderRadius: 12,
-    alignItems: 'center',
-  },
-  startButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: COLORS.pureWhite,
-  },
-  loadingOverlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 1000,
-  },
-  loadingCard: {
-    backgroundColor: COLORS.pureWhite,
-    borderRadius: 20,
-    padding: 30,
-    alignItems: 'center',
-    width: '80%',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 10,
-  },
-  loadingIcon: {
-    fontSize: 60,
-    marginBottom: 20,
-  },
-  loadingTitle: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: COLORS.deepBlack,
-    marginBottom: 12,
-  },
-  loadingText: {
-    fontSize: 15,
-    color: COLORS.earthBrown,
-    textAlign: 'center',
-    lineHeight: 22,
-  },
-  nasaDataOverlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.85)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 999,
-  },
-  nasaDataCard: {
-    backgroundColor: COLORS.pureWhite,
-    borderRadius: 20,
-    width: '90%',
-    maxHeight: '80%',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 10,
-  },
-  nasaDataHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 20,
-    borderBottomWidth: 2,
-    borderBottomColor: COLORS.skyBlue,
-  },
-  nasaDataTitle: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: COLORS.deepBlack,
-  },
-  closeButton: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: COLORS.primaryGreen,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  closeButtonText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: COLORS.pureWhite,
-  },
-  nasaDataContent: {
-    padding: 20,
-  },
-  nasaDataItem: {
-    backgroundColor: COLORS.skyBlue,
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 12,
-  },
-  nasaDataLabel: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: COLORS.deepBlack,
-    marginBottom: 6,
-  },
-  nasaDataValue: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: COLORS.primaryGreen,
-    marginBottom: 4,
-  },
-  nasaDataSource: {
-    fontSize: 12,
-    color: COLORS.earthBrown,
+    color: '#4B5563',
+    marginTop: 6,
     fontStyle: 'italic',
   },
   objectivesSection: {
@@ -1054,7 +894,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 16,
     marginTop: 8,
-    marginBottom: 16,
   },
   objectivesTitle: {
     fontSize: 18,

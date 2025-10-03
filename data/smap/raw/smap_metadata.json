@@ -1,0 +1,11 @@
+{
+  "dataset": "SPL3SMP_E",
+  "version": "005",
+  "bbox": "88.0,20.0,93.0,27.0",
+  "date_range": {
+    "start": "2025-07-05T15:09:21.316715",
+    "end": "2025-10-03T15:09:21.316715"
+  },
+  "granules_found": 0,
+  "note": "No granules available - using NASA POWER fallback in app"
+}

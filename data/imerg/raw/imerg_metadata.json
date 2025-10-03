@@ -1,0 +1,13 @@
+{
+  "dataset": "GPM_3IMERGHHE.07",
+  "location": {
+    "lat": 23.8103,
+    "lon": 90.4125
+  },
+  "date_range": {
+    "start": "2025-09-03T15:09:23.275403",
+    "end": "2025-10-03T15:09:23.275403"
+  },
+  "status": "no_data",
+  "note": "No IMERG data available - using NASA POWER fallback in app"
+}

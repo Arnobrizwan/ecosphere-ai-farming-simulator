@@ -1,0 +1,12 @@
+{
+  "location": {
+    "lat": 23.8103,
+    "lon": 90.4125
+  },
+  "date_range": {
+    "start": "2025-08-04T15:09:36.059109",
+    "end": "2025-10-03T15:09:36.059109"
+  },
+  "status": "no_data",
+  "note": "No Landsat data available - using simulated NDVI in app"
+}
