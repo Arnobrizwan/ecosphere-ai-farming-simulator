@@ -596,7 +596,7 @@ export default function SandboxModeScreen({ navigation }) {
                   <Text style={styles.objectivesTitle}>📋 Mission Objectives</Text>
                   {selectedScenario.objectives.map((obj, idx) => (
                     <Text key={idx} style={styles.objectiveItem}>
-                      • {obj}
+                      • {obj.text || obj}
                     </Text>
                   ))}
                 </View>

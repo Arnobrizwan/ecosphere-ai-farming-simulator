@@ -64,7 +64,19 @@ export const fetchIMERGPrecipitation = async (latitude, longitude, date) => {
     });
 
     if (!response.data || !response.data.results || response.data.results.length === 0) {
-      throw new Error('No IMERG data available for this date/location');
+      console.warn('[IMERG] No data available, returning simulated values');
+      return {
+        date,
+        latitude,
+        longitude,
+        precipitationRate: parseFloat((Math.random() * 5).toFixed(2)), // 0-5 mm/hr
+        dailyAccumulation: parseFloat((Math.random() * 15).toFixed(2)), // 0-15 mm/day
+        probability: Math.floor(Math.random() * 100), // 0-100%
+        precipitationType: 'rain',
+        source: 'Simulated IMERG Data (No real data available)',
+        isSimulated: true,
+        timestamp: new Date().toISOString(),
+      };
     }
 
     // Get the first granule
@@ -87,7 +99,20 @@ export const fetchIMERGPrecipitation = async (latitude, longitude, date) => {
     };
   } catch (error) {
     console.error('[IMERG] Fetch error:', error);
-    throw new Error(`Failed to fetch IMERG data: ${error?.message || String(error)}`);
+    // Return fallback data instead of throwing
+    return {
+      date,
+      latitude,
+      longitude,
+      precipitationRate: parseFloat((Math.random() * 5).toFixed(2)), // 0-5 mm/hr
+      dailyAccumulation: parseFloat((Math.random() * 15).toFixed(2)), // 0-15 mm/day
+      probability: Math.floor(Math.random() * 100), // 0-100%
+      precipitationType: 'rain',
+      source: 'Simulated IMERG Data (API Error)',
+      isSimulated: true,
+      error: error?.message || String(error),
+      timestamp: new Date().toISOString(),
+    };
   }
 };
 
