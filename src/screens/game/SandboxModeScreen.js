@@ -36,7 +36,6 @@ export default function SandboxModeScreen({ navigation }) {
   const [storySegments, setStorySegments] = useState([]);
   const [nasaData, setNasaData] = useState(null);
   const [loadingNasaData, setLoadingNasaData] = useState(false);
-  const [gameplayActive, setGameplayActive] = useState(false);
 
   useEffect(() => {
     const user = authService.getCurrentUser();
@@ -300,7 +299,13 @@ export default function SandboxModeScreen({ navigation }) {
       Alert.alert(
         '⚠️ Data Loading Failed',
         `Could not load all NASA data: ${error.message}\n\nContinuing with scenario objectives...`,
-        [{ text: 'Continue', onPress: () => setGameplayActive(true) }]
+        [{ text: 'Continue', onPress: () => {
+          // Navigate to MissionDashboard even with limited data
+          navigation.navigate('MissionDashboard', {
+            scenario: selectedScenario,
+            nasaData: { error: error.message, fallbackMode: true }
+          });
+        }}]
       );
     }
   };
@@ -309,7 +314,6 @@ export default function SandboxModeScreen({ navigation }) {
     console.log('[Sandbox] Back to scenarios pressed');
     setShowStoryNarrative(false);
     setSelectedScenario(null);
-    setGameplayActive(false);
     setNasaData(null);
     setLoadingNasaData(false);
   };
@@ -622,136 +626,6 @@ export default function SandboxModeScreen({ navigation }) {
         </View>
       )}
 
-      {/* NASA Data Dashboard */}
-      {gameplayActive && nasaData && (
-        <View style={styles.nasaDataOverlay}>
-          <View style={styles.nasaDataCard}>
-            <View style={styles.nasaDataHeader}>
-              <Text style={styles.nasaDataTitle}>🛰️ Live NASA Data</Text>
-              <TouchableOpacity
-                onPress={() => {
-                  setGameplayActive(false);
-                  setNasaData(null);
-                }}
-                style={styles.closeButton}
-              >
-                <Text style={styles.closeButtonText}>✕</Text>
-              </TouchableOpacity>
-            </View>
-
-            <ScrollView style={styles.nasaDataContent}>
-              {nasaData.soilMoisture && (
-                <View style={styles.nasaDataItem}>
-                  <Text style={styles.nasaDataLabel}>💧 Soil Moisture</Text>
-                  <Text style={styles.nasaDataValue}>
-                    {(nasaData.soilMoisture.soilMoisture * 100).toFixed(1)}%
-                  </Text>
-                  <Text style={styles.nasaDataSource}>
-                    {nasaData.soilMoisture.source || 'SMAP SPL3SMP_E'}
-                  </Text>
-                </View>
-              )}
-
-              {nasaData.precipitation && (
-                <View style={styles.nasaDataItem}>
-                  <Text style={styles.nasaDataLabel}>🌧️ Precipitation</Text>
-                  <Text style={styles.nasaDataValue}>
-                    {nasaData.precipitation.precipitationRate.toFixed(2)} mm/day
-                  </Text>
-                  <Text style={styles.nasaDataSource}>
-                    {nasaData.precipitation.source || 'IMERG GPM_3IMERGDF'}
-                  </Text>
-                </View>
-              )}
-
-              {nasaData.climate?.parameters && (
-                <>
-                  {nasaData.climate.parameters.T2M?.[0]?.value !== null &&
-                    nasaData.climate.parameters.T2M?.[0]?.value !== undefined && (
-                      <View style={styles.nasaDataItem}>
-                        <Text style={styles.nasaDataLabel}>🌡️ Temperature</Text>
-                        <Text style={styles.nasaDataValue}>
-                          {nasaData.climate.parameters.T2M[0].value.toFixed(1)}°C
-                        </Text>
-                        <Text style={styles.nasaDataSource}>NASA POWER</Text>
-                      </View>
-                    )}
-
-                  {nasaData.climate.parameters.ALLSKY_SFC_SW_DWN?.[0]?.value !== null &&
-                    nasaData.climate.parameters.ALLSKY_SFC_SW_DWN?.[0]?.value !== undefined && (
-                      <View style={styles.nasaDataItem}>
-                        <Text style={styles.nasaDataLabel}>☀️ Solar Radiation</Text>
-                        <Text style={styles.nasaDataValue}>
-                          {nasaData.climate.parameters.ALLSKY_SFC_SW_DWN[0].value.toFixed(1)} MJ/m²
-                        </Text>
-                        <Text style={styles.nasaDataSource}>NASA POWER</Text>
-                      </View>
-                    )}
-                </>
-              )}
-
-              {nasaData.ndvi && (
-                <View style={styles.nasaDataItem}>
-                  <Text style={styles.nasaDataLabel}>🌿 MODIS NDVI (Processed)</Text>
-                  <Text style={styles.nasaDataValue}>{nasaData.ndvi.ndvi?.toFixed?.(3) || '—'}</Text>
-                  <Text style={styles.nasaDataSource}>{nasaData.ndvi.source || 'MOD13Q1'}</Text>
-                </View>
-              )}
-
-              {nasaData.landsat && (
-                <View style={styles.nasaDataItem}>
-                  <Text style={styles.nasaDataLabel}>🛰️ Landsat Vegetation Health</Text>
-                  <Text style={styles.nasaDataSource}>{nasaData.landsat.source}</Text>
-                  {nasaData.landsat.observations > 0 ? (
-                    <View style={styles.landsatTrendContainer}>
-                      {nasaData.landsat.trend.slice(0, 3).map((obs, index) => (
-                        <View key={obs.date || index} style={styles.landsatTrendRow}>
-                          <Text style={styles.landsatTrendDate}>{obs.date?.slice(0, 10) || '—'}</Text>
-                          <Text style={styles.landsatTrendValue}>
-                            NDVI {obs.ndvi?.toFixed?.(3) ?? '—'}
-                          </Text>
-                          <Text style={styles.landsatTrendTag}>{obs.landCover || 'N/A'}</Text>
-                        </View>
-                      ))}
-                      <Text style={styles.landsatTrendFootnote}>
-                        Cloud cover: {nasaData.landsat.trend[0]?.cloudCover?.toFixed?.(1) ?? '—'}%
-                      </Text>
-                    </View>
-                  ) : (
-                    <Text style={styles.landsatTrendFootnote}>
-                      No recent Landsat passes. Showing simulated values until satellite coverage resumes.
-                    </Text>
-                  )}
-                </View>
-              )}
-
-              {selectedScenario && selectedScenario.objectives && (
-                <View style={styles.objectivesSection}>
-                  <Text style={styles.objectivesTitle}>📋 Mission Objectives</Text>
-                  {selectedScenario.objectives.map((obj, idx) => (
-                    <Text key={idx} style={styles.objectiveItem}>
-                      • {obj.text || obj}
-                    </Text>
-                  ))}
-                </View>
-              )}
-
-              <TouchableOpacity
-                style={styles.viewFullDataButton}
-                onPress={() => {
-                  Alert.alert(
-                    '🛰️ Full NASA Data',
-                    JSON.stringify(nasaData, null, 2),
-                    [{ text: 'OK' }]
-                  );
-                }}
-              >
-                <Text style={styles.viewFullDataButtonText}>View Raw Data</Text>
-              </TouchableOpacity>
-            </ScrollView>
-          </View>
-        </View>
-      )}
     </View>
   );
 }
