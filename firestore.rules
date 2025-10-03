@@ -1,0 +1,376 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(data) {
+      return isSignedIn() && data.userId != null && data.userId == request.auth.uid;
+    }
+
+    function canOfficerAccess(data) {
+      return isSignedIn() && data.officerId != null && data.officerId == request.auth.uid;
+    }
+
+    // UC3: User profiles - Users can read/write their own profile
+    match /users/{userId} {
+      allow read: if isSignedIn() && request.auth.uid == userId;
+      allow create: if isSignedIn() && request.auth.uid == userId;
+      allow update: if isSignedIn() && request.auth.uid == userId;
+      allow delete: if false; // Prevent profile deletion
+
+      // UC4: User locations - Users can manage their own farm locations
+      match /locations/{locationId} {
+        allow read: if isSignedIn() && request.auth.uid == userId;
+        allow create: if isSignedIn() && request.auth.uid == userId;
+        allow update: if isSignedIn() && request.auth.uid == userId;
+        allow delete: if isSignedIn() && request.auth.uid == userId;
+      }
+
+      // User learning progress - Users can read/write their own learning data
+      match /learningProgress/{document=**} {
+        allow read: if request.auth != null && request.auth.uid == userId;
+        allow write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // User activity logs - Users can read/write their own activity
+      match /activityLogs/{document=**} {
+        allow read: if request.auth != null && request.auth.uid == userId;
+        allow write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // User settings - Users can read/write their own settings
+      match /settings/{document=**} {
+        allow read: if request.auth != null && request.auth.uid == userId;
+        allow write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Achievements - Public read, admin write
+    match /achievements/{documentId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == 'arnobrizwan23@gmail.com';
+    }
+
+    // Unlock rules - Public read, admin write
+    match /unlock_rules/{documentId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.email == 'arnobrizwan23@gmail.com';
+    }
+
+    // User progress - Users can read/write their own progress
+    match /user_progress/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // User achievements - Users can read/write their own achievements
+    match /user_achievements/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Farm data - Users can read/write their own farm
+    match /farms/{farmId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // UC39: Planting guides - Users can read/write their own guides
+    match /planting_guides/{guideId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // UC40: Weather alerts - Users can read their alerts, system writes
+    match /weather_alerts/{alertId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null; // System can create, users can acknowledge
+    }
+
+    match /alert_subscriptions/{subId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // UC42: Irrigation schedules - Users manage their own
+    match /irrigation_schedules/{scheduleId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // UC43: Crop health - Users manage their own
+    match /crop_health/{healthId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // UC44: Farm operations - Users manage their own
+    match /farm_operations/{operationId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    match /operation_tasks/{taskId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // UC46: Analytics views - Users manage their own
+    match /analytics_views/{viewId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // UC48: Analytics reports - Users manage their own
+    match /analytics_reports/{reportId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // UC49: IoT devices - Users can read/write their farm's devices
+    match /iot_devices/{deviceId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // Satellite data cache - Public read, authenticated write
+    match /satellite_data/{dataId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    match /satellite_cache/{cacheId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // User notes and saved items
+    match /user_notes/{noteId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // Campaign progress - Users manage their own
+    match /user_campaign_progress/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Sandbox scenarios - Users manage their own
+    match /sandbox_scenarios/{scenarioId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // Tutorial progress - Users manage their own
+    match /user_tutorial_progress/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Quiz progress - Users manage their own
+    match /user_quiz_progress/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Impact measurement collections
+    match /yield_entries/{entryId} {
+      allow read: if isOwner(resource.data);
+      allow create: if isOwner(request.resource.data);
+      allow update: if isOwner(resource.data) && isOwner(request.resource.data);
+      allow delete: if false;
+    }
+
+    match /yield_baselines/{baselineId} {
+      allow read: if isOwner(resource.data);
+      allow create: if isOwner(request.resource.data);
+      allow update: if isOwner(resource.data) && isOwner(request.resource.data);
+      allow delete: if false;
+    }
+
+    match /water_usage/{entryId} {
+      allow read: if isOwner(resource.data);
+      allow create: if isOwner(request.resource.data);
+      allow update: if isOwner(resource.data) && isOwner(request.resource.data);
+      allow delete: if false;
+    }
+
+    match /water_baselines/{baselineId} {
+      allow read: if isOwner(resource.data);
+      allow create: if isOwner(request.resource.data);
+      allow update: if isOwner(resource.data) && isOwner(request.resource.data);
+      allow delete: if false;
+    }
+
+    match /cost_entries/{entryId} {
+      allow read: if isOwner(resource.data);
+      allow create: if isOwner(request.resource.data);
+      allow update: if isOwner(resource.data) && isOwner(request.resource.data);
+      allow delete: if false;
+    }
+
+    match /cost_baselines/{baselineId} {
+      allow read: if isOwner(resource.data);
+      allow create: if isOwner(request.resource.data);
+      allow update: if isOwner(resource.data) && isOwner(request.resource.data);
+      allow delete: if false;
+    }
+
+    match /environmental_indicators/{indicatorId} {
+      allow read: if isOwner(resource.data);
+      allow create: if isOwner(request.resource.data);
+      allow update: if isOwner(resource.data) && isOwner(request.resource.data);
+      allow delete: if false;
+    }
+
+    match /impact_reports/{reportId} {
+      allow read: if isOwner(resource.data);
+      allow create: if isOwner(request.resource.data);
+      allow update: if isOwner(resource.data) && isOwner(request.resource.data);
+      allow delete: if false;
+    }
+
+    match /verifications/{verificationId} {
+      allow read: if isOwner(resource.data) || canOfficerAccess(resource.data);
+      allow create: if isOwner(request.resource.data);
+      allow update: if
+        (isOwner(resource.data) && isOwner(request.resource.data)) ||
+        canOfficerAccess(request.resource.data) ||
+        canOfficerAccess(resource.data);
+      allow delete: if false;
+    }
+
+    match /operation_tasks/{taskId} {
+      allow read: if isOwner(resource.data);
+      allow create: if isOwner(request.resource.data);
+      allow update: if isOwner(resource.data) && isOwner(request.resource.data);
+      allow delete: if isOwner(resource.data);
+    }
+
+    // User activities - Users manage their own
+    match /user_activities/{activityId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // Learning progress - Users manage their own
+    match /user_learning_progress/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /farm_plots/{plotId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // UC56-UC63: Livestock management collections
+    match /pastures/{pastureId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    match /pasture_assessments/{assessmentId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    match /feed_plans/{planId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    match /livestock_impacts/{impactId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // Default deny all other collectionsets - Public read for accessible datasets, admin write
+    match /research_datasets/{datasetId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.token.email == 'arnobrizwan23@gmail.com';
+    }
+
+    match /dataset_access_logs/{logId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // Access requests - Users can read/write their own requests
+    match /access_requests/{requestId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // UC51: Research workspaces - Members can read/write their workspaces
+    match /research_workspaces/{workspaceId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null;
+      allow delete: if request.auth != null && request.resource.data.ownerId == request.auth.uid;
+    }
+
+    // Workspace invitations - Users can read/write their own invitations
+    match /workspace_invitations/{invitationId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+
+    // UC52: Publications - Public read published, authors manage own
+    match /publications/{publicationId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null && request.resource.data.submittedBy == request.auth.uid;
+      allow delete: if request.auth != null && request.resource.data.submittedBy == request.auth.uid;
+    }
+
+    // UC53: Academic resources - Public read, admin write
+    match /academic_resources/{resourceId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.token.email == 'arnobrizwan23@gmail.com';
+    }
+
+    // Course enrollments - Users can read/write their own enrollments
+    match /course_enrollments/{enrollmentId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // Resource history - Users can read/write their own history
+    match /resource_history/{historyId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // UC54: Research projects - Project lead and members can access
+    match /research_projects/{projectId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update: if request.auth != null;
+      allow delete: if request.auth != null && request.resource.data.leadResearcherId == request.auth.uid;
+    }
+
+    // UC55: Data exports - Users can read/write their own exports
+    match /data_exports/{exportId} {
+      allow read: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow write: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
+
+    // Game progress - Users can read/write their own game data
+    match /users/{userId}/gameProgress/{progressId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Temporary development rules - Allow authenticated users full access
+    // TODO: Restrict these in production
+    match /{collection}/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+  }
+}

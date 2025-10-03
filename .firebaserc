@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "ecosphere-5dad1",
+    "prod": "ecosphere-5dad1"
+  },
+  "targets": {},
+  "etags": {}
+}

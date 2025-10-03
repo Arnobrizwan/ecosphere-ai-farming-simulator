@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-10-02T13:27:16.893489",
+  "data": "NASA POWER + SMAP + MODIS",
+  "features": [
+    "temp_avg",
+    "temp_max",
+    "temp_min",
+    "humidity",
+    "wind_speed",
+    "solar_radiation",
+    "precipitation",
+    "soilMoisture",
+    "ndvi",
+    "heat_stress",
+    "cold_stress",
+    "temp_range",
+    "growing_degree_days",
+    "drought_index",
+    "flood_risk",
+    "water_stress",
+    "humidity_stress",
+    "vpd",
+    "radiation_efficiency",
+    "vegetation_stress",
+    "crop_vigor",
+    "crop_suitability"
+  ],
+  "models": {
+    "yield": "nasa_complete_yield.tflite",
+    "suitability": "nasa_complete_suitability.pkl"
+  }
+}

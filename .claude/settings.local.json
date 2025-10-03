@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx expo install:*)",
+      "Bash(adb shell:*)",
+      "Bash(gcloud auth:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm install:*)",
+      "Bash(npx expo start:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

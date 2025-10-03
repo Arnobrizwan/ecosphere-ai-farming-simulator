@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+dist/
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# Local env files
+.env*.local
+my.env
+.env
+nasa_data_cache/
+
+# Firebase service account
+serviceAccount.json
+
+# Typescript
+*.tsbuildinfo
+
+# UC21 - Disease Detection Model Training
+*.tflite
+model-training/dataset/
+model-training/*.h5
+model-training/__pycache__/
+model-training/venv/
+model-training/.ipynb_checkpoints/
+assets/models/*.tflite

@@ -1,0 +1,7275 @@
+{
+  "metadata": {
+    "collectedAt": "2025-10-02T07:23:48.442Z",
+    "locations": 8,
+    "dateRange": {
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31"
+    },
+    "sources": [
+      "SMAP",
+      "MODIS"
+    ],
+    "note": "Mix of real NASA data and synthetic fallback where unavailable"
+  },
+  "smap": [
+    {
+      "date": "2024-01-01",
+      "location": "dhaka_central",
+      "granuleId": "G2940380616-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-02",
+      "location": "dhaka_central",
+      "granuleId": "G2940379935-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-03",
+      "location": "dhaka_central",
+      "granuleId": "G2940379969-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-04",
+      "location": "dhaka_central",
+      "granuleId": "G2940379991-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-05",
+      "location": "dhaka_central",
+      "granuleId": "G2940379943-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-06",
+      "location": "dhaka_central",
+      "granuleId": "G2940380009-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-07",
+      "location": "dhaka_central",
+      "granuleId": "G2940379928-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-08",
+      "location": "dhaka_central",
+      "granuleId": "G2940379989-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-09",
+      "location": "dhaka_central",
+      "granuleId": "G2940380012-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-10",
+      "location": "dhaka_central",
+      "granuleId": "G2940379971-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-11",
+      "location": "dhaka_central",
+      "granuleId": "G2940379949-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-12",
+      "location": "dhaka_central",
+      "granuleId": "G2940377819-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-13",
+      "location": "dhaka_central",
+      "granuleId": "G2940380700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-14",
+      "location": "dhaka_central",
+      "granuleId": "G2940380693-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-15",
+      "location": "dhaka_central",
+      "granuleId": "G2940379913-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-16",
+      "location": "dhaka_central",
+      "granuleId": "G2940379936-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "dhaka_central",
+      "granuleId": "G2940379910-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-18",
+      "location": "dhaka_central",
+      "granuleId": "G2940378861-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-19",
+      "location": "dhaka_central",
+      "granuleId": "G2940380720-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-20",
+      "location": "dhaka_central",
+      "granuleId": "G2940377929-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-21",
+      "location": "dhaka_central",
+      "granuleId": "G2940378887-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-22",
+      "location": "dhaka_central",
+      "granuleId": "G2940379985-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-23",
+      "location": "dhaka_central",
+      "granuleId": "G2940379921-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-24",
+      "location": "dhaka_central",
+      "granuleId": "G2940378867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-25",
+      "location": "dhaka_central",
+      "granuleId": "G2940377830-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-26",
+      "location": "dhaka_central",
+      "granuleId": "G2940379995-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-27",
+      "location": "dhaka_central",
+      "granuleId": "G2940378920-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-28",
+      "location": "dhaka_central",
+      "granuleId": "G2940378885-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-29",
+      "location": "dhaka_central",
+      "granuleId": "G2940378873-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-30",
+      "location": "dhaka_central",
+      "granuleId": "G2940377852-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-31",
+      "location": "dhaka_central",
+      "granuleId": "G2940377984-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-01",
+      "location": "dhaka_central",
+      "granuleId": "G2940378898-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "dhaka_central",
+      "granuleId": "G2940377798-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-03",
+      "location": "dhaka_central",
+      "granuleId": "G2940377790-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-04",
+      "location": "dhaka_central",
+      "granuleId": "G2940378871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-05",
+      "location": "dhaka_central",
+      "granuleId": "G2940378902-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-06",
+      "location": "dhaka_central",
+      "granuleId": "G2940377801-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-07",
+      "location": "dhaka_central",
+      "granuleId": "G2940378868-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-08",
+      "location": "dhaka_central",
+      "granuleId": "G2940377901-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-09",
+      "location": "dhaka_central",
+      "granuleId": "G2940377808-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-10",
+      "location": "dhaka_central",
+      "granuleId": "G2940378851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-11",
+      "location": "dhaka_central",
+      "granuleId": "G2940377987-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-12",
+      "location": "dhaka_central",
+      "granuleId": "G2940377821-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-13",
+      "location": "dhaka_central",
+      "granuleId": "G2940377813-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-14",
+      "location": "dhaka_central",
+      "granuleId": "G2940377787-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-15",
+      "location": "dhaka_central",
+      "granuleId": "G2940378890-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-16",
+      "location": "dhaka_central",
+      "granuleId": "G2940377840-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-17",
+      "location": "dhaka_central",
+      "granuleId": "G2940377824-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "dhaka_central",
+      "granuleId": "G2940378894-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-19",
+      "location": "dhaka_central",
+      "granuleId": "G2940377833-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-20",
+      "location": "dhaka_central",
+      "granuleId": "G2940377795-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-21",
+      "location": "dhaka_central",
+      "granuleId": "G2940378862-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-22",
+      "location": "dhaka_central",
+      "granuleId": "G2940377867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-23",
+      "location": "dhaka_central",
+      "granuleId": "G2940377892-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-24",
+      "location": "dhaka_central",
+      "granuleId": "G2940377841-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-25",
+      "location": "dhaka_central",
+      "granuleId": "G2940377909-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-26",
+      "location": "dhaka_central",
+      "granuleId": "G2940378884-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-27",
+      "location": "dhaka_central",
+      "granuleId": "G2940377810-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-28",
+      "location": "dhaka_central",
+      "granuleId": "G2940377869-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-29",
+      "location": "dhaka_central",
+      "granuleId": "G2940377816-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-01",
+      "location": "dhaka_central",
+      "granuleId": "G2940377851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-02",
+      "location": "dhaka_central",
+      "granuleId": "G2940377886-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-03",
+      "location": "dhaka_central",
+      "granuleId": "G2940377871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-04",
+      "location": "dhaka_central",
+      "granuleId": "G2940377823-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "dhaka_central",
+      "granuleId": "G2940377863-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-06",
+      "location": "dhaka_central",
+      "granuleId": "G2940377809-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-07",
+      "location": "dhaka_central",
+      "granuleId": "G2940378891-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-08",
+      "location": "dhaka_central",
+      "granuleId": "G2940378877-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-09",
+      "location": "dhaka_central",
+      "granuleId": "G2940378848-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-10",
+      "location": "dhaka_central",
+      "granuleId": "G2940377847-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-11",
+      "location": "dhaka_central",
+      "granuleId": "G2940377860-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-12",
+      "location": "dhaka_central",
+      "granuleId": "G2949627142-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-13",
+      "location": "dhaka_central",
+      "granuleId": "G2949630811-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-14",
+      "location": "dhaka_central",
+      "granuleId": "G2949626294-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-15",
+      "location": "dhaka_central",
+      "granuleId": "G2949626475-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-16",
+      "location": "dhaka_central",
+      "granuleId": "G2949626478-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-17",
+      "location": "dhaka_central",
+      "granuleId": "G2949627245-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-18",
+      "location": "dhaka_central",
+      "granuleId": "G2949627042-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-19",
+      "location": "dhaka_central",
+      "granuleId": "G2949628784-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-20",
+      "location": "dhaka_central",
+      "granuleId": "G2949635907-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "dhaka_central",
+      "granuleId": "G2949627114-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-22",
+      "location": "dhaka_central",
+      "granuleId": "G2949626517-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-23",
+      "location": "dhaka_central",
+      "granuleId": "G2949637582-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-24",
+      "location": "dhaka_central",
+      "granuleId": "G2949637449-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-25",
+      "location": "dhaka_central",
+      "granuleId": "G2949631095-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-26",
+      "location": "dhaka_central",
+      "granuleId": "G2949633429-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-27",
+      "location": "dhaka_central",
+      "granuleId": "G2949636240-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-28",
+      "location": "dhaka_central",
+      "granuleId": "G2949642208-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-29",
+      "location": "dhaka_central",
+      "granuleId": "G2949639870-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-30",
+      "location": "dhaka_central",
+      "granuleId": "G2949634450-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-31",
+      "location": "dhaka_central",
+      "granuleId": "G2949639552-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-01",
+      "location": "dhaka_central",
+      "granuleId": "G2949635986-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-02",
+      "location": "dhaka_central",
+      "granuleId": "G2949639239-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-03",
+      "location": "dhaka_central",
+      "granuleId": "G2949637439-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-04",
+      "location": "dhaka_central",
+      "granuleId": "G2949634700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-05",
+      "location": "dhaka_central",
+      "granuleId": "G2949642057-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "dhaka_central",
+      "granuleId": "G2949637575-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-07",
+      "location": "dhaka_central",
+      "granuleId": "G2949637614-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-08",
+      "location": "dhaka_central",
+      "granuleId": "G2949639277-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-09",
+      "location": "dhaka_central",
+      "granuleId": "G2949639690-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "rajshahi",
+      "granuleId": "G2940380616-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-02",
+      "location": "rajshahi",
+      "granuleId": "G2940379935-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-03",
+      "location": "rajshahi",
+      "granuleId": "G2940379969-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-04",
+      "location": "rajshahi",
+      "granuleId": "G2940379991-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-05",
+      "location": "rajshahi",
+      "granuleId": "G2940379943-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-06",
+      "location": "rajshahi",
+      "granuleId": "G2940380009-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-07",
+      "location": "rajshahi",
+      "granuleId": "G2940379928-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-08",
+      "location": "rajshahi",
+      "granuleId": "G2940379989-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-09",
+      "location": "rajshahi",
+      "granuleId": "G2940380012-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-10",
+      "location": "rajshahi",
+      "granuleId": "G2940379971-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-11",
+      "location": "rajshahi",
+      "granuleId": "G2940379949-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-12",
+      "location": "rajshahi",
+      "granuleId": "G2940377819-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-13",
+      "location": "rajshahi",
+      "granuleId": "G2940380700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-14",
+      "location": "rajshahi",
+      "granuleId": "G2940380693-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-15",
+      "location": "rajshahi",
+      "granuleId": "G2940379913-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-16",
+      "location": "rajshahi",
+      "granuleId": "G2940379936-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "rajshahi",
+      "granuleId": "G2940379910-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-18",
+      "location": "rajshahi",
+      "granuleId": "G2940378861-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-19",
+      "location": "rajshahi",
+      "granuleId": "G2940380720-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-20",
+      "location": "rajshahi",
+      "granuleId": "G2940377929-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-21",
+      "location": "rajshahi",
+      "granuleId": "G2940378887-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-22",
+      "location": "rajshahi",
+      "granuleId": "G2940379985-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-23",
+      "location": "rajshahi",
+      "granuleId": "G2940379921-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-24",
+      "location": "rajshahi",
+      "granuleId": "G2940378867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-25",
+      "location": "rajshahi",
+      "granuleId": "G2940377830-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-26",
+      "location": "rajshahi",
+      "granuleId": "G2940379995-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-27",
+      "location": "rajshahi",
+      "granuleId": "G2940378920-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-28",
+      "location": "rajshahi",
+      "granuleId": "G2940378885-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-29",
+      "location": "rajshahi",
+      "granuleId": "G2940378873-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-30",
+      "location": "rajshahi",
+      "granuleId": "G2940377852-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-31",
+      "location": "rajshahi",
+      "granuleId": "G2940377984-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-01",
+      "location": "rajshahi",
+      "granuleId": "G2940378898-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "rajshahi",
+      "granuleId": "G2940377798-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-03",
+      "location": "rajshahi",
+      "granuleId": "G2940377790-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-04",
+      "location": "rajshahi",
+      "granuleId": "G2940378871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-05",
+      "location": "rajshahi",
+      "granuleId": "G2940378902-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-06",
+      "location": "rajshahi",
+      "granuleId": "G2940377801-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-07",
+      "location": "rajshahi",
+      "granuleId": "G2940378868-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-08",
+      "location": "rajshahi",
+      "granuleId": "G2940377901-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-09",
+      "location": "rajshahi",
+      "granuleId": "G2940377808-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-10",
+      "location": "rajshahi",
+      "granuleId": "G2940378851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-11",
+      "location": "rajshahi",
+      "granuleId": "G2940377987-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-12",
+      "location": "rajshahi",
+      "granuleId": "G2940377821-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-13",
+      "location": "rajshahi",
+      "granuleId": "G2940377813-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-14",
+      "location": "rajshahi",
+      "granuleId": "G2940377787-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-15",
+      "location": "rajshahi",
+      "granuleId": "G2940378890-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-16",
+      "location": "rajshahi",
+      "granuleId": "G2940377840-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-17",
+      "location": "rajshahi",
+      "granuleId": "G2940377824-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "rajshahi",
+      "granuleId": "G2940378894-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-19",
+      "location": "rajshahi",
+      "granuleId": "G2940377833-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-20",
+      "location": "rajshahi",
+      "granuleId": "G2940377795-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-21",
+      "location": "rajshahi",
+      "granuleId": "G2940378862-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-22",
+      "location": "rajshahi",
+      "granuleId": "G2940377867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-23",
+      "location": "rajshahi",
+      "granuleId": "G2940377892-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-24",
+      "location": "rajshahi",
+      "granuleId": "G2940377841-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-25",
+      "location": "rajshahi",
+      "granuleId": "G2940377909-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-26",
+      "location": "rajshahi",
+      "granuleId": "G2940378884-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-27",
+      "location": "rajshahi",
+      "granuleId": "G2940377810-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-28",
+      "location": "rajshahi",
+      "granuleId": "G2940377869-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-29",
+      "location": "rajshahi",
+      "granuleId": "G2940377816-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-01",
+      "location": "rajshahi",
+      "granuleId": "G2940377851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-02",
+      "location": "rajshahi",
+      "granuleId": "G2940377886-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-03",
+      "location": "rajshahi",
+      "granuleId": "G2940377871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-04",
+      "location": "rajshahi",
+      "granuleId": "G2940377823-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "rajshahi",
+      "granuleId": "G2940377863-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-06",
+      "location": "rajshahi",
+      "granuleId": "G2940377809-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-07",
+      "location": "rajshahi",
+      "granuleId": "G2940378891-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-08",
+      "location": "rajshahi",
+      "granuleId": "G2940378877-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-09",
+      "location": "rajshahi",
+      "granuleId": "G2940378848-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-10",
+      "location": "rajshahi",
+      "granuleId": "G2940377847-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-11",
+      "location": "rajshahi",
+      "granuleId": "G2940377860-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-12",
+      "location": "rajshahi",
+      "granuleId": "G2949627142-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-13",
+      "location": "rajshahi",
+      "granuleId": "G2949630811-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-14",
+      "location": "rajshahi",
+      "granuleId": "G2949626294-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-15",
+      "location": "rajshahi",
+      "granuleId": "G2949626475-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-16",
+      "location": "rajshahi",
+      "granuleId": "G2949626478-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-17",
+      "location": "rajshahi",
+      "granuleId": "G2949627245-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-18",
+      "location": "rajshahi",
+      "granuleId": "G2949627042-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-19",
+      "location": "rajshahi",
+      "granuleId": "G2949628784-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-20",
+      "location": "rajshahi",
+      "granuleId": "G2949635907-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "rajshahi",
+      "granuleId": "G2949627114-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-22",
+      "location": "rajshahi",
+      "granuleId": "G2949626517-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-23",
+      "location": "rajshahi",
+      "granuleId": "G2949637582-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-24",
+      "location": "rajshahi",
+      "granuleId": "G2949637449-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-25",
+      "location": "rajshahi",
+      "granuleId": "G2949631095-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-26",
+      "location": "rajshahi",
+      "granuleId": "G2949633429-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-27",
+      "location": "rajshahi",
+      "granuleId": "G2949636240-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-28",
+      "location": "rajshahi",
+      "granuleId": "G2949642208-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-29",
+      "location": "rajshahi",
+      "granuleId": "G2949639870-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-30",
+      "location": "rajshahi",
+      "granuleId": "G2949634450-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-31",
+      "location": "rajshahi",
+      "granuleId": "G2949639552-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-01",
+      "location": "rajshahi",
+      "granuleId": "G2949635986-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-02",
+      "location": "rajshahi",
+      "granuleId": "G2949639239-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-03",
+      "location": "rajshahi",
+      "granuleId": "G2949637439-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-04",
+      "location": "rajshahi",
+      "granuleId": "G2949634700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-05",
+      "location": "rajshahi",
+      "granuleId": "G2949642057-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "rajshahi",
+      "granuleId": "G2949637575-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-07",
+      "location": "rajshahi",
+      "granuleId": "G2949637614-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-08",
+      "location": "rajshahi",
+      "granuleId": "G2949639277-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-09",
+      "location": "rajshahi",
+      "granuleId": "G2949639690-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "chittagong",
+      "granuleId": "G2940380616-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-02",
+      "location": "chittagong",
+      "granuleId": "G2940379935-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-03",
+      "location": "chittagong",
+      "granuleId": "G2940379969-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-04",
+      "location": "chittagong",
+      "granuleId": "G2940379991-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-05",
+      "location": "chittagong",
+      "granuleId": "G2940379943-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-06",
+      "location": "chittagong",
+      "granuleId": "G2940380009-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-07",
+      "location": "chittagong",
+      "granuleId": "G2940379928-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-08",
+      "location": "chittagong",
+      "granuleId": "G2940379989-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-09",
+      "location": "chittagong",
+      "granuleId": "G2940380012-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-10",
+      "location": "chittagong",
+      "granuleId": "G2940379971-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-11",
+      "location": "chittagong",
+      "granuleId": "G2940379949-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-12",
+      "location": "chittagong",
+      "granuleId": "G2940377819-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-13",
+      "location": "chittagong",
+      "granuleId": "G2940380700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-14",
+      "location": "chittagong",
+      "granuleId": "G2940380693-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-15",
+      "location": "chittagong",
+      "granuleId": "G2940379913-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-16",
+      "location": "chittagong",
+      "granuleId": "G2940379936-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "chittagong",
+      "granuleId": "G2940379910-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-18",
+      "location": "chittagong",
+      "granuleId": "G2940378861-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-19",
+      "location": "chittagong",
+      "granuleId": "G2940380720-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-20",
+      "location": "chittagong",
+      "granuleId": "G2940377929-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-21",
+      "location": "chittagong",
+      "granuleId": "G2940378887-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-22",
+      "location": "chittagong",
+      "granuleId": "G2940379985-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-23",
+      "location": "chittagong",
+      "granuleId": "G2940379921-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-24",
+      "location": "chittagong",
+      "granuleId": "G2940378867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-25",
+      "location": "chittagong",
+      "granuleId": "G2940377830-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-26",
+      "location": "chittagong",
+      "granuleId": "G2940379995-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-27",
+      "location": "chittagong",
+      "granuleId": "G2940378920-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-28",
+      "location": "chittagong",
+      "granuleId": "G2940378885-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-29",
+      "location": "chittagong",
+      "granuleId": "G2940378873-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-30",
+      "location": "chittagong",
+      "granuleId": "G2940377852-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-31",
+      "location": "chittagong",
+      "granuleId": "G2940377984-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-01",
+      "location": "chittagong",
+      "granuleId": "G2940378898-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "chittagong",
+      "granuleId": "G2940377798-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-03",
+      "location": "chittagong",
+      "granuleId": "G2940377790-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-04",
+      "location": "chittagong",
+      "granuleId": "G2940378871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-05",
+      "location": "chittagong",
+      "granuleId": "G2940378902-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-06",
+      "location": "chittagong",
+      "granuleId": "G2940377801-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-07",
+      "location": "chittagong",
+      "granuleId": "G2940378868-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-08",
+      "location": "chittagong",
+      "granuleId": "G2940377901-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-09",
+      "location": "chittagong",
+      "granuleId": "G2940377808-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-10",
+      "location": "chittagong",
+      "granuleId": "G2940378851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-11",
+      "location": "chittagong",
+      "granuleId": "G2940377987-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-12",
+      "location": "chittagong",
+      "granuleId": "G2940377821-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-13",
+      "location": "chittagong",
+      "granuleId": "G2940377813-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-14",
+      "location": "chittagong",
+      "granuleId": "G2940377787-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-15",
+      "location": "chittagong",
+      "granuleId": "G2940378890-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-16",
+      "location": "chittagong",
+      "granuleId": "G2940377840-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-17",
+      "location": "chittagong",
+      "granuleId": "G2940377824-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "chittagong",
+      "granuleId": "G2940378894-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-19",
+      "location": "chittagong",
+      "granuleId": "G2940377833-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-20",
+      "location": "chittagong",
+      "granuleId": "G2940377795-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-21",
+      "location": "chittagong",
+      "granuleId": "G2940378862-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-22",
+      "location": "chittagong",
+      "granuleId": "G2940377867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-23",
+      "location": "chittagong",
+      "granuleId": "G2940377892-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-24",
+      "location": "chittagong",
+      "granuleId": "G2940377841-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-25",
+      "location": "chittagong",
+      "granuleId": "G2940377909-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-26",
+      "location": "chittagong",
+      "granuleId": "G2940378884-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-27",
+      "location": "chittagong",
+      "granuleId": "G2940377810-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-28",
+      "location": "chittagong",
+      "granuleId": "G2940377869-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-29",
+      "location": "chittagong",
+      "granuleId": "G2940377816-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-01",
+      "location": "chittagong",
+      "granuleId": "G2940377851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-02",
+      "location": "chittagong",
+      "granuleId": "G2940377886-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-03",
+      "location": "chittagong",
+      "granuleId": "G2940377871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-04",
+      "location": "chittagong",
+      "granuleId": "G2940377823-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "chittagong",
+      "granuleId": "G2940377863-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-06",
+      "location": "chittagong",
+      "granuleId": "G2940377809-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-07",
+      "location": "chittagong",
+      "granuleId": "G2940378891-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-08",
+      "location": "chittagong",
+      "granuleId": "G2940378877-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-09",
+      "location": "chittagong",
+      "granuleId": "G2940378848-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-10",
+      "location": "chittagong",
+      "granuleId": "G2940377847-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-11",
+      "location": "chittagong",
+      "granuleId": "G2940377860-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-12",
+      "location": "chittagong",
+      "granuleId": "G2949627142-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-13",
+      "location": "chittagong",
+      "granuleId": "G2949630811-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-14",
+      "location": "chittagong",
+      "granuleId": "G2949626294-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-15",
+      "location": "chittagong",
+      "granuleId": "G2949626475-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-16",
+      "location": "chittagong",
+      "granuleId": "G2949626478-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-17",
+      "location": "chittagong",
+      "granuleId": "G2949627245-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-18",
+      "location": "chittagong",
+      "granuleId": "G2949627042-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-19",
+      "location": "chittagong",
+      "granuleId": "G2949628784-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-20",
+      "location": "chittagong",
+      "granuleId": "G2949635907-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "chittagong",
+      "granuleId": "G2949627114-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-22",
+      "location": "chittagong",
+      "granuleId": "G2949626517-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-23",
+      "location": "chittagong",
+      "granuleId": "G2949637582-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-24",
+      "location": "chittagong",
+      "granuleId": "G2949637449-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-25",
+      "location": "chittagong",
+      "granuleId": "G2949631095-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-26",
+      "location": "chittagong",
+      "granuleId": "G2949633429-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-27",
+      "location": "chittagong",
+      "granuleId": "G2949636240-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-28",
+      "location": "chittagong",
+      "granuleId": "G2949642208-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-29",
+      "location": "chittagong",
+      "granuleId": "G2949639870-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-30",
+      "location": "chittagong",
+      "granuleId": "G2949634450-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-31",
+      "location": "chittagong",
+      "granuleId": "G2949639552-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-01",
+      "location": "chittagong",
+      "granuleId": "G2949635986-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-02",
+      "location": "chittagong",
+      "granuleId": "G2949639239-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-03",
+      "location": "chittagong",
+      "granuleId": "G2949637439-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-04",
+      "location": "chittagong",
+      "granuleId": "G2949634700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-05",
+      "location": "chittagong",
+      "granuleId": "G2949642057-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "chittagong",
+      "granuleId": "G2949637575-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-07",
+      "location": "chittagong",
+      "granuleId": "G2949637614-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-08",
+      "location": "chittagong",
+      "granuleId": "G2949639277-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-09",
+      "location": "chittagong",
+      "granuleId": "G2949639690-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "khulna",
+      "granuleId": "G2940380616-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-02",
+      "location": "khulna",
+      "granuleId": "G2940379935-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-03",
+      "location": "khulna",
+      "granuleId": "G2940379969-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-04",
+      "location": "khulna",
+      "granuleId": "G2940379991-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-05",
+      "location": "khulna",
+      "granuleId": "G2940379943-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-06",
+      "location": "khulna",
+      "granuleId": "G2940380009-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-07",
+      "location": "khulna",
+      "granuleId": "G2940379928-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-08",
+      "location": "khulna",
+      "granuleId": "G2940379989-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-09",
+      "location": "khulna",
+      "granuleId": "G2940380012-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-10",
+      "location": "khulna",
+      "granuleId": "G2940379971-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-11",
+      "location": "khulna",
+      "granuleId": "G2940379949-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-12",
+      "location": "khulna",
+      "granuleId": "G2940377819-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-13",
+      "location": "khulna",
+      "granuleId": "G2940380700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-14",
+      "location": "khulna",
+      "granuleId": "G2940380693-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-15",
+      "location": "khulna",
+      "granuleId": "G2940379913-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-16",
+      "location": "khulna",
+      "granuleId": "G2940379936-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "khulna",
+      "granuleId": "G2940379910-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-18",
+      "location": "khulna",
+      "granuleId": "G2940378861-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-19",
+      "location": "khulna",
+      "granuleId": "G2940380720-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-20",
+      "location": "khulna",
+      "granuleId": "G2940377929-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-21",
+      "location": "khulna",
+      "granuleId": "G2940378887-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-22",
+      "location": "khulna",
+      "granuleId": "G2940379985-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-23",
+      "location": "khulna",
+      "granuleId": "G2940379921-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-24",
+      "location": "khulna",
+      "granuleId": "G2940378867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-25",
+      "location": "khulna",
+      "granuleId": "G2940377830-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-26",
+      "location": "khulna",
+      "granuleId": "G2940379995-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-27",
+      "location": "khulna",
+      "granuleId": "G2940378920-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-28",
+      "location": "khulna",
+      "granuleId": "G2940378885-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-29",
+      "location": "khulna",
+      "granuleId": "G2940378873-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-30",
+      "location": "khulna",
+      "granuleId": "G2940377852-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-31",
+      "location": "khulna",
+      "granuleId": "G2940377984-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-01",
+      "location": "khulna",
+      "granuleId": "G2940378898-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "khulna",
+      "granuleId": "G2940377798-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-03",
+      "location": "khulna",
+      "granuleId": "G2940377790-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-04",
+      "location": "khulna",
+      "granuleId": "G2940378871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-05",
+      "location": "khulna",
+      "granuleId": "G2940378902-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-06",
+      "location": "khulna",
+      "granuleId": "G2940377801-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-07",
+      "location": "khulna",
+      "granuleId": "G2940378868-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-08",
+      "location": "khulna",
+      "granuleId": "G2940377901-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-09",
+      "location": "khulna",
+      "granuleId": "G2940377808-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-10",
+      "location": "khulna",
+      "granuleId": "G2940378851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-11",
+      "location": "khulna",
+      "granuleId": "G2940377987-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-12",
+      "location": "khulna",
+      "granuleId": "G2940377821-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-13",
+      "location": "khulna",
+      "granuleId": "G2940377813-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-14",
+      "location": "khulna",
+      "granuleId": "G2940377787-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-15",
+      "location": "khulna",
+      "granuleId": "G2940378890-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-16",
+      "location": "khulna",
+      "granuleId": "G2940377840-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-17",
+      "location": "khulna",
+      "granuleId": "G2940377824-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "khulna",
+      "granuleId": "G2940378894-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-19",
+      "location": "khulna",
+      "granuleId": "G2940377833-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-20",
+      "location": "khulna",
+      "granuleId": "G2940377795-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-21",
+      "location": "khulna",
+      "granuleId": "G2940378862-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-22",
+      "location": "khulna",
+      "granuleId": "G2940377867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-23",
+      "location": "khulna",
+      "granuleId": "G2940377892-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-24",
+      "location": "khulna",
+      "granuleId": "G2940377841-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-25",
+      "location": "khulna",
+      "granuleId": "G2940377909-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-26",
+      "location": "khulna",
+      "granuleId": "G2940378884-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-27",
+      "location": "khulna",
+      "granuleId": "G2940377810-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-28",
+      "location": "khulna",
+      "granuleId": "G2940377869-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-29",
+      "location": "khulna",
+      "granuleId": "G2940377816-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-01",
+      "location": "khulna",
+      "granuleId": "G2940377851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-02",
+      "location": "khulna",
+      "granuleId": "G2940377886-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-03",
+      "location": "khulna",
+      "granuleId": "G2940377871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-04",
+      "location": "khulna",
+      "granuleId": "G2940377823-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "khulna",
+      "granuleId": "G2940377863-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-06",
+      "location": "khulna",
+      "granuleId": "G2940377809-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-07",
+      "location": "khulna",
+      "granuleId": "G2940378891-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-08",
+      "location": "khulna",
+      "granuleId": "G2940378877-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-09",
+      "location": "khulna",
+      "granuleId": "G2940378848-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-10",
+      "location": "khulna",
+      "granuleId": "G2940377847-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-11",
+      "location": "khulna",
+      "granuleId": "G2940377860-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-12",
+      "location": "khulna",
+      "granuleId": "G2949627142-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-13",
+      "location": "khulna",
+      "granuleId": "G2949630811-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-14",
+      "location": "khulna",
+      "granuleId": "G2949626294-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-15",
+      "location": "khulna",
+      "granuleId": "G2949626475-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-16",
+      "location": "khulna",
+      "granuleId": "G2949626478-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-17",
+      "location": "khulna",
+      "granuleId": "G2949627245-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-18",
+      "location": "khulna",
+      "granuleId": "G2949627042-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-19",
+      "location": "khulna",
+      "granuleId": "G2949628784-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-20",
+      "location": "khulna",
+      "granuleId": "G2949635907-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "khulna",
+      "granuleId": "G2949627114-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-22",
+      "location": "khulna",
+      "granuleId": "G2949626517-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-23",
+      "location": "khulna",
+      "granuleId": "G2949637582-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-24",
+      "location": "khulna",
+      "granuleId": "G2949637449-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-25",
+      "location": "khulna",
+      "granuleId": "G2949631095-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-26",
+      "location": "khulna",
+      "granuleId": "G2949633429-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-27",
+      "location": "khulna",
+      "granuleId": "G2949636240-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-28",
+      "location": "khulna",
+      "granuleId": "G2949642208-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-29",
+      "location": "khulna",
+      "granuleId": "G2949639870-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-30",
+      "location": "khulna",
+      "granuleId": "G2949634450-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-31",
+      "location": "khulna",
+      "granuleId": "G2949639552-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-01",
+      "location": "khulna",
+      "granuleId": "G2949635986-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-02",
+      "location": "khulna",
+      "granuleId": "G2949639239-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-03",
+      "location": "khulna",
+      "granuleId": "G2949637439-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-04",
+      "location": "khulna",
+      "granuleId": "G2949634700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-05",
+      "location": "khulna",
+      "granuleId": "G2949642057-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "khulna",
+      "granuleId": "G2949637575-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-07",
+      "location": "khulna",
+      "granuleId": "G2949637614-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-08",
+      "location": "khulna",
+      "granuleId": "G2949639277-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-09",
+      "location": "khulna",
+      "granuleId": "G2949639690-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "sylhet",
+      "granuleId": "G2940380616-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-02",
+      "location": "sylhet",
+      "granuleId": "G2940379935-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-03",
+      "location": "sylhet",
+      "granuleId": "G2940379969-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-04",
+      "location": "sylhet",
+      "granuleId": "G2940379991-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-05",
+      "location": "sylhet",
+      "granuleId": "G2940379943-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-06",
+      "location": "sylhet",
+      "granuleId": "G2940380009-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-07",
+      "location": "sylhet",
+      "granuleId": "G2940379928-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-08",
+      "location": "sylhet",
+      "granuleId": "G2940379989-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-09",
+      "location": "sylhet",
+      "granuleId": "G2940380012-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-10",
+      "location": "sylhet",
+      "granuleId": "G2940379971-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-11",
+      "location": "sylhet",
+      "granuleId": "G2940379949-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-12",
+      "location": "sylhet",
+      "granuleId": "G2940377819-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-13",
+      "location": "sylhet",
+      "granuleId": "G2940380700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-14",
+      "location": "sylhet",
+      "granuleId": "G2940380693-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-15",
+      "location": "sylhet",
+      "granuleId": "G2940379913-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-16",
+      "location": "sylhet",
+      "granuleId": "G2940379936-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "sylhet",
+      "granuleId": "G2940379910-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-18",
+      "location": "sylhet",
+      "granuleId": "G2940378861-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-19",
+      "location": "sylhet",
+      "granuleId": "G2940380720-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-20",
+      "location": "sylhet",
+      "granuleId": "G2940377929-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-21",
+      "location": "sylhet",
+      "granuleId": "G2940378887-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-22",
+      "location": "sylhet",
+      "granuleId": "G2940379985-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-23",
+      "location": "sylhet",
+      "granuleId": "G2940379921-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-24",
+      "location": "sylhet",
+      "granuleId": "G2940378867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-25",
+      "location": "sylhet",
+      "granuleId": "G2940377830-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-26",
+      "location": "sylhet",
+      "granuleId": "G2940379995-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-27",
+      "location": "sylhet",
+      "granuleId": "G2940378920-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-28",
+      "location": "sylhet",
+      "granuleId": "G2940378885-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-29",
+      "location": "sylhet",
+      "granuleId": "G2940378873-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-30",
+      "location": "sylhet",
+      "granuleId": "G2940377852-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-31",
+      "location": "sylhet",
+      "granuleId": "G2940377984-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-01",
+      "location": "sylhet",
+      "granuleId": "G2940378898-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "sylhet",
+      "granuleId": "G2940377798-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-03",
+      "location": "sylhet",
+      "granuleId": "G2940377790-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-04",
+      "location": "sylhet",
+      "granuleId": "G2940378871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-05",
+      "location": "sylhet",
+      "granuleId": "G2940378902-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-06",
+      "location": "sylhet",
+      "granuleId": "G2940377801-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-07",
+      "location": "sylhet",
+      "granuleId": "G2940378868-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-08",
+      "location": "sylhet",
+      "granuleId": "G2940377901-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-09",
+      "location": "sylhet",
+      "granuleId": "G2940377808-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-10",
+      "location": "sylhet",
+      "granuleId": "G2940378851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-11",
+      "location": "sylhet",
+      "granuleId": "G2940377987-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-12",
+      "location": "sylhet",
+      "granuleId": "G2940377821-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-13",
+      "location": "sylhet",
+      "granuleId": "G2940377813-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-14",
+      "location": "sylhet",
+      "granuleId": "G2940377787-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-15",
+      "location": "sylhet",
+      "granuleId": "G2940378890-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-16",
+      "location": "sylhet",
+      "granuleId": "G2940377840-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-17",
+      "location": "sylhet",
+      "granuleId": "G2940377824-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "sylhet",
+      "granuleId": "G2940378894-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-19",
+      "location": "sylhet",
+      "granuleId": "G2940377833-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-20",
+      "location": "sylhet",
+      "granuleId": "G2940377795-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-21",
+      "location": "sylhet",
+      "granuleId": "G2940378862-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-22",
+      "location": "sylhet",
+      "granuleId": "G2940377867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-23",
+      "location": "sylhet",
+      "granuleId": "G2940377892-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-24",
+      "location": "sylhet",
+      "granuleId": "G2940377841-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-25",
+      "location": "sylhet",
+      "granuleId": "G2940377909-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-26",
+      "location": "sylhet",
+      "granuleId": "G2940378884-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-27",
+      "location": "sylhet",
+      "granuleId": "G2940377810-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-28",
+      "location": "sylhet",
+      "granuleId": "G2940377869-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-29",
+      "location": "sylhet",
+      "granuleId": "G2940377816-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-01",
+      "location": "sylhet",
+      "granuleId": "G2940377851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-02",
+      "location": "sylhet",
+      "granuleId": "G2940377886-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-03",
+      "location": "sylhet",
+      "granuleId": "G2940377871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-04",
+      "location": "sylhet",
+      "granuleId": "G2940377823-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "sylhet",
+      "granuleId": "G2940377863-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-06",
+      "location": "sylhet",
+      "granuleId": "G2940377809-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-07",
+      "location": "sylhet",
+      "granuleId": "G2940378891-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-08",
+      "location": "sylhet",
+      "granuleId": "G2940378877-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-09",
+      "location": "sylhet",
+      "granuleId": "G2940378848-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-10",
+      "location": "sylhet",
+      "granuleId": "G2940377847-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-11",
+      "location": "sylhet",
+      "granuleId": "G2940377860-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-12",
+      "location": "sylhet",
+      "granuleId": "G2949627142-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-13",
+      "location": "sylhet",
+      "granuleId": "G2949630811-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-14",
+      "location": "sylhet",
+      "granuleId": "G2949626294-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-15",
+      "location": "sylhet",
+      "granuleId": "G2949626475-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-16",
+      "location": "sylhet",
+      "granuleId": "G2949626478-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-17",
+      "location": "sylhet",
+      "granuleId": "G2949627245-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-18",
+      "location": "sylhet",
+      "granuleId": "G2949627042-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-19",
+      "location": "sylhet",
+      "granuleId": "G2949628784-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-20",
+      "location": "sylhet",
+      "granuleId": "G2949635907-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "sylhet",
+      "granuleId": "G2949627114-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-22",
+      "location": "sylhet",
+      "granuleId": "G2949626517-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-23",
+      "location": "sylhet",
+      "granuleId": "G2949637582-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-24",
+      "location": "sylhet",
+      "granuleId": "G2949637449-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-25",
+      "location": "sylhet",
+      "granuleId": "G2949631095-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-26",
+      "location": "sylhet",
+      "granuleId": "G2949633429-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-27",
+      "location": "sylhet",
+      "granuleId": "G2949636240-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-28",
+      "location": "sylhet",
+      "granuleId": "G2949642208-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-29",
+      "location": "sylhet",
+      "granuleId": "G2949639870-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-30",
+      "location": "sylhet",
+      "granuleId": "G2949634450-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-31",
+      "location": "sylhet",
+      "granuleId": "G2949639552-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-01",
+      "location": "sylhet",
+      "granuleId": "G2949635986-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-02",
+      "location": "sylhet",
+      "granuleId": "G2949639239-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-03",
+      "location": "sylhet",
+      "granuleId": "G2949637439-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-04",
+      "location": "sylhet",
+      "granuleId": "G2949634700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-05",
+      "location": "sylhet",
+      "granuleId": "G2949642057-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "sylhet",
+      "granuleId": "G2949637575-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-07",
+      "location": "sylhet",
+      "granuleId": "G2949637614-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-08",
+      "location": "sylhet",
+      "granuleId": "G2949639277-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-09",
+      "location": "sylhet",
+      "granuleId": "G2949639690-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "rangpur",
+      "granuleId": "G2940380616-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-02",
+      "location": "rangpur",
+      "granuleId": "G2940379935-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-03",
+      "location": "rangpur",
+      "granuleId": "G2940379969-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-04",
+      "location": "rangpur",
+      "granuleId": "G2940379991-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-05",
+      "location": "rangpur",
+      "granuleId": "G2940379943-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-06",
+      "location": "rangpur",
+      "granuleId": "G2940380009-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-07",
+      "location": "rangpur",
+      "granuleId": "G2940379928-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-08",
+      "location": "rangpur",
+      "granuleId": "G2940379989-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-09",
+      "location": "rangpur",
+      "granuleId": "G2940380012-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-10",
+      "location": "rangpur",
+      "granuleId": "G2940379971-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-11",
+      "location": "rangpur",
+      "granuleId": "G2940379949-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-12",
+      "location": "rangpur",
+      "granuleId": "G2940377819-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-13",
+      "location": "rangpur",
+      "granuleId": "G2940380700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-14",
+      "location": "rangpur",
+      "granuleId": "G2940380693-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-15",
+      "location": "rangpur",
+      "granuleId": "G2940379913-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-16",
+      "location": "rangpur",
+      "granuleId": "G2940379936-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "rangpur",
+      "granuleId": "G2940379910-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-18",
+      "location": "rangpur",
+      "granuleId": "G2940378861-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-19",
+      "location": "rangpur",
+      "granuleId": "G2940380720-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-20",
+      "location": "rangpur",
+      "granuleId": "G2940377929-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-21",
+      "location": "rangpur",
+      "granuleId": "G2940378887-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-22",
+      "location": "rangpur",
+      "granuleId": "G2940379985-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-23",
+      "location": "rangpur",
+      "granuleId": "G2940379921-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-24",
+      "location": "rangpur",
+      "granuleId": "G2940378867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-25",
+      "location": "rangpur",
+      "granuleId": "G2940377830-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-26",
+      "location": "rangpur",
+      "granuleId": "G2940379995-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-27",
+      "location": "rangpur",
+      "granuleId": "G2940378920-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-28",
+      "location": "rangpur",
+      "granuleId": "G2940378885-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-29",
+      "location": "rangpur",
+      "granuleId": "G2940378873-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-30",
+      "location": "rangpur",
+      "granuleId": "G2940377852-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-31",
+      "location": "rangpur",
+      "granuleId": "G2940377984-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-01",
+      "location": "rangpur",
+      "granuleId": "G2940378898-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "rangpur",
+      "granuleId": "G2940377798-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-03",
+      "location": "rangpur",
+      "granuleId": "G2940377790-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-04",
+      "location": "rangpur",
+      "granuleId": "G2940378871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-05",
+      "location": "rangpur",
+      "granuleId": "G2940378902-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-06",
+      "location": "rangpur",
+      "granuleId": "G2940377801-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-07",
+      "location": "rangpur",
+      "granuleId": "G2940378868-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-08",
+      "location": "rangpur",
+      "granuleId": "G2940377901-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-09",
+      "location": "rangpur",
+      "granuleId": "G2940377808-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-10",
+      "location": "rangpur",
+      "granuleId": "G2940378851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-11",
+      "location": "rangpur",
+      "granuleId": "G2940377987-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-12",
+      "location": "rangpur",
+      "granuleId": "G2940377821-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-13",
+      "location": "rangpur",
+      "granuleId": "G2940377813-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-14",
+      "location": "rangpur",
+      "granuleId": "G2940377787-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-15",
+      "location": "rangpur",
+      "granuleId": "G2940378890-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-16",
+      "location": "rangpur",
+      "granuleId": "G2940377840-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-17",
+      "location": "rangpur",
+      "granuleId": "G2940377824-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "rangpur",
+      "granuleId": "G2940378894-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-19",
+      "location": "rangpur",
+      "granuleId": "G2940377833-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-20",
+      "location": "rangpur",
+      "granuleId": "G2940377795-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-21",
+      "location": "rangpur",
+      "granuleId": "G2940378862-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-22",
+      "location": "rangpur",
+      "granuleId": "G2940377867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-23",
+      "location": "rangpur",
+      "granuleId": "G2940377892-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-24",
+      "location": "rangpur",
+      "granuleId": "G2940377841-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-25",
+      "location": "rangpur",
+      "granuleId": "G2940377909-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-26",
+      "location": "rangpur",
+      "granuleId": "G2940378884-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-27",
+      "location": "rangpur",
+      "granuleId": "G2940377810-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-28",
+      "location": "rangpur",
+      "granuleId": "G2940377869-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-29",
+      "location": "rangpur",
+      "granuleId": "G2940377816-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-01",
+      "location": "rangpur",
+      "granuleId": "G2940377851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-02",
+      "location": "rangpur",
+      "granuleId": "G2940377886-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-03",
+      "location": "rangpur",
+      "granuleId": "G2940377871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-04",
+      "location": "rangpur",
+      "granuleId": "G2940377823-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "rangpur",
+      "granuleId": "G2940377863-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-06",
+      "location": "rangpur",
+      "granuleId": "G2940377809-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-07",
+      "location": "rangpur",
+      "granuleId": "G2940378891-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-08",
+      "location": "rangpur",
+      "granuleId": "G2940378877-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-09",
+      "location": "rangpur",
+      "granuleId": "G2940378848-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-10",
+      "location": "rangpur",
+      "granuleId": "G2940377847-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-11",
+      "location": "rangpur",
+      "granuleId": "G2940377860-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-12",
+      "location": "rangpur",
+      "granuleId": "G2949627142-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-13",
+      "location": "rangpur",
+      "granuleId": "G2949630811-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-14",
+      "location": "rangpur",
+      "granuleId": "G2949626294-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-15",
+      "location": "rangpur",
+      "granuleId": "G2949626475-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-16",
+      "location": "rangpur",
+      "granuleId": "G2949626478-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-17",
+      "location": "rangpur",
+      "granuleId": "G2949627245-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-18",
+      "location": "rangpur",
+      "granuleId": "G2949627042-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-19",
+      "location": "rangpur",
+      "granuleId": "G2949628784-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-20",
+      "location": "rangpur",
+      "granuleId": "G2949635907-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "rangpur",
+      "granuleId": "G2949627114-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-22",
+      "location": "rangpur",
+      "granuleId": "G2949626517-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-23",
+      "location": "rangpur",
+      "granuleId": "G2949637582-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-24",
+      "location": "rangpur",
+      "granuleId": "G2949637449-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-25",
+      "location": "rangpur",
+      "granuleId": "G2949631095-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-26",
+      "location": "rangpur",
+      "granuleId": "G2949633429-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-27",
+      "location": "rangpur",
+      "granuleId": "G2949636240-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-28",
+      "location": "rangpur",
+      "granuleId": "G2949642208-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-29",
+      "location": "rangpur",
+      "granuleId": "G2949639870-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-30",
+      "location": "rangpur",
+      "granuleId": "G2949634450-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-31",
+      "location": "rangpur",
+      "granuleId": "G2949639552-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-01",
+      "location": "rangpur",
+      "granuleId": "G2949635986-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-02",
+      "location": "rangpur",
+      "granuleId": "G2949639239-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-03",
+      "location": "rangpur",
+      "granuleId": "G2949637439-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-04",
+      "location": "rangpur",
+      "granuleId": "G2949634700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-05",
+      "location": "rangpur",
+      "granuleId": "G2949642057-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "rangpur",
+      "granuleId": "G2949637575-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-07",
+      "location": "rangpur",
+      "granuleId": "G2949637614-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-08",
+      "location": "rangpur",
+      "granuleId": "G2949639277-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-09",
+      "location": "rangpur",
+      "granuleId": "G2949639690-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "barisal",
+      "granuleId": "G2940380616-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-02",
+      "location": "barisal",
+      "granuleId": "G2940379935-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-03",
+      "location": "barisal",
+      "granuleId": "G2940379969-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-04",
+      "location": "barisal",
+      "granuleId": "G2940379991-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-05",
+      "location": "barisal",
+      "granuleId": "G2940379943-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-06",
+      "location": "barisal",
+      "granuleId": "G2940380009-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-07",
+      "location": "barisal",
+      "granuleId": "G2940379928-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-08",
+      "location": "barisal",
+      "granuleId": "G2940379989-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-09",
+      "location": "barisal",
+      "granuleId": "G2940380012-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-10",
+      "location": "barisal",
+      "granuleId": "G2940379971-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-11",
+      "location": "barisal",
+      "granuleId": "G2940379949-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-12",
+      "location": "barisal",
+      "granuleId": "G2940377819-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-13",
+      "location": "barisal",
+      "granuleId": "G2940380700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-14",
+      "location": "barisal",
+      "granuleId": "G2940380693-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-15",
+      "location": "barisal",
+      "granuleId": "G2940379913-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-16",
+      "location": "barisal",
+      "granuleId": "G2940379936-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "barisal",
+      "granuleId": "G2940379910-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-18",
+      "location": "barisal",
+      "granuleId": "G2940378861-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-19",
+      "location": "barisal",
+      "granuleId": "G2940380720-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-20",
+      "location": "barisal",
+      "granuleId": "G2940377929-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-21",
+      "location": "barisal",
+      "granuleId": "G2940378887-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-22",
+      "location": "barisal",
+      "granuleId": "G2940379985-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-23",
+      "location": "barisal",
+      "granuleId": "G2940379921-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-24",
+      "location": "barisal",
+      "granuleId": "G2940378867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-25",
+      "location": "barisal",
+      "granuleId": "G2940377830-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-26",
+      "location": "barisal",
+      "granuleId": "G2940379995-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-27",
+      "location": "barisal",
+      "granuleId": "G2940378920-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-28",
+      "location": "barisal",
+      "granuleId": "G2940378885-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-29",
+      "location": "barisal",
+      "granuleId": "G2940378873-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-30",
+      "location": "barisal",
+      "granuleId": "G2940377852-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-31",
+      "location": "barisal",
+      "granuleId": "G2940377984-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-01",
+      "location": "barisal",
+      "granuleId": "G2940378898-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "barisal",
+      "granuleId": "G2940377798-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-03",
+      "location": "barisal",
+      "granuleId": "G2940377790-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-04",
+      "location": "barisal",
+      "granuleId": "G2940378871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-05",
+      "location": "barisal",
+      "granuleId": "G2940378902-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-06",
+      "location": "barisal",
+      "granuleId": "G2940377801-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-07",
+      "location": "barisal",
+      "granuleId": "G2940378868-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-08",
+      "location": "barisal",
+      "granuleId": "G2940377901-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-09",
+      "location": "barisal",
+      "granuleId": "G2940377808-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-10",
+      "location": "barisal",
+      "granuleId": "G2940378851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-11",
+      "location": "barisal",
+      "granuleId": "G2940377987-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-12",
+      "location": "barisal",
+      "granuleId": "G2940377821-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-13",
+      "location": "barisal",
+      "granuleId": "G2940377813-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-14",
+      "location": "barisal",
+      "granuleId": "G2940377787-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-15",
+      "location": "barisal",
+      "granuleId": "G2940378890-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-16",
+      "location": "barisal",
+      "granuleId": "G2940377840-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-17",
+      "location": "barisal",
+      "granuleId": "G2940377824-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "barisal",
+      "granuleId": "G2940378894-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-19",
+      "location": "barisal",
+      "granuleId": "G2940377833-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-20",
+      "location": "barisal",
+      "granuleId": "G2940377795-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-21",
+      "location": "barisal",
+      "granuleId": "G2940378862-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-22",
+      "location": "barisal",
+      "granuleId": "G2940377867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-23",
+      "location": "barisal",
+      "granuleId": "G2940377892-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-24",
+      "location": "barisal",
+      "granuleId": "G2940377841-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-25",
+      "location": "barisal",
+      "granuleId": "G2940377909-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-26",
+      "location": "barisal",
+      "granuleId": "G2940378884-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-27",
+      "location": "barisal",
+      "granuleId": "G2940377810-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-28",
+      "location": "barisal",
+      "granuleId": "G2940377869-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-29",
+      "location": "barisal",
+      "granuleId": "G2940377816-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-01",
+      "location": "barisal",
+      "granuleId": "G2940377851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-02",
+      "location": "barisal",
+      "granuleId": "G2940377886-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-03",
+      "location": "barisal",
+      "granuleId": "G2940377871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-04",
+      "location": "barisal",
+      "granuleId": "G2940377823-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "barisal",
+      "granuleId": "G2940377863-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-06",
+      "location": "barisal",
+      "granuleId": "G2940377809-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-07",
+      "location": "barisal",
+      "granuleId": "G2940378891-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-08",
+      "location": "barisal",
+      "granuleId": "G2940378877-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-09",
+      "location": "barisal",
+      "granuleId": "G2940378848-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-10",
+      "location": "barisal",
+      "granuleId": "G2940377847-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-11",
+      "location": "barisal",
+      "granuleId": "G2940377860-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-12",
+      "location": "barisal",
+      "granuleId": "G2949627142-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-13",
+      "location": "barisal",
+      "granuleId": "G2949630811-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-14",
+      "location": "barisal",
+      "granuleId": "G2949626294-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-15",
+      "location": "barisal",
+      "granuleId": "G2949626475-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-16",
+      "location": "barisal",
+      "granuleId": "G2949626478-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-17",
+      "location": "barisal",
+      "granuleId": "G2949627245-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-18",
+      "location": "barisal",
+      "granuleId": "G2949627042-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-19",
+      "location": "barisal",
+      "granuleId": "G2949628784-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-20",
+      "location": "barisal",
+      "granuleId": "G2949635907-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "barisal",
+      "granuleId": "G2949627114-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-22",
+      "location": "barisal",
+      "granuleId": "G2949626517-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-23",
+      "location": "barisal",
+      "granuleId": "G2949637582-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-24",
+      "location": "barisal",
+      "granuleId": "G2949637449-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-25",
+      "location": "barisal",
+      "granuleId": "G2949631095-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-26",
+      "location": "barisal",
+      "granuleId": "G2949633429-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-27",
+      "location": "barisal",
+      "granuleId": "G2949636240-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-28",
+      "location": "barisal",
+      "granuleId": "G2949642208-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-29",
+      "location": "barisal",
+      "granuleId": "G2949639870-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-30",
+      "location": "barisal",
+      "granuleId": "G2949634450-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-31",
+      "location": "barisal",
+      "granuleId": "G2949639552-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-01",
+      "location": "barisal",
+      "granuleId": "G2949635986-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-02",
+      "location": "barisal",
+      "granuleId": "G2949639239-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-03",
+      "location": "barisal",
+      "granuleId": "G2949637439-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-04",
+      "location": "barisal",
+      "granuleId": "G2949634700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-05",
+      "location": "barisal",
+      "granuleId": "G2949642057-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "barisal",
+      "granuleId": "G2949637575-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-07",
+      "location": "barisal",
+      "granuleId": "G2949637614-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-08",
+      "location": "barisal",
+      "granuleId": "G2949639277-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-09",
+      "location": "barisal",
+      "granuleId": "G2949639690-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "mymensingh",
+      "granuleId": "G2940380616-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-02",
+      "location": "mymensingh",
+      "granuleId": "G2940379935-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-03",
+      "location": "mymensingh",
+      "granuleId": "G2940379969-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-04",
+      "location": "mymensingh",
+      "granuleId": "G2940379991-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-05",
+      "location": "mymensingh",
+      "granuleId": "G2940379943-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-06",
+      "location": "mymensingh",
+      "granuleId": "G2940380009-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-07",
+      "location": "mymensingh",
+      "granuleId": "G2940379928-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-08",
+      "location": "mymensingh",
+      "granuleId": "G2940379989-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-09",
+      "location": "mymensingh",
+      "granuleId": "G2940380012-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-10",
+      "location": "mymensingh",
+      "granuleId": "G2940379971-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-11",
+      "location": "mymensingh",
+      "granuleId": "G2940379949-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-12",
+      "location": "mymensingh",
+      "granuleId": "G2940377819-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-13",
+      "location": "mymensingh",
+      "granuleId": "G2940380700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-14",
+      "location": "mymensingh",
+      "granuleId": "G2940380693-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-15",
+      "location": "mymensingh",
+      "granuleId": "G2940379913-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-16",
+      "location": "mymensingh",
+      "granuleId": "G2940379936-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "mymensingh",
+      "granuleId": "G2940379910-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-18",
+      "location": "mymensingh",
+      "granuleId": "G2940378861-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-19",
+      "location": "mymensingh",
+      "granuleId": "G2940380720-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-20",
+      "location": "mymensingh",
+      "granuleId": "G2940377929-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-21",
+      "location": "mymensingh",
+      "granuleId": "G2940378887-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-22",
+      "location": "mymensingh",
+      "granuleId": "G2940379985-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-23",
+      "location": "mymensingh",
+      "granuleId": "G2940379921-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-24",
+      "location": "mymensingh",
+      "granuleId": "G2940378867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-25",
+      "location": "mymensingh",
+      "granuleId": "G2940377830-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-26",
+      "location": "mymensingh",
+      "granuleId": "G2940379995-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-27",
+      "location": "mymensingh",
+      "granuleId": "G2940378920-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-28",
+      "location": "mymensingh",
+      "granuleId": "G2940378885-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-29",
+      "location": "mymensingh",
+      "granuleId": "G2940378873-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-30",
+      "location": "mymensingh",
+      "granuleId": "G2940377852-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-01-31",
+      "location": "mymensingh",
+      "granuleId": "G2940377984-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-01",
+      "location": "mymensingh",
+      "granuleId": "G2940378898-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "mymensingh",
+      "granuleId": "G2940377798-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-03",
+      "location": "mymensingh",
+      "granuleId": "G2940377790-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-04",
+      "location": "mymensingh",
+      "granuleId": "G2940378871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-05",
+      "location": "mymensingh",
+      "granuleId": "G2940378902-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-06",
+      "location": "mymensingh",
+      "granuleId": "G2940377801-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-07",
+      "location": "mymensingh",
+      "granuleId": "G2940378868-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-08",
+      "location": "mymensingh",
+      "granuleId": "G2940377901-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-09",
+      "location": "mymensingh",
+      "granuleId": "G2940377808-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-10",
+      "location": "mymensingh",
+      "granuleId": "G2940378851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-11",
+      "location": "mymensingh",
+      "granuleId": "G2940377987-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-12",
+      "location": "mymensingh",
+      "granuleId": "G2940377821-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-13",
+      "location": "mymensingh",
+      "granuleId": "G2940377813-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-14",
+      "location": "mymensingh",
+      "granuleId": "G2940377787-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-15",
+      "location": "mymensingh",
+      "granuleId": "G2940378890-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-16",
+      "location": "mymensingh",
+      "granuleId": "G2940377840-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-17",
+      "location": "mymensingh",
+      "granuleId": "G2940377824-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "mymensingh",
+      "granuleId": "G2940378894-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-19",
+      "location": "mymensingh",
+      "granuleId": "G2940377833-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-20",
+      "location": "mymensingh",
+      "granuleId": "G2940377795-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-21",
+      "location": "mymensingh",
+      "granuleId": "G2940378862-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-22",
+      "location": "mymensingh",
+      "granuleId": "G2940377867-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-23",
+      "location": "mymensingh",
+      "granuleId": "G2940377892-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-24",
+      "location": "mymensingh",
+      "granuleId": "G2940377841-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-25",
+      "location": "mymensingh",
+      "granuleId": "G2940377909-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-26",
+      "location": "mymensingh",
+      "granuleId": "G2940378884-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-27",
+      "location": "mymensingh",
+      "granuleId": "G2940377810-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-28",
+      "location": "mymensingh",
+      "granuleId": "G2940377869-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-02-29",
+      "location": "mymensingh",
+      "granuleId": "G2940377816-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-01",
+      "location": "mymensingh",
+      "granuleId": "G2940377851-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-02",
+      "location": "mymensingh",
+      "granuleId": "G2940377886-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-03",
+      "location": "mymensingh",
+      "granuleId": "G2940377871-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-04",
+      "location": "mymensingh",
+      "granuleId": "G2940377823-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "mymensingh",
+      "granuleId": "G2940377863-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-06",
+      "location": "mymensingh",
+      "granuleId": "G2940377809-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-07",
+      "location": "mymensingh",
+      "granuleId": "G2940378891-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-08",
+      "location": "mymensingh",
+      "granuleId": "G2940378877-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-09",
+      "location": "mymensingh",
+      "granuleId": "G2940378848-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-10",
+      "location": "mymensingh",
+      "granuleId": "G2940377847-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-11",
+      "location": "mymensingh",
+      "granuleId": "G2940377860-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-12",
+      "location": "mymensingh",
+      "granuleId": "G2949627142-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-13",
+      "location": "mymensingh",
+      "granuleId": "G2949630811-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-14",
+      "location": "mymensingh",
+      "granuleId": "G2949626294-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-15",
+      "location": "mymensingh",
+      "granuleId": "G2949626475-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-16",
+      "location": "mymensingh",
+      "granuleId": "G2949626478-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-17",
+      "location": "mymensingh",
+      "granuleId": "G2949627245-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-18",
+      "location": "mymensingh",
+      "granuleId": "G2949627042-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-19",
+      "location": "mymensingh",
+      "granuleId": "G2949628784-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-20",
+      "location": "mymensingh",
+      "granuleId": "G2949635907-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "mymensingh",
+      "granuleId": "G2949627114-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-22",
+      "location": "mymensingh",
+      "granuleId": "G2949626517-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-23",
+      "location": "mymensingh",
+      "granuleId": "G2949637582-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-24",
+      "location": "mymensingh",
+      "granuleId": "G2949637449-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-25",
+      "location": "mymensingh",
+      "granuleId": "G2949631095-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-26",
+      "location": "mymensingh",
+      "granuleId": "G2949633429-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-27",
+      "location": "mymensingh",
+      "granuleId": "G2949636240-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-28",
+      "location": "mymensingh",
+      "granuleId": "G2949642208-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-29",
+      "location": "mymensingh",
+      "granuleId": "G2949639870-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-30",
+      "location": "mymensingh",
+      "granuleId": "G2949634450-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-03-31",
+      "location": "mymensingh",
+      "granuleId": "G2949639552-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-01",
+      "location": "mymensingh",
+      "granuleId": "G2949635986-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-02",
+      "location": "mymensingh",
+      "granuleId": "G2949639239-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-03",
+      "location": "mymensingh",
+      "granuleId": "G2949637439-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-04",
+      "location": "mymensingh",
+      "granuleId": "G2949634700-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-05",
+      "location": "mymensingh",
+      "granuleId": "G2949642057-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "mymensingh",
+      "granuleId": "G2949637575-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-07",
+      "location": "mymensingh",
+      "granuleId": "G2949637614-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-08",
+      "location": "mymensingh",
+      "granuleId": "G2949639277-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    },
+    {
+      "date": "2024-04-09",
+      "location": "mymensingh",
+      "granuleId": "G2949639690-NSIDC_CPRD",
+      "product": "SPL3SMP_E",
+      "dataType": "REAL"
+    }
+  ],
+  "modis": [
+    {
+      "date": "2024-01-01",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.4845,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.243,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.3724,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.4415,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.3378,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.3192,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.2255,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-22",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.2949,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-08",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.7461,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-24",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.5415,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-09",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.646,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-25",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.5176,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-11",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.7567,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-27",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.6694,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-12",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.4613,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-28",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.5727,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-13",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.7232,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-29",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.5549,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-15",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.6707,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-31",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.3781,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-11-16",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.2353,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-02",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.3186,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-18",
+      "location": "dhaka_central",
+      "latitude": 23.8103,
+      "longitude": 90.4125,
+      "ndvi": 0.2757,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.2292,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.4409,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.4628,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.2899,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.4685,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.3662,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.1397,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-22",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.2368,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-08",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.3759,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-24",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.5307,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-09",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.3848,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-25",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.6824,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-11",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.5607,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-27",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.5688,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-12",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.5123,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-28",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.7333,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-13",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.3553,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-29",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.6155,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-15",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.5138,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-31",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.7133,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-11-16",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.3924,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-02",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.4878,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-18",
+      "location": "rajshahi",
+      "latitude": 24.3745,
+      "longitude": 88.6042,
+      "ndvi": 0.3094,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.3653,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.3982,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.2302,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.3291,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.195,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.438,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.2309,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-22",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.3536,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-08",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.3439,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-24",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.7476,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-09",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.7883,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-25",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.6063,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-11",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.5304,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-27",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.7447,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-12",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.6079,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-28",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.5084,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-13",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.6287,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-29",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.6796,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-15",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.5037,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-31",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.3279,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-11-16",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.4138,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-02",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.4677,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-18",
+      "location": "chittagong",
+      "latitude": 22.3569,
+      "longitude": 91.7832,
+      "ndvi": 0.4289,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.3183,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.4242,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.3597,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.2613,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.4066,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.2659,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.2676,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-22",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.1303,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-08",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.7524,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-24",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.785,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-09",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.6239,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-25",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.4462,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-11",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.6654,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-27",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.5312,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-12",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.5599,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-28",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.7892,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-13",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.4775,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-29",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.7323,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-15",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.6521,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-31",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.3476,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-11-16",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.3187,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-02",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.4394,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-18",
+      "location": "khulna",
+      "latitude": 22.8456,
+      "longitude": 89.5403,
+      "ndvi": 0.2535,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.2667,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.3585,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.2444,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.3824,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.2788,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.3191,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.264,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-22",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.2524,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-08",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.608,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-24",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.4663,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-09",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.52,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-25",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.7027,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-11",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.5227,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-27",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.7477,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-12",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.6892,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-28",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.6101,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-13",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.7904,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-29",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.7207,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-15",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.6161,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-31",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.6655,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-11-16",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.4055,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-02",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.4263,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-18",
+      "location": "sylhet",
+      "latitude": 24.8949,
+      "longitude": 91.8687,
+      "ndvi": 0.4373,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.2741,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.205,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.4348,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.2444,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.2084,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.4412,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.2065,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-22",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.2052,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-08",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.622,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-24",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.7765,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-09",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.7315,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-25",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.5325,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-11",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.5279,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-27",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.6441,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-12",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.5221,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-28",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.7346,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-13",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.7651,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-29",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.3637,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-15",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.6238,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-31",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.5997,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-11-16",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.2248,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-02",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.386,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-18",
+      "location": "rangpur",
+      "latitude": 25.7439,
+      "longitude": 89.2752,
+      "ndvi": 0.2275,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.2281,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.1353,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.1574,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.3165,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.2635,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.2446,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.1372,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-22",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.3581,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-08",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.6201,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-24",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.6284,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-09",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.5803,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-25",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.6908,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-11",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.7159,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-27",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.5908,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-12",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.66,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-28",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.414,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-13",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.5712,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-29",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.6145,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-15",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.6371,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-31",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.6517,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-11-16",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.2719,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-02",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.486,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-18",
+      "location": "barisal",
+      "latitude": 22.701,
+      "longitude": 90.3535,
+      "ndvi": 0.2639,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-01",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.2843,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-01-17",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.266,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-02",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.3376,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-02-18",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.1466,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-05",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.2641,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-03-21",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.18,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-06",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.4452,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-04-22",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.488,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-08",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.5998,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-05-24",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.5545,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-09",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.6029,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-06-25",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.3045,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-11",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.5101,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-07-27",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.7019,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-12",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.665,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-08-28",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.5333,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-13",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.5524,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-09-29",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.6277,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-15",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.7763,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-10-31",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.6641,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-11-16",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.1596,
+      "quality": "cloudy",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-02",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.4285,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    },
+    {
+      "date": "2024-12-18",
+      "location": "mymensingh",
+      "latitude": 24.7471,
+      "longitude": 90.4203,
+      "ndvi": 0.228,
+      "quality": "good",
+      "source": "MODIS_SYNTHETIC"
+    }
+  ]
+}

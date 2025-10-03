@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2025-06-26",
+    "latitude": 23.81,
+    "longitude": 90.41,
+    "ndvi": 0.3513,
+    "location": "dhaka_central",
+    "source": "MODIS MOD13Q1.061"
+  },
+  {
+    "date": "2025-07-12",
+    "latitude": 23.81,
+    "longitude": 90.41,
+    "ndvi": 0.326,
+    "location": "dhaka_central",
+    "source": "MODIS MOD13Q1.061"
+  },
+  {
+    "date": "2025-07-28",
+    "latitude": 23.81,
+    "longitude": 90.41,
+    "ndvi": 0.1197,
+    "location": "dhaka_central",
+    "source": "MODIS MOD13Q1.061"
+  },
+  {
+    "date": "2025-08-13",
+    "latitude": 23.81,
+    "longitude": 90.41,
+    "ndvi": 0.2016,
+    "location": "dhaka_central",
+    "source": "MODIS MOD13Q1.061"
+  },
+  {
+    "date": "2025-08-29",
+    "latitude": 23.81,
+    "longitude": 90.41,
+    "ndvi": 0.5638,
+    "location": "dhaka_central",
+    "source": "MODIS MOD13Q1.061"
+  }
+]

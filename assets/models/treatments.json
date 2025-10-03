@@ -1,0 +1,188 @@
+{
+  "Pepper__bell___Bacterial_spot": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Pepper__bell___healthy": {
+    "severity": "none",
+    "treatment": "No treatment needed. Continue regular care and monitoring.",
+    "steps": [
+      "Maintain proper watering schedule",
+      "Ensure adequate sunlight exposure",
+      "Monitor for any changes in leaf color or texture"
+    ],
+    "prevention": "Keep up good agricultural practices"
+  },
+  "PlantVillage": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Potato___Early_blight": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Potato___Late_blight": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Potato___healthy": {
+    "severity": "none",
+    "treatment": "No treatment needed. Continue regular care and monitoring.",
+    "steps": [
+      "Maintain proper watering schedule",
+      "Ensure adequate sunlight exposure",
+      "Monitor for any changes in leaf color or texture"
+    ],
+    "prevention": "Keep up good agricultural practices"
+  },
+  "Tomato_Bacterial_spot": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Tomato_Early_blight": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Tomato_Late_blight": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Tomato_Leaf_Mold": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Tomato_Septoria_leaf_spot": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Tomato_Spider_mites_Two_spotted_spider_mite": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Tomato__Target_Spot": {
+    "severity": "medium",
+    "treatment": "Fungal infection detected. Apply fungicide treatment.",
+    "steps": [
+      "Remove and destroy affected leaves",
+      "Apply copper-based fungicide spray",
+      "Reduce leaf wetness by improving air circulation",
+      "Avoid overhead watering",
+      "Repeat treatment every 7-10 days"
+    ],
+    "prevention": "Ensure proper spacing between plants for air circulation"
+  },
+  "Tomato__Tomato_YellowLeaf__Curl_Virus": {
+    "severity": "high",
+    "treatment": "Viral infection detected. No cure available - focus on prevention.",
+    "steps": [
+      "Remove and destroy infected plants",
+      "Control insect vectors (aphids, whiteflies)",
+      "Use reflective mulches to deter insects",
+      "Plant virus-resistant varieties in future",
+      "Maintain strict sanitation practices"
+    ],
+    "prevention": "Control insect populations and use certified virus-free seeds"
+  },
+  "Tomato__Tomato_mosaic_virus": {
+    "severity": "high",
+    "treatment": "Viral infection detected. No cure available - focus on prevention.",
+    "steps": [
+      "Remove and destroy infected plants",
+      "Control insect vectors (aphids, whiteflies)",
+      "Use reflective mulches to deter insects",
+      "Plant virus-resistant varieties in future",
+      "Maintain strict sanitation practices"
+    ],
+    "prevention": "Control insect populations and use certified virus-free seeds"
+  },
+  "Tomato_healthy": {
+    "severity": "none",
+    "treatment": "No treatment needed. Continue regular care and monitoring.",
+    "steps": [
+      "Maintain proper watering schedule",
+      "Ensure adequate sunlight exposure",
+      "Monitor for any changes in leaf color or texture"
+    ],
+    "prevention": "Keep up good agricultural practices"
+  }
+}

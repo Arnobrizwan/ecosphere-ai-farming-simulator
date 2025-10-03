@@ -1,0 +1,90 @@
+[
+  {
+    "feature": "solar_radiation",
+    "importance": 0.2783612754210048
+  },
+  {
+    "feature": "radiation_efficiency",
+    "importance": 0.26725015417768555
+  },
+  {
+    "feature": "crop_suitability",
+    "importance": 0.24518301863449
+  },
+  {
+    "feature": "humidity_stress",
+    "importance": 0.05550364269800851
+  },
+  {
+    "feature": "wind_speed",
+    "importance": 0.02056114577239508
+  },
+  {
+    "feature": "precipitation",
+    "importance": 0.016569534301444287
+  },
+  {
+    "feature": "temp_range",
+    "importance": 0.015430172018770928
+  },
+  {
+    "feature": "ndvi",
+    "importance": 0.012411499625601985
+  },
+  {
+    "feature": "cold_stress",
+    "importance": 0.012200045916341369
+  },
+  {
+    "feature": "vpd",
+    "importance": 0.01194831022122009
+  },
+  {
+    "feature": "humidity",
+    "importance": 0.010190458393078495
+  },
+  {
+    "feature": "drought_index",
+    "importance": 0.00996400242617269
+  },
+  {
+    "feature": "soilMoisture",
+    "importance": 0.009075318104944934
+  },
+  {
+    "feature": "growing_degree_days",
+    "importance": 0.00846846610633007
+  },
+  {
+    "feature": "temp_min",
+    "importance": 0.008127056310662803
+  },
+  {
+    "feature": "temp_max",
+    "importance": 0.007113245488632165
+  },
+  {
+    "feature": "crop_vigor",
+    "importance": 0.0050097715186897115
+  },
+  {
+    "feature": "water_stress",
+    "importance": 0.00451209255466811
+  },
+  {
+    "feature": "temp_avg",
+    "importance": 0.0021206101901189043
+  },
+  {
+    "feature": "flood_risk",
+    "importance": 1.783758969608598e-07
+  },
+  {
+    "feature": "vegetation_stress",
+    "importance": 1.7424581983892786e-09
+  },
+  {
+    "feature": "heat_stress",
+    "importance": 1.3843673953761918e-12
+  }
+]

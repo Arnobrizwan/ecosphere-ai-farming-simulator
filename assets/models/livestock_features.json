@@ -1,0 +1,39 @@
+{
+  "biomass_features": [
+    "ndvi",
+    "evi",
+    "soilMoisture",
+    "temp",
+    "tempMax",
+    "tempMin",
+    "rainfall",
+    "humidity",
+    "windSpeed",
+    "avgTemp",
+    "totalRainfall",
+    "avgHumidity"
+  ],
+  "feed_features": [
+    "temp",
+    "tempMax",
+    "tempMin",
+    "rainfall",
+    "humidity",
+    "windSpeed",
+    "cattleCount",
+    "sheepCount",
+    "totalAnimals",
+    "pastureAreaHa"
+  ],
+  "grazing_features": [
+    "ndvi",
+    "biomass",
+    "soilMoisture",
+    "temp",
+    "rainfall",
+    "cattleCount",
+    "sheepCount",
+    "pastureAreaHa",
+    "stockingRate"
+  ]
+}
