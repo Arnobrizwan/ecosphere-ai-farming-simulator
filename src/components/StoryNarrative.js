@@ -16,7 +16,7 @@ const { width, height } = Dimensions.get('window');
  * StoryNarrative Component
  * Displays story segments with click-through progression
  */
-export default function StoryNarrative({ visible, onClose, storySegments, characterName, characterAvatar }) {
+export default function StoryNarrative({ visible, onClose, storySegments, characterName, characterAvatar, onBack }) {
   const [currentSegment, setCurrentSegment] = useState(0);
   const [fadeAnim] = useState(new Animated.Value(1));
 
@@ -81,15 +81,30 @@ export default function StoryNarrative({ visible, onClose, storySegments, charac
           {/* Navigation */}
           <View style={styles.navigationContainer}>
             <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
-              <Text style={styles.skipButtonText}>Skip</Text>
+              <Text style={styles.skipButtonText}>Skip Story</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
               <Text style={styles.nextButtonText}>
-                {isLastSegment ? 'Start Mission' : 'Continue →'}
+                {isLastSegment ? '🚀 Start Mission' : 'Continue →'}
               </Text>
             </TouchableOpacity>
           </View>
+
+          {/* Emergency Back Button */}
+          <TouchableOpacity 
+            style={styles.emergencyBackButton} 
+            onPress={() => {
+              console.log('[StoryNarrative] Emergency back pressed');
+              if (onBack) {
+                onBack();
+              } else {
+                onClose();
+              }
+            }}
+          >
+            <Text style={styles.emergencyBackText}>← Back to Scenarios</Text>
+          </TouchableOpacity>
 
           {/* Page Indicator */}
           <Text style={styles.pageIndicator}>
@@ -188,9 +203,23 @@ const styles = StyleSheet.create({
   },
   pageIndicator: {
     textAlign: 'center',
+    color: 'rgba(255, 255, 255, 0.6)',
     fontSize: 14,
-    color: '#6B7280',
     marginTop: 16,
+  },
+  emergencyBackButton: {
+    alignSelf: 'center',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    marginTop: 12,
+    borderRadius: 8,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.2)',
+  },
+  emergencyBackText: {
+    color: 'rgba(255, 255, 255, 0.8)',
+    fontSize: 14,
     fontWeight: '500',
   },
 });

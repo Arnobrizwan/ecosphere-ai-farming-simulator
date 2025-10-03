@@ -102,6 +102,7 @@ export default function SandboxModeScreen({ navigation }) {
   };
 
   const handleStoryComplete = async () => {
+    console.log('[Sandbox] Story completed, starting NASA data fetch...');
     setShowStoryNarrative(false);
     setLoadingNasaData(true);
 
@@ -109,6 +110,8 @@ export default function SandboxModeScreen({ navigation }) {
       // Fetch real NASA data for the scenario
       const location = selectedScenario.location || { lat: 23.81, lon: 90.41 };
       const today = new Date().toISOString().split('T')[0];
+      
+      console.log('[Sandbox] Location:', location, 'Date:', today);
 
       const nasaDataPromises = [];
 
@@ -283,6 +286,15 @@ export default function SandboxModeScreen({ navigation }) {
         [{ text: 'Continue', onPress: () => setGameplayActive(true) }]
       );
     }
+  };
+
+  const handleBackToScenarios = () => {
+    console.log('[Sandbox] Back to scenarios pressed');
+    setShowStoryNarrative(false);
+    setSelectedScenario(null);
+    setGameplayActive(false);
+    setNasaData(null);
+    setLoadingNasaData(false);
   };
 
   const getDifficultyColor = (difficulty) => {
@@ -573,6 +585,7 @@ export default function SandboxModeScreen({ navigation }) {
         <StoryNarrative
           visible={showStoryNarrative}
           onClose={handleStoryComplete}
+          onBack={handleBackToScenarios}
           storySegments={storySegments}
           characterName={CHARACTERS[selectedScenario.character]?.name || 'Narrator'}
           characterAvatar={CHARACTERS[selectedScenario.character]?.avatar || '👤'}
