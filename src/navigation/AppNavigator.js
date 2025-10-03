@@ -65,6 +65,7 @@ import ChallengesScreen from '../screens/game/ChallengesScreen';
 import CampaignMissionScreen from '../screens/game/CampaignMissionScreen';
 import UnifiedGameDashboard from '../screens/game/UnifiedGameDashboard';
 import LivestockDashboard from '../screens/livestock/LivestockDashboard';
+import MissionDashboardScreen from '../screens/game/MissionDashboardScreen';
 
 const Stack = createStackNavigator();
 
@@ -134,6 +135,7 @@ const AUTHENTICATED_SCREENS = [
   { name: 'CampaignMission', component: CampaignMissionScreen },
   { name: 'UnifiedDashboard', component: UnifiedGameDashboard },
   { name: 'LivestockDashboard', component: LivestockDashboard },
+  { name: 'MissionDashboard', component: MissionDashboardScreen },
 ];
 
 const AUTHENTICATED_GAME_SCREENS = AUTHENTICATED_SCREENS.map(

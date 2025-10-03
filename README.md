@@ -27,16 +27,39 @@
 
 ---
 
+## 🚀 Project Status
+
+### **Current Version: 1.0.0** ✅
+- ✅ **Core App**: Fully functional with Firebase backend
+- ✅ **NASA Integration**: All 5 satellite APIs working
+- ✅ **ML Pipeline**: RandomForest model trained and integrated
+- ✅ **Sandbox Mode**: Story-driven missions with NASA data
+- ✅ **Mission Dashboard**: Dedicated screen for satellite data
+- ✅ **Navigation**: Fixed all routing and overlay issues
+- ✅ **Android**: Tested and working on emulator
+- ✅ **Documentation**: Complete setup and usage guides
+
+### **Recent Updates (Oct 2025)**
+- 🛰️ **Landsat Integration**: Added vegetation health monitoring
+- 🤖 **ML Predictions**: Soil moisture forecasting with trend analysis
+- 📱 **UI Improvements**: Fixed overlapping elements and navigation
+- 🔧 **Bug Fixes**: Resolved syntax errors and story navigation
+- 📚 **Documentation**: Updated README and technical docs
+
+---
+
 ## 🌟 Overview
 
-**EcoSphere AI Farming Simulator** is an educational mobile application that transforms farming education through:
+**EcoSphere AI Farming Simulator** is a comprehensive educational mobile application that revolutionizes farming education through cutting-edge technology:
 
-- 🛰️ **Real NASA Satellite Data** - SMAP, MODIS, Landsat, IMERG, POWER APIs
+- 🛰️ **Real NASA Satellite Data** - SMAP, MODIS, Landsat, IMERG, POWER APIs with ML integration
 - 🤖 **AI-Powered Insights** - Google Gemini AI tutor & TensorFlow disease detection
-- 🎮 **Interactive Gameplay** - 3 game modes (Campaign, Sandbox, Challenges)
+- 🎮 **Interactive Gameplay** - 3 game modes (Campaign, Sandbox, Challenges) with story-driven missions
 - 📊 **Real-time Analytics** - IoT monitoring, weather alerts, impact measurement
 - 👥 **Community Platform** - Knowledge sharing, expert connections, collaboration
 - 🏆 **Gamified Learning** - Missions, achievements, leaderboards, rewards
+- 🔬 **Machine Learning** - Soil moisture prediction using RandomForest models
+- 📱 **Cross-Platform** - React Native with Expo for iOS, Android, and Web
 
 **Perfect for:**
 - 🎓 Students learning sustainable agriculture
@@ -64,13 +87,14 @@
 - Chapter 3: Crop Health (Missions 8-11) - MODIS, Landsat
 - Chapter 4: Harvest & Market (Missions 12-16)
 
-#### 2. Sandbox Mode
-- **Free experimentation** with farming parameters
-- **5 preset scenarios** (drought, flood, perfect, etc.)
-- Adjustable rainfall, temperature, soil fertility, budget
-- **Real-time simulation** with adjustable speed (1x/2x/4x)
-- Save/load custom scenarios
-- **90-day timeline** with live results
+#### 2. Sandbox Mode ⭐ ENHANCED
+- **Story-driven scenarios** with character narratives
+- **12 real-world scenarios** (drought, flood, monsoon, etc.)
+- **Live NASA satellite data** integration in missions
+- **Skip story option** for quick testing
+- **Mission Dashboard** - Dedicated screen with NASA data cards
+- **ML predictions** - Soil moisture forecasting
+- **Landsat vegetation health** - Real-time NDVI trends
 
 #### 3. Challenges Mode ⭐ NEW
 - **Weekly/Daily/Tournament** competitions
@@ -92,11 +116,19 @@
 | **POWER** | Climate Data | 0.5° | Daily (1981-present) |
 
 **Data Usage:**
-- 💧 Irrigation scheduling (SMAP)
+- 💧 Irrigation scheduling (SMAP soil moisture)
 - 🌱 Crop health monitoring (MODIS NDVI)
-- 🌧️ Rainfall forecasting (IMERG)
-- 🌡️ Temperature & humidity (POWER)
-- 🗺️ Land classification (Landsat)
+- 🌧️ Rainfall forecasting (IMERG precipitation)
+- 🌡️ Temperature & humidity (POWER climate)
+- 🗺️ Land classification (Landsat multispectral)
+- 🤖 ML soil moisture prediction (RandomForest model)
+
+**Processing Pipeline:**
+```bash
+npm run nasa:download   # Download all satellite data
+npm run nasa:preprocess # Merge datasets into features
+npm run nasa:train      # Train ML models
+```
 
 **Caching:** 24-hour local cache for offline access
 
@@ -205,28 +237,36 @@
 
 ### Frontend
 - **React Native** 0.81.4 - Cross-platform mobile framework
-- **Expo** 54.0 - Development platform
-- **React Navigation** 6.1.9 - Screen routing
-- **React Context** - State management
-- **AsyncStorage** - Local data persistence
-
-### Backend
-- **Firebase Authentication** - User management
+- **Expo** 54.0 - Development platform and toolchain
+- **React Navigation** 6.x - Stack and tab navigation
+- **React Native Gesture Handler** - Touch interactions
+- **React Native Reanimated** - Smooth animations
+- **React Native Maps** - Interactive mapping with geofencing
+- **React Native Vector Icons** - Comprehensive icon library
+- **React Native Safe Area Context** - Safe area handling
+- **React Native Modal** - Custom modal components
 - **Firebase Firestore** - NoSQL database (82 collections)
 - **Firebase Storage** - File uploads
 - **Cloud Functions** - Serverless backend (Node.js)
 - **Realtime Database** - Live IoT updates
 
 ### APIs & Services
+- **NASA SMAP API** - Soil moisture data (CMR)
+- **NASA MODIS API** - NDVI vegetation indices (AppEEARS)
+- **NASA Landsat API** - Land cover classification (CMR)
+- **NASA IMERG API** - Precipitation data (GES DISC)
 - **NASA POWER API** - Agro-climate data
-- **NASA Earthdata API** - Satellite imagery (SMAP, MODIS)
 - **Google Gemini AI** - Conversational AI (gemini-2.5-flash)
-- **TensorFlow.js** 4.22.0 - On-device ML inference
+- **Google Translate API** - Multi-language support
+- **OpenWeather API** - Weather forecasting
 
-### ML/AI
-- **TensorFlow Lite** - Disease detection model
-- **MobileNetV2** - CNN architecture (87.34% accuracy)
-- **PlantDisease Dataset** - 87,000 training images, 38 classes
+### ML/AI & Data Processing
+- **Python 3.8+** - NASA data processing pipeline
+- **scikit-learn** - RandomForest soil moisture prediction
+- **pandas/numpy** - Data manipulation and analysis
+- **xarray** - NetCDF/HDF5 satellite data processing
+- **TensorFlow.js** 4.22.0 - On-device ML inference
+- **joblib** - Model serialization and loading
 
 ### Development Tools
 - **Expo CLI** - Development workflow
