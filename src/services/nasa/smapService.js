@@ -6,6 +6,8 @@ import { getDailyPoint } from '../power.service';
 
 const NASA_EARTHDATA_TOKEN =
   process.env.EXPO_PUBLIC_NASA_EARTHDATA_TOKEN || process.env.NASA_EARTHDATA_TOKEN;
+const NASA_EARTHDATA_API_KEY =
+  process.env.EXPO_PUBLIC_NASA_EARTHDATA_API_KEY || process.env.NASA_EARTHDATA_API_KEY;
 const CMR_API = 'https://cmr.earthdata.nasa.gov/search/granules.json';
 
 if (!NASA_EARTHDATA_TOKEN) {
@@ -19,15 +21,94 @@ if (!NASA_EARTHDATA_TOKEN) {
  * @param {string} date - YYYY-MM-DD
  */
 export const fetchSMAPSoilMoisture = async (latitude, longitude, date) => {
-  // Use date 7 days ago to avoid latency issues
+  // Try multiple historical dates for better success rate
+  const daysToTry = [14, 21, 30];  // 14, 21, and 30 days ago
+  
+  for (const daysAgo of daysToTry) {
+    const queryDate = new Date(date);
+    queryDate.setDate(queryDate.getDate() - daysAgo);
+    const historicalDate = queryDate.toISOString().split('T')[0];
+    
+    console.log(`[SMAP] Trying ${daysAgo} days ago: ${historicalDate}`);
+    
+    try {
+      const bbox = `${longitude - 0.1},${latitude - 0.1},${longitude + 0.1},${latitude + 0.1}`;
+
+      // Prepare headers with both token and API key
+      const headers = {};
+      if (NASA_EARTHDATA_TOKEN) {
+        headers.Authorization = `Bearer ${NASA_EARTHDATA_TOKEN}`;
+      }
+      if (NASA_EARTHDATA_API_KEY) {
+        headers['X-API-Key'] = NASA_EARTHDATA_API_KEY;
+      }
+
+      const response = await withRetry(() =>
+        axios.get(CMR_API, {
+          params: {
+            short_name: 'SPL3SMP_E',
+            version: '005',
+            bounding_box: bbox,
+            temporal: `${historicalDate}T00:00:00Z,${historicalDate}T23:59:59Z`,
+            page_size: 10,  // Increased to get more options
+          },
+          headers,
+          timeout: 15000,
+        })
+      , {
+        retries: 2,
+        onRetry: ({ attempt, error }) =>
+          console.warn(`[SMAP] retry ${attempt} for ${historicalDate}: ${error?.message || error}`),
+      });
+
+      const entries = response?.data?.feed?.entry || [];
+      console.log(`[SMAP] Found ${entries.length} granules for ${historicalDate}`);
+      
+      if (entries.length > 0) {
+        const granule = entries[0];
+        const dataUrl = granule.links?.find((link) => link.rel?.includes('data'))?.href;
+
+        return {
+          date,
+          location: { latitude, longitude },
+          soilMoisture: parseFloat(granule.summary || '0') || 0.30,
+          unit: 'cm³/cm³',
+          source: `NASA SMAP SPL3SMP_E (${daysAgo}d old)`,
+          granuleId: granule.id,
+          dataUrl,
+          daysOld: daysAgo,
+        };
+      }
+    } catch (error) {
+      console.warn(`[SMAP] Failed for ${historicalDate}: ${error?.message}`);
+      // Continue to next date
+    }
+  }
+  
+  // All dates failed, fall back to POWER
+  console.warn('[SMAP] No granules found in any historical date, falling back to NASA POWER...');
+  return await fetchSoilMoistureFromPOWER(latitude, longitude, date);
+};
+
+const fetchSMAPSoilMoistureOld = async (latitude, longitude, date) => {
+  // Use date 14 days ago to avoid latency issues (increased from 7)
   const queryDate = new Date(date);
-  queryDate.setDate(queryDate.getDate() - 7);
+  queryDate.setDate(queryDate.getDate() - 14);
   const historicalDate = queryDate.toISOString().split('T')[0];
   
   console.log(`[SMAP] Fetching for ${date}, using historical ${historicalDate}`);
   
   try {
     const bbox = `${longitude - 0.1},${latitude - 0.1},${longitude + 0.1},${latitude + 0.1}`;
+
+    // Prepare headers with both token and API key
+    const headers = {};
+    if (NASA_EARTHDATA_TOKEN) {
+      headers.Authorization = `Bearer ${NASA_EARTHDATA_TOKEN}`;
+    }
+    if (NASA_EARTHDATA_API_KEY) {
+      headers['X-API-Key'] = NASA_EARTHDATA_API_KEY;
+    }
 
     const response = await withRetry(() =>
       axios.get(CMR_API, {
@@ -36,12 +117,10 @@ export const fetchSMAPSoilMoisture = async (latitude, longitude, date) => {
           version: '005',
           bounding_box: bbox,
           temporal: `${historicalDate}T00:00:00Z,${historicalDate}T23:59:59Z`,
-          page_size: 1,
+          page_size: 10,
         },
-        headers: {
-          Authorization: `Bearer ${NASA_EARTHDATA_TOKEN}`,
-        },
-        timeout: 10000,
+        headers,
+        timeout: 15000,
       })
     , {
       retries: 2,

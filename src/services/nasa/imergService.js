@@ -15,6 +15,8 @@ import { getDailyPoint } from '../power.service';
 
 const NASA_EARTHDATA_TOKEN =
   process.env.EXPO_PUBLIC_NASA_EARTHDATA_TOKEN || process.env.NASA_EARTHDATA_TOKEN;
+const NASA_EARTHDATA_API_KEY =
+  process.env.EXPO_PUBLIC_NASA_EARTHDATA_API_KEY || process.env.NASA_EARTHDATA_API_KEY;
 
 const GES_DISC_API = 'https://disc.gsfc.nasa.gov/api';
 // Use Early Run for faster data availability (4-14 hour latency vs 3.5 months)
@@ -34,9 +36,91 @@ if (!NASA_EARTHDATA_TOKEN) {
  * @returns {Promise<Object>} Precipitation data
  */
 export const fetchIMERGPrecipitation = async (latitude, longitude, date) => {
-  // Use date 1 day ago for Early Run availability
+  // Try multiple historical dates for better success rate  
+  const daysToTry = [2, 3, 5, 7];  // 2, 3, 5, and 7 days ago
+  
+  for (const daysAgo of daysToTry) {
+    const queryDate = new Date(date);
+    queryDate.setDate(queryDate.getDate() - daysAgo);
+    const historicalDate = queryDate.toISOString().split('T')[0];
+    
+    console.log(`[IMERG] Trying ${daysAgo} days ago: ${historicalDate}`);
+    
+    try {
+      // Format date for IMERG API (YYYYMMDD)
+      const formattedDate = historicalDate.replace(/-/g, '');
+
+      // Build bounding box (0.1° buffer around point)
+      const bbox = {
+        west: longitude - 0.05,
+        south: latitude - 0.05,
+        east: longitude + 0.05,
+        north: latitude + 0.05,
+      };
+
+      // Prepare headers with both token and API key
+      const headers = {};
+      if (NASA_EARTHDATA_TOKEN) {
+        headers.Authorization = `Bearer ${NASA_EARTHDATA_TOKEN}`;
+      }
+      if (NASA_EARTHDATA_API_KEY) {
+        headers['X-API-Key'] = NASA_EARTHDATA_API_KEY;
+      }
+
+      // Search for IMERG granules
+      const searchUrl = `${GES_DISC_API}/search`;
+
+      const response = await axios.get(searchUrl, {
+        params: {
+          dataset: `${IMERG_DATASET}.${IMERG_VERSION}`,
+          bbox: `${bbox.west},${bbox.south},${bbox.east},${bbox.north}`,
+          start: `${formattedDate}T000000`,
+          end: `${formattedDate}T235959`,
+          format: 'json',
+        },
+        headers,
+        timeout: 30000,
+      });
+
+      const results = response?.data?.results || [];
+      console.log(`[IMERG] Found ${results.length} granules for ${historicalDate}`);
+      
+      if (results.length > 0) {
+        // Get the first granule
+        const granule = results[0];
+
+        // Extract precipitation values from granule
+        const precipitationData = await extractPrecipitationData(granule, latitude, longitude);
+
+        return {
+          date,
+          latitude,
+          longitude,
+          precipitationRate: precipitationData.rate,
+          dailyAccumulation: precipitationData.daily,
+          probability: precipitationData.probability,
+          precipitationType: precipitationData.type,
+          source: `NASA IMERG ${IMERG_DATASET} (${daysAgo}d old)`,
+          granuleId: granule.id,
+          daysOld: daysAgo,
+          timestamp: new Date().toISOString(),
+        };
+      }
+    } catch (error) {
+      console.warn(`[IMERG] Failed for ${historicalDate}: ${error?.message}`);
+      // Continue to next date
+    }
+  }
+  
+  // All dates failed, fall back to POWER
+  console.warn('[IMERG] No granules found in any historical date, falling back to NASA POWER...');
+  return await fetchPrecipitationFromPOWER(latitude, longitude, date);
+};
+
+const fetchIMERGPrecipitationOld = async (latitude, longitude, date) => {
+  // Use date 2 days ago for Early Run availability (increased from 1)
   const queryDate = new Date(date);
-  queryDate.setDate(queryDate.getDate() - 1);
+  queryDate.setDate(queryDate.getDate() - 2);
   const historicalDate = queryDate.toISOString().split('T')[0];
   
   console.log(`[IMERG] Fetching for ${date}, using historical ${historicalDate}`);
@@ -53,6 +137,15 @@ export const fetchIMERGPrecipitation = async (latitude, longitude, date) => {
       north: latitude + 0.05,
     };
 
+    // Prepare headers with both token and API key
+    const headers = {};
+    if (NASA_EARTHDATA_TOKEN) {
+      headers.Authorization = `Bearer ${NASA_EARTHDATA_TOKEN}`;
+    }
+    if (NASA_EARTHDATA_API_KEY) {
+      headers['X-API-Key'] = NASA_EARTHDATA_API_KEY;
+    }
+
     // Search for IMERG granules
     const searchUrl = `${GES_DISC_API}/search`;
 
@@ -64,9 +157,7 @@ export const fetchIMERGPrecipitation = async (latitude, longitude, date) => {
         end: `${formattedDate}T235959`,
         format: 'json',
       },
-      headers: {
-        Authorization: `Bearer ${NASA_EARTHDATA_TOKEN}`,
-      },
+      headers,
       timeout: 30000,
     });
 
