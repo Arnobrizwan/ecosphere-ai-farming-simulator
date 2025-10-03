@@ -99,8 +99,13 @@ export default function ObjectiveInteraction({ visible, onClose, objective, onCo
       
       <View style={styles.dialogueBox}>
         <Text style={styles.dialogueText}>
-          {objective.hint || 'Let me explain what you need to do...'}
+          "{objective.text}"
         </Text>
+        {objective.hint && (
+          <Text style={[styles.dialogueText, { fontStyle: 'italic', marginTop: 10, fontSize: 14 }]}>
+            💡 {objective.hint}
+          </Text>
+        )}
       </View>
 
       <TouchableOpacity style={styles.actionButton} onPress={handleDialogue}>

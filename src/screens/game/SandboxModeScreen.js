@@ -490,6 +490,105 @@ export default function SandboxModeScreen({ navigation }) {
           characterAvatar={CHARACTERS[selectedScenario.character]?.avatar || '👤'}
         />
       )}
+
+      {/* Loading NASA Data Overlay */}
+      {loadingNasaData && (
+        <View style={styles.loadingOverlay}>
+          <View style={styles.loadingCard}>
+            <Text style={styles.loadingIcon}>🛰️</Text>
+            <Text style={styles.loadingTitle}>Loading NASA Data...</Text>
+            <Text style={styles.loadingText}>
+              Fetching real-time satellite data{'\n'}SMAP • IMERG • POWER
+            </Text>
+          </View>
+        </View>
+      )}
+
+      {/* NASA Data Dashboard */}
+      {gameplayActive && nasaData && (
+        <View style={styles.nasaDataOverlay}>
+          <View style={styles.nasaDataCard}>
+            <View style={styles.nasaDataHeader}>
+              <Text style={styles.nasaDataTitle}>🛰️ Live NASA Data</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  setGameplayActive(false);
+                  setNasaData(null);
+                }}
+                style={styles.closeButton}
+              >
+                <Text style={styles.closeButtonText}>✕</Text>
+              </TouchableOpacity>
+            </View>
+
+            <ScrollView style={styles.nasaDataContent}>
+              {nasaData.soilMoisture && (
+                <View style={styles.nasaDataItem}>
+                  <Text style={styles.nasaDataLabel}>💧 Soil Moisture</Text>
+                  <Text style={styles.nasaDataValue}>
+                    {nasaData.soilMoisture.mean.toFixed(2)}%
+                  </Text>
+                  <Text style={styles.nasaDataSource}>SMAP (36km resolution)</Text>
+                </View>
+              )}
+
+              {nasaData.precipitation && (
+                <View style={styles.nasaDataItem}>
+                  <Text style={styles.nasaDataLabel}>🌧️ Precipitation</Text>
+                  <Text style={styles.nasaDataValue}>
+                    {nasaData.precipitation.precipitationRate.toFixed(2)} mm/day
+                  </Text>
+                  <Text style={styles.nasaDataSource}>IMERG (0.1° resolution)</Text>
+                </View>
+              )}
+
+              {nasaData.climate && (
+                <>
+                  <View style={styles.nasaDataItem}>
+                    <Text style={styles.nasaDataLabel}>🌡️ Temperature</Text>
+                    <Text style={styles.nasaDataValue}>
+                      {nasaData.climate.T2M?.toFixed(1) || 'N/A'}°C
+                    </Text>
+                    <Text style={styles.nasaDataSource}>NASA POWER</Text>
+                  </View>
+
+                  <View style={styles.nasaDataItem}>
+                    <Text style={styles.nasaDataLabel}>☀️ Solar Radiation</Text>
+                    <Text style={styles.nasaDataValue}>
+                      {nasaData.climate.ALLSKY_SFC_SW_DWN?.toFixed(1) || 'N/A'} kWh/m²
+                    </Text>
+                    <Text style={styles.nasaDataSource}>NASA POWER</Text>
+                  </View>
+                </>
+              )}
+
+              {selectedScenario && selectedScenario.objectives && (
+                <View style={styles.objectivesSection}>
+                  <Text style={styles.objectivesTitle}>📋 Mission Objectives</Text>
+                  {selectedScenario.objectives.map((obj, idx) => (
+                    <Text key={idx} style={styles.objectiveItem}>
+                      • {obj}
+                    </Text>
+                  ))}
+                </View>
+              )}
+
+              <TouchableOpacity
+                style={styles.viewFullDataButton}
+                onPress={() => {
+                  Alert.alert(
+                    '🛰️ Full NASA Data',
+                    JSON.stringify(nasaData, null, 2),
+                    [{ text: 'OK' }]
+                  );
+                }}
+              >
+                <Text style={styles.viewFullDataButtonText}>View Raw Data</Text>
+              </TouchableOpacity>
+            </ScrollView>
+          </View>
+        </View>
+      )}
     </View>
   );
 }
@@ -804,6 +903,150 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   startButtonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: COLORS.pureWhite,
+  },
+  loadingOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1000,
+  },
+  loadingCard: {
+    backgroundColor: COLORS.pureWhite,
+    borderRadius: 20,
+    padding: 30,
+    alignItems: 'center',
+    width: '80%',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 10,
+  },
+  loadingIcon: {
+    fontSize: 60,
+    marginBottom: 20,
+  },
+  loadingTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: COLORS.deepBlack,
+    marginBottom: 12,
+  },
+  loadingText: {
+    fontSize: 15,
+    color: COLORS.earthBrown,
+    textAlign: 'center',
+    lineHeight: 22,
+  },
+  nasaDataOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 999,
+  },
+  nasaDataCard: {
+    backgroundColor: COLORS.pureWhite,
+    borderRadius: 20,
+    width: '90%',
+    maxHeight: '80%',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 10,
+  },
+  nasaDataHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    borderBottomWidth: 2,
+    borderBottomColor: COLORS.skyBlue,
+  },
+  nasaDataTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: COLORS.deepBlack,
+  },
+  closeButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: COLORS.primaryGreen,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  closeButtonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: COLORS.pureWhite,
+  },
+  nasaDataContent: {
+    padding: 20,
+  },
+  nasaDataItem: {
+    backgroundColor: COLORS.skyBlue,
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 12,
+  },
+  nasaDataLabel: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: COLORS.deepBlack,
+    marginBottom: 6,
+  },
+  nasaDataValue: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: COLORS.primaryGreen,
+    marginBottom: 4,
+  },
+  nasaDataSource: {
+    fontSize: 12,
+    color: COLORS.earthBrown,
+    fontStyle: 'italic',
+  },
+  objectivesSection: {
+    backgroundColor: COLORS.accentYellow,
+    borderRadius: 12,
+    padding: 16,
+    marginTop: 8,
+    marginBottom: 16,
+  },
+  objectivesTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: COLORS.deepBlack,
+    marginBottom: 12,
+  },
+  objectiveItem: {
+    fontSize: 14,
+    color: COLORS.deepBlack,
+    marginBottom: 6,
+    lineHeight: 20,
+  },
+  viewFullDataButton: {
+    backgroundColor: COLORS.primaryGreen,
+    paddingVertical: 14,
+    borderRadius: 12,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  viewFullDataButtonText: {
     fontSize: 16,
     fontWeight: 'bold',
     color: COLORS.pureWhite,
