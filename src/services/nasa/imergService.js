@@ -11,12 +11,14 @@
  */
 
 import axios from 'axios';
+import { getDailyPoint } from '../power.service';
 
 const NASA_EARTHDATA_TOKEN =
   process.env.EXPO_PUBLIC_NASA_EARTHDATA_TOKEN || process.env.NASA_EARTHDATA_TOKEN;
 
 const GES_DISC_API = 'https://disc.gsfc.nasa.gov/api';
-const IMERG_DATASET = 'GPM_3IMERGDF';
+// Use Early Run for faster data availability (4-14 hour latency vs 3.5 months)
+const IMERG_DATASET = 'GPM_3IMERGHHE';  // Early Half-Hour
 const IMERG_VERSION = '07';
 
 if (!NASA_EARTHDATA_TOKEN) {
@@ -32,11 +34,16 @@ if (!NASA_EARTHDATA_TOKEN) {
  * @returns {Promise<Object>} Precipitation data
  */
 export const fetchIMERGPrecipitation = async (latitude, longitude, date) => {
+  // Use date 1 day ago for Early Run availability
+  const queryDate = new Date(date);
+  queryDate.setDate(queryDate.getDate() - 1);
+  const historicalDate = queryDate.toISOString().split('T')[0];
+  
+  console.log(`[IMERG] Fetching for ${date}, using historical ${historicalDate}`);
+  
   try {
-    console.log(`[IMERG] Fetching precipitation for ${latitude}, ${longitude} on ${date}`);
-
     // Format date for IMERG API (YYYYMMDD)
-    const formattedDate = date.replace(/-/g, '');
+    const formattedDate = historicalDate.replace(/-/g, '');
 
     // Build bounding box (0.1° buffer around point)
     const bbox = {
@@ -64,19 +71,8 @@ export const fetchIMERGPrecipitation = async (latitude, longitude, date) => {
     });
 
     if (!response.data || !response.data.results || response.data.results.length === 0) {
-      console.warn('[IMERG] No data available, returning simulated values');
-      return {
-        date,
-        latitude,
-        longitude,
-        precipitationRate: parseFloat((Math.random() * 5).toFixed(2)), // 0-5 mm/hr
-        dailyAccumulation: parseFloat((Math.random() * 15).toFixed(2)), // 0-15 mm/day
-        probability: Math.floor(Math.random() * 100), // 0-100%
-        precipitationType: 'rain',
-        source: 'Simulated IMERG Data (No real data available)',
-        isSimulated: true,
-        timestamp: new Date().toISOString(),
-      };
+      console.warn('[IMERG] No granules found, falling back to NASA POWER...');
+      return await fetchPrecipitationFromPOWER(latitude, longitude, date);
     }
 
     // Get the first granule
@@ -98,19 +94,55 @@ export const fetchIMERGPrecipitation = async (latitude, longitude, date) => {
       timestamp: new Date().toISOString(),
     };
   } catch (error) {
-    console.error('[IMERG] Fetch error:', error);
-    // Return fallback data instead of throwing
+    console.error('[IMERG] GES DISC API error:', error?.message);
+    console.warn('[IMERG] Falling back to NASA POWER API...');
+    return await fetchPrecipitationFromPOWER(latitude, longitude, date);
+  }
+};
+
+/**
+ * Fetch precipitation from NASA POWER as fallback
+ */
+const fetchPrecipitationFromPOWER = async (latitude, longitude, date) => {
+  try {
+    const formattedDate = date.replace(/-/g, '');
+    
+    const powerData = await getDailyPoint({
+      latitude,
+      longitude,
+      start: formattedDate,
+      end: formattedDate,
+      parameters: ['PRECTOTCORR'],  // Precipitation corrected
+    });
+
+    const precipitation = powerData?.properties?.parameter?.PRECTOTCORR?.[formattedDate] || 0;
+
     return {
       date,
       latitude,
       longitude,
-      precipitationRate: parseFloat((Math.random() * 5).toFixed(2)), // 0-5 mm/hr
-      dailyAccumulation: parseFloat((Math.random() * 15).toFixed(2)), // 0-15 mm/day
-      probability: Math.floor(Math.random() * 100), // 0-100%
+      precipitationRate: parseFloat((precipitation / 24).toFixed(2)), // Convert daily to hourly
+      dailyAccumulation: parseFloat(precipitation.toFixed(2)),
+      probability: precipitation > 0 ? 80 : 20,
       precipitationType: 'rain',
-      source: 'Simulated IMERG Data (API Error)',
+      source: 'NASA POWER (PRECTOTCORR)',
+      isPOWER: true,
+      timestamp: new Date().toISOString(),
+    };
+  } catch (powerError) {
+    console.error('[IMERG] POWER API also failed:', powerError?.message);
+    // Final fallback: simulated data
+    return {
+      date,
+      latitude,
+      longitude,
+      precipitationRate: parseFloat((Math.random() * 5).toFixed(2)),
+      dailyAccumulation: parseFloat((Math.random() * 15).toFixed(2)),
+      probability: Math.floor(Math.random() * 100),
+      precipitationType: 'rain',
+      source: 'Simulated Data (All APIs failed)',
       isSimulated: true,
-      error: error?.message || String(error),
+      error: powerError?.message || String(powerError),
       timestamp: new Date().toISOString(),
     };
   }

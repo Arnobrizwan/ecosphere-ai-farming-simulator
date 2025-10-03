@@ -2,6 +2,7 @@ import axios from 'axios';
 import { addDays, differenceInCalendarDays, format } from 'date-fns';
 
 import { withRetry } from '../../utils/retry';
+import { getDailyPoint } from '../power.service';
 
 const NASA_EARTHDATA_TOKEN =
   process.env.EXPO_PUBLIC_NASA_EARTHDATA_TOKEN || process.env.NASA_EARTHDATA_TOKEN;
@@ -18,6 +19,13 @@ if (!NASA_EARTHDATA_TOKEN) {
  * @param {string} date - YYYY-MM-DD
  */
 export const fetchSMAPSoilMoisture = async (latitude, longitude, date) => {
+  // Use date 7 days ago to avoid latency issues
+  const queryDate = new Date(date);
+  queryDate.setDate(queryDate.getDate() - 7);
+  const historicalDate = queryDate.toISOString().split('T')[0];
+  
+  console.log(`[SMAP] Fetching for ${date}, using historical ${historicalDate}`);
+  
   try {
     const bbox = `${longitude - 0.1},${latitude - 0.1},${longitude + 0.1},${latitude + 0.1}`;
 
@@ -27,30 +35,24 @@ export const fetchSMAPSoilMoisture = async (latitude, longitude, date) => {
           short_name: 'SPL3SMP_E',
           version: '005',
           bounding_box: bbox,
-          temporal: `${date}T00:00:00Z,${date}T23:59:59Z`,
+          temporal: `${historicalDate}T00:00:00Z,${historicalDate}T23:59:59Z`,
           page_size: 1,
         },
         headers: {
           Authorization: `Bearer ${NASA_EARTHDATA_TOKEN}`,
         },
+        timeout: 10000,
       })
     , {
-      retries: 3,
+      retries: 2,
       onRetry: ({ attempt, error }) =>
-        console.warn(`[SMAP] retry ${attempt} for ${date}: ${error?.message || error}`),
+        console.warn(`[SMAP] retry ${attempt} for ${historicalDate}: ${error?.message || error}`),
     });
 
     const entries = response?.data?.feed?.entry || [];
     if (entries.length === 0) {
-      console.warn('[SMAP] No data available, returning simulated values');
-      return {
-        date,
-        location: { latitude, longitude },
-        soilMoisture: 0.25 + Math.random() * 0.15, // 25-40% (realistic range)
-        unit: 'cm³/cm³',
-        source: 'Simulated SMAP Data (No real data available)',
-        isSimulated: true,
-      };
+      console.warn('[SMAP] No granules found, falling back to NASA POWER...');
+      return await fetchSoilMoistureFromPOWER(latitude, longitude, date);
     }
 
     const granule = entries[0];
@@ -59,23 +61,58 @@ export const fetchSMAPSoilMoisture = async (latitude, longitude, date) => {
     return {
       date,
       location: { latitude, longitude },
-      soilMoisture: parseFloat(granule.summary || '0') || 0.25 + Math.random() * 0.15,
+      soilMoisture: parseFloat(granule.summary || '0') || 0.30,
       unit: 'cm³/cm³',
       source: 'NASA SMAP SPL3SMP_E',
       granuleId: granule.id,
       dataUrl,
     };
   } catch (error) {
-    console.error('[SMAP] fetch error:', error);
-    // Return fallback data instead of throwing
+    console.error('[SMAP] CMR API error:', error?.message);
+    console.warn('[SMAP] Falling back to NASA POWER API...');
+    return await fetchSoilMoistureFromPOWER(latitude, longitude, date);
+  }
+};
+
+/**
+ * Fetch soil moisture from NASA POWER as fallback
+ */
+const fetchSoilMoistureFromPOWER = async (latitude, longitude, date) => {
+  try {
+    const formattedDate = date.replace(/-/g, '');
+    
+    const powerData = await getDailyPoint({
+      latitude,
+      longitude,
+      start: formattedDate,
+      end: formattedDate,
+      parameters: ['GWETTOP', 'GWETROOT'],
+    });
+
+    // GWETROOT is 0-1 scale, convert to volumetric (cm³/cm³)
+    const gwetroot = powerData?.properties?.parameter?.GWETROOT?.[formattedDate];
+    const soilMoisture = gwetroot ? gwetroot * 0.4 : 0.30; // Convert to realistic range
+
     return {
       date,
       location: { latitude, longitude },
-      soilMoisture: 0.25 + Math.random() * 0.15, // 25-40% (realistic range)
+      soilMoisture: parseFloat(soilMoisture.toFixed(3)),
       unit: 'cm³/cm³',
-      source: 'Simulated SMAP Data (API Error)',
+      source: 'NASA POWER (GWETROOT)',
+      isPOWER: true,
+      timestamp: new Date().toISOString(),
+    };
+  } catch (powerError) {
+    console.error('[SMAP] POWER API also failed:', powerError?.message);
+    // Final fallback: simulated data
+    return {
+      date,
+      location: { latitude, longitude },
+      soilMoisture: 0.25 + Math.random() * 0.15,
+      unit: 'cm³/cm³',
+      source: 'Simulated Data (All APIs failed)',
       isSimulated: true,
-      error: error?.message || String(error),
+      error: powerError?.message || String(powerError),
     };
   }
 };
